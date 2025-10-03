@@ -1,0 +1,64 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Card, CardContent } from "@/components/ui/card";
+
+const News = () => {
+  const newsItems = [
+    {
+      date: "০৩ অক্টোবর ২০২৫",
+      title: "২০২৫ শিক্ষাবর্ষের ভর্তি চলছে",
+      description: "হিফজুল কুরআন, কওমী শিক্ষা ও লিল্লাহ বোডিং-এ সীমিত সংখ্যক আসনে ভর্তি চলছে। আগ্রহী অভিভাবকগণ অনলাইনে আবেদন করতে পারবেন।"
+    },
+    {
+      date: "২৫ সেপ্টেম্বর ২০২৫",
+      title: "কামিল পরীক্ষার বিজ্ঞপ্তি প্রকাশ",
+      description: "কামিল ১ম ও ২য় পর্বের বার্ষিক পরীক্ষা আগামী ১৫ নভেম্বর থেকে শুরু হবে। সকল শিক্ষার্থীদের প্রস্তুতি নিতে বলা হচ্ছে।"
+    },
+    {
+      date: "১০ সেপ্টেম্বর ২০২৫",
+      title: "বার্ষিক খতমে কুরআন মাহফিল",
+      description: "আলহামদুলিল্লাহ, এ বছর ৫০ জন ছাত্র সফলভাবে হিফজ সম্পন্ন করেছে। তাদের সম্মানে আগামী ২০ সেপ্টেম্বর খতমে কুরআন মাহফিল অনুষ্ঠিত হবে।"
+    },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      <main className="flex-1 container mx-auto px-4 py-12">
+        <h1 className="text-4xl font-bold font-bengali text-primary mb-8 text-center">
+          সাম্প্রতিক সংবাদ
+        </h1>
+        
+        <div className="max-w-4xl mx-auto space-y-6">
+          {newsItems.map((item, index) => (
+            <Card key={index} className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-16 h-16 bg-islamic-green/10 rounded-lg flex items-center justify-center">
+                    <span className="text-2xl">📰</span>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm text-muted-foreground font-bengali mb-2">
+                      {item.date}
+                    </p>
+                    <h3 className="text-xl font-bold font-bengali text-islamic-green mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="font-bengali leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default News;

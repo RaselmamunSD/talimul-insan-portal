@@ -1,0 +1,70 @@
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { Card, CardContent } from "@/components/ui/card";
+
+const Teachers = () => {
+  const teachers = [
+    {
+      name: "মাওলানা আব্দুল করিম",
+      designation: "প্রধান মুহতামিম",
+      qualification: "কামিল, দাওরায়ে হাদিস",
+      experience: "২৫ বছর",
+    },
+    {
+      name: "মাওলানা মুহাম্মদ আলী",
+      designation: "হিফজ বিভাগের প্রধান",
+      qualification: "হাফেজ, কামিল",
+      experience: "১৫ বছর",
+    },
+    {
+      name: "উস্তাদ আবু বকর",
+      designation: "কওমী বিভাগের শিক্ষক",
+      qualification: "ফাজিল, দাওরায়ে হাদিস",
+      experience: "১০ বছর",
+    },
+    {
+      name: "মাওলানা উমর ফারুক",
+      designation: "নূরানী বিভাগের প্রধান",
+      qualification: "আলিম, হাফেজ",
+      experience: "৮ বছর",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      <main className="flex-1 container mx-auto px-4 py-12">
+        <h1 className="text-4xl font-bold font-bengali text-primary mb-8 text-center">
+          শিক্ষক পরিচিতি
+        </h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {teachers.map((teacher, index) => (
+            <Card key={index} className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6">
+                <div className="w-24 h-24 bg-islamic-green/10 rounded-full mx-auto mb-4 flex items-center justify-center text-4xl">
+                  👤
+                </div>
+                <h3 className="text-xl font-bold font-bengali text-center mb-2">
+                  {teacher.name}
+                </h3>
+                <p className="text-islamic-green font-bengali text-center mb-3">
+                  {teacher.designation}
+                </p>
+                <div className="space-y-2 font-bengali text-sm">
+                  <p><span className="font-semibold">যোগ্যতা:</span> {teacher.qualification}</p>
+                  <p><span className="font-semibold">অভিজ্ঞতা:</span> {teacher.experience}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default Teachers;
