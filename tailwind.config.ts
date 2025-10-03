@@ -13,6 +13,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+        arabic: ['Amiri', 'serif'],
+        bengali: ['Noto Sans Bengali', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -46,6 +51,12 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        islamic: {
+          green: "hsl(var(--islamic-green))",
+          gold: "hsl(var(--islamic-gold))",
+          orange: "hsl(var(--islamic-orange))",
+          lightGreen: "hsl(var(--islamic-light-green))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
