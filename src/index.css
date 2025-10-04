@@ -20,14 +20,14 @@ All colors MUST be HSL.
     --primary: 145 63% 42%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 43 96% 56%;
-    --secondary-foreground: 0 0% 15%;
+    --secondary: 185 84% 45%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 145 20% 95%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 192 95% 68%;
+    --accent-foreground: 0 0% 15%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -39,12 +39,13 @@ All colors MUST be HSL.
     --radius: 0.5rem;
     
     --islamic-green: 145 63% 42%;
-    --islamic-gold: 43 96% 56%;
+    --islamic-dark-green: 145 63% 25%;
+    --islamic-teal: 185 84% 45%;
     --islamic-orange: 25 95% 53%;
     --islamic-light-green: 145 45% 92%;
     
     --gradient-primary: linear-gradient(135deg, hsl(var(--islamic-green)), hsl(145, 63%, 35%));
-    --gradient-gold: linear-gradient(135deg, hsl(var(--islamic-gold)), hsl(43, 96%, 48%));
+    --gradient-teal: linear-gradient(135deg, hsl(var(--islamic-teal)), hsl(185, 84%, 38%));
     
     --shadow-elegant: 0 4px 20px rgba(34, 139, 87, 0.15);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -171,10 +172,10 @@ All colors MUST be HSL.
   
   @keyframes glow {
     0%, 100% {
-      box-shadow: 0 0 10px hsl(var(--islamic-gold)), 0 0 20px hsl(var(--islamic-gold)), 0 0 30px hsl(var(--islamic-gold));
+      box-shadow: 0 0 15px hsl(var(--islamic-teal) / 0.6), 0 0 30px hsl(var(--islamic-teal) / 0.4), 0 0 45px hsl(var(--islamic-teal) / 0.2);
     }
     50% {
-      box-shadow: 0 0 20px hsl(var(--islamic-gold)), 0 0 30px hsl(var(--islamic-gold)), 0 0 40px hsl(var(--islamic-gold));
+      box-shadow: 0 0 20px hsl(var(--islamic-teal) / 0.8), 0 0 40px hsl(var(--islamic-teal) / 0.6), 0 0 60px hsl(var(--islamic-teal) / 0.3);
     }
   }
 

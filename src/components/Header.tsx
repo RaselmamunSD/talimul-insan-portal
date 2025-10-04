@@ -41,11 +41,33 @@ const Header = () => {
       label: "পরিচিতি", 
       href: "#", 
       dropdown: [
+        { label: "মুহতামিমের বাণী ও সংক্ষিপ্ত জীবনবৃত্তান্ত", href: "/principal-message" },
+        { label: "কমিটি বিন্দু", href: "/committee" },
+        { label: "প্রতিষ্ঠার লক্ষ্য", href: "/goals" },
+        { label: "বৈশিষ্ট্য", href: "/features" },
         { label: "শিক্ষক পরিচিতি", href: "/teachers" },
         { label: "হাফেজ ছাত্রের পরিচিতি", href: "/students" }
       ]
     },
-    { label: "ভর্তি", href: "/admission" },
+    { 
+      label: "আবাসন", 
+      href: "#", 
+      dropdown: [
+        { label: "আবাসিক হল ও পরিচালকবৃন্দ", href: "/residential-halls" },
+        { label: "আবাসন চার্জ", href: "/accommodation-charges" },
+        { label: "আবাসিক নীতিমাল", href: "/residential-policies" },
+        { label: "দৈনিক আবাসিক কার্যসূচি", href: "/daily-schedule" }
+      ]
+    },
+    { 
+      label: "ভর্তি", 
+      href: "#", 
+      dropdown: [
+        { label: "ভর্তির সময়", href: "/admission-time" },
+        { label: "ভর্তি পরীক্ষা", href: "/admission-exam" },
+        { label: "ভর্তির শর্তাবলী", href: "/admission-terms" }
+      ]
+    },
     { label: "নিউজ", href: "/news" },
     { label: "গ্যালারি", href: "/gallery" },
     { label: "মিডিয়া", href: "/media" },
@@ -58,17 +80,13 @@ const Header = () => {
       <div className="bg-white text-foreground py-2 px-4 border-b">
         <div className="container mx-auto flex flex-wrap items-center justify-between gap-2 text-sm">
           <div className="flex items-center gap-4 flex-wrap">
-            <span className="font-semibold">Madrasah Code: 11004</span>
-            <span className="font-semibold">EIIN: 107906</span>
+            <span className="font-semibold">
+              🕐 {formatTime(currentTime)}
+            </span>
+            <span className="font-semibold">📅 {formatDate(currentTime)}</span>
           </div>
           
           <div className="flex items-center gap-4 flex-wrap">
-            <div className="flex items-center gap-2">
-              <span className="font-semibold">
-                🕐 {formatTime(currentTime)}
-              </span>
-              <span className="font-semibold">📅 {formatDate(currentTime)}</span>
-            </div>
             
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -93,38 +111,41 @@ const Header = () => {
       </div>
 
       {/* Main Header */}
-      <div className="bg-islamic-green text-white py-4 px-4">
+      <div className="bg-islamic-green text-white py-3 px-4">
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-            {/* Logo */}
+          <div className="flex items-center justify-center gap-4">
+            {/* Left - English Name */}
+            <div className="hidden lg:block text-left flex-1">
+              <p className="text-sm font-english font-semibold leading-tight">
+                Talimul Insan Hafizia<br />Qawmi Madrasah & Lillah Boarding
+              </p>
+            </div>
+
+            {/* Center - Logo */}
             <div className="flex-shrink-0">
               <img 
                 src={madrasahLogo} 
                 alt="Madrasah Logo" 
-                className="w-20 h-20 lg:w-24 lg:h-24 object-contain rounded-full bg-white p-2"
+                className="w-16 h-16 lg:w-20 lg:h-20 object-contain rounded-full bg-white p-2"
               />
             </div>
 
-            {/* Center - Names */}
-            <div className="flex-1 text-center space-y-1">
-              <h1 className="text-xl lg:text-3xl font-bold font-bengali leading-tight">
-                হাড়ীভাঙ্গা তা'লিমুল ইন্‌স্সান হাফেজিয়া কওমী মাদ্রাসা
-              </h1>
-              <h2 className="text-base lg:text-xl font-bold font-bengali">
-                ও লিল্লাহ বোডিং
-              </h2>
-              <p className="text-sm lg:text-base font-bengali">
-                হাড়ীভাঙ্গা এয়ারপোর্ট সংলগ্ন, লালমনিরহাট।
-              </p>
-              
-              <p className="text-lg lg:text-2xl font-arabic text-islamic-gold leading-relaxed mt-2">
-                المدرسة الحافظية و القومية تعليم الانسان و دار الايتام
-              </p>
-              
-              <p className="text-base lg:text-lg font-english text-islamic-orange font-semibold mt-1">
-                Harivanga Talimul Insan Hafizia Qawmi Madrasah & Lillah Boarding
+            {/* Right - Arabic Name */}
+            <div className="hidden lg:block text-right flex-1">
+              <p className="text-sm font-arabic leading-relaxed">
+                المدرسة الحافظية و القومية<br />تعليم الانسان و دار الايتام
               </p>
             </div>
+          </div>
+          
+          {/* Bengali Names - Center */}
+          <div className="text-center mt-2">
+            <h1 className="text-lg lg:text-2xl font-bold font-bengali leading-tight">
+              হাড়ীভাঙ্গা তা'লিমুল ইন্‌স্সান হাফেজিয়া কওমী মাদ্রাসা ও লিল্লাহ বোডিং
+            </h1>
+            <p className="text-xs lg:text-sm font-bengali mt-1">
+              হাড়ীভাঙ্গা এয়ারপোর্ট সংলগ্ন, লালমনিরহাট।
+            </p>
           </div>
         </div>
       </div>
@@ -198,9 +219,9 @@ const Header = () => {
             <div className="hidden lg:flex items-center gap-3">
               <Button 
                 asChild
-                className="bg-islamic-gold hover:bg-islamic-gold/90 text-white font-bengali font-bold animate-glow"
+                className="bg-islamic-teal hover:bg-islamic-teal/90 text-white font-bengali font-bold animate-glow shadow-lg"
               >
-                <Link to="/donate">দান করুন</Link>
+                <Link to="/donate">💝 দান করুন</Link>
               </Button>
               
               <DropdownMenu>
@@ -263,9 +284,9 @@ const Header = () => {
               <div className="mt-4 px-4 space-y-2">
                 <Button 
                   asChild
-                  className="w-full bg-islamic-gold hover:bg-islamic-gold/90 text-white font-bengali font-bold"
+                  className="w-full bg-islamic-teal hover:bg-islamic-teal/90 text-white font-bengali font-bold"
                 >
-                  <Link to="/donate">দান করুন</Link>
+                  <Link to="/donate">💝 দান করুন</Link>
                 </Button>
               </div>
             </div>
