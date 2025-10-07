@@ -6,16 +6,16 @@ const Footer = () => {
 
   const links = {
     quick: [
-      { label: "হোম", href: "#home" },
-      { label: "পরিচিতি", href: "#about" },
-      { label: "ভর্তি", href: "#admission" },
-      { label: "যোগাযোগ", href: "#contact" },
+      { label: "হোম", href: "/" },
+      { label: "পরিচিতি", href: "/principal-message" },
+      { label: "ভর্তি", href: "/admission-time" },
+      { label: "যোগাযোগ", href: "/contact" },
     ],
     programs: [
-      { label: "হিফজুল কুরআন", href: "#programs" },
-      { label: "কওমী শিক্ষা", href: "#programs" },
-      { label: "নূরানী বিভাগ", href: "#programs" },
-      { label: "লিল্লাহ বোডিং", href: "#programs" },
+      { label: "হিফজুল কুরআন", href: "/hifz-department" },
+      { label: "কওমী শিক্ষা", href: "/qawmi-department" },
+      { label: "নূরানী বিভাগ", href: "/nurani-department" },
+      { label: "লিল্লাহ বোডিং", href: "/lillah-boarding" },
     ],
   };
 
