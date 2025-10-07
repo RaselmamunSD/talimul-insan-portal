@@ -111,7 +111,7 @@ const Header = () => {
       </div>
 
       {/* Main Header */}
-      <div className="bg-islamic-green text-white py-3 px-4">
+      <div className="bg-islamic-dark-green text-white py-3 px-4">
         <div className="container mx-auto">
           <div className="flex items-center justify-center gap-4">
             {/* Left - English Name */}
@@ -168,7 +168,7 @@ const Header = () => {
       </div>
 
       {/* Navigation Menu */}
-      <nav className="bg-primary/95 text-white sticky top-0 z-50">
+      <nav className="bg-islamic-dark-green text-white sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             {/* Mobile Menu Button */}
