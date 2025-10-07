@@ -54,7 +54,8 @@ export default {
         },
         islamic: {
           green: "hsl(var(--islamic-green))",
-          gold: "hsl(var(--islamic-gold))",
+          "dark-green": "hsl(var(--islamic-dark-green))",
+          teal: "hsl(var(--islamic-teal))",
           orange: "hsl(var(--islamic-orange))",
           lightGreen: "hsl(var(--islamic-light-green))",
         },
