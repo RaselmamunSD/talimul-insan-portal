@@ -50,6 +50,17 @@ const Header = () => {
       ]
     },
     { 
+      label: "বিভাগ সমূহ", 
+      href: "#", 
+      dropdown: [
+        { label: "হিফজুল কুরআন", href: "/hifz-department" },
+        { label: "কওমি বিভাগ", href: "/qawmi-department" },
+        { label: "নূরানী বিভাগ", href: "/nurani-department" },
+        { label: "লিল্লাহ বোডিং", href: "/lillah-boarding" },
+        { label: "রিভিশন", href: "/revision" }
+      ]
+    },
+    { 
       label: "আবাসন", 
       href: "#", 
       dropdown: [
@@ -219,7 +230,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center gap-3">
               <Button 
                 asChild
-                className="bg-islamic-teal hover:bg-islamic-teal/90 text-white font-bengali font-bold animate-glow shadow-lg"
+                className="bg-islamic-green hover:bg-islamic-green/90 text-white font-bengali font-bold border-2 border-white px-6 py-3 shadow-lg hover:shadow-xl transition-smooth"
               >
                 <Link to="/donate">💝 দান করুন</Link>
               </Button>
@@ -284,7 +295,7 @@ const Header = () => {
               <div className="mt-4 px-4 space-y-2">
                 <Button 
                   asChild
-                  className="w-full bg-islamic-teal hover:bg-islamic-teal/90 text-white font-bengali font-bold"
+                  className="w-full bg-islamic-green hover:bg-islamic-green/90 text-white font-bengali font-bold border-2 border-white"
                 >
                   <Link to="/donate">💝 দান করুন</Link>
                 </Button>
