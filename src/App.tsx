@@ -30,6 +30,9 @@ import DailySchedule from "./pages/DailySchedule";
 import AdmissionTime from "./pages/AdmissionTime";
 import AdmissionExam from "./pages/AdmissionExam";
 import AdmissionTerms from "./pages/AdmissionTerms";
+import Terms from "./pages/Terms";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Help from "./pages/Help";
 
 const queryClient = new QueryClient();
 
@@ -67,6 +70,9 @@ const App = () => (
           <Route path="/donate" element={<Donate />} />
           <Route path="/admission" element={<AdmissionInstructions />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/help" element={<Help />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

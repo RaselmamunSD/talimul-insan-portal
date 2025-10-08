@@ -128,11 +128,26 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/20 mt-8 pt-8 text-center">
-          <p className="text-sm font-bengali">
+        <div className="border-t border-white/20 mt-8 pt-8">
+          <div className="text-center mb-4">
+            <div className="flex flex-wrap justify-center gap-4 mb-4">
+              <a href="/terms" className="text-sm font-bengali hover:text-secondary transition-smooth">
+                শর্তবলী
+              </a>
+              <span className="text-white/40">|</span>
+              <a href="/privacy-policy" className="text-sm font-bengali hover:text-secondary transition-smooth">
+                গোপনীয়তা নীতি
+              </a>
+              <span className="text-white/40">|</span>
+              <a href="/help" className="text-sm font-bengali hover:text-secondary transition-smooth">
+                সাহায্য
+              </a>
+            </div>
+          </div>
+          <p className="text-sm font-bengali text-center">
             © {currentYear} তা'লিমুল ইন্সান হাফেজিয়া কওমী মাদ্রাসা ও লিল্লাহ বোডিং। সর্বস্বত্ব সংরক্ষিত।
           </p>
-          <p className="text-xs text-secondary mt-2 font-english">
+          <p className="text-xs text-secondary mt-2 font-english text-center">
             Madrasah Code: 11004 | EIIN: 107906
           </p>
         </div>
