@@ -83,37 +83,59 @@ const About = () => {
           </Card>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className="shadow-elegant hover:shadow-2xl transition-smooth hover:-translate-y-1 bg-gradient-to-br from-white to-muted border-2 border-primary/20"
-            >
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="flex-shrink-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          {features.map((feature, index) => {
+            const bgColors = [
+              "bg-blue-50/80 border-blue-200",
+              "bg-purple-50/80 border-purple-200", 
+              "bg-green-50/80 border-green-200",
+              "bg-pink-50/80 border-pink-200",
+              "bg-indigo-50/80 border-indigo-200"
+            ];
+            const iconBgColors = [
+              "bg-blue-500",
+              "bg-purple-500",
+              "bg-green-500", 
+              "bg-pink-500",
+              "bg-indigo-500"
+            ];
+            
+            return (
+              <Card 
+                key={index}
+                className={`${bgColors[index % 5]} border-2 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 rounded-2xl`}
+              >
+                <CardContent className="p-6 text-center">
+                  <div className={`${iconBgColors[index % 5]} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-md`}>
                     {feature.icon}
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold font-bengali text-primary mb-1">
-                      {feature.titleBn}
-                    </h3>
-                    <p className="text-sm font-english text-accent font-semibold">
-                      {feature.titleEn}
-                    </p>
+                  
+                  <div className="mb-3">
+                    <span className="text-sm font-bengali font-semibold text-primary">ধাপ {index + 1}</span>
                   </div>
-                </div>
-                <p className="text-base font-bengali text-muted-foreground leading-relaxed mb-6">
-                  {feature.descBn}
-                </p>
-                <Button asChild variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white font-bengali">
-                  <Link to={feature.link}>
-                    বিস্তারিত জানুন →
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+                  
+                  <h3 className="text-xl font-bold font-bengali text-foreground mb-3">
+                    {feature.titleBn}
+                  </h3>
+                  
+                  <p className="text-sm font-bengali text-muted-foreground leading-relaxed mb-4">
+                    {feature.descBn}
+                  </p>
+                  
+                  <Button 
+                    asChild 
+                    variant="ghost" 
+                    size="sm"
+                    className="text-primary hover:text-primary hover:bg-primary/10 font-bengali"
+                  >
+                    <Link to={feature.link}>
+                      বিস্তারিত →
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>
