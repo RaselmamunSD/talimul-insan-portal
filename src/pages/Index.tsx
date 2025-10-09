@@ -6,6 +6,7 @@ import About from "@/components/About";
 import Contribute from "@/components/Contribute";
 import Programs from "@/components/Programs";
 import Contact from "@/components/Contact";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -21,6 +22,7 @@ const Index = () => {
         <Programs />
         <Contact />
       </main>
+      <Newsletter />
       <Footer />
     </div>
   );
