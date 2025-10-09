@@ -1,5 +1,24 @@
 import { useState, useEffect } from "react";
-import { Menu, X, ChevronDown, Globe } from "lucide-react";
+import { 
+  Menu, 
+  X, 
+  ChevronDown, 
+  Globe, 
+  User, 
+  Users, 
+  Target, 
+  Award, 
+  BookOpen, 
+  GraduationCap,
+  Book,
+  Home as HomeIcon,
+  Building,
+  DollarSign,
+  FileText,
+  Clock,
+  ClipboardCheck,
+  School
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -41,42 +60,42 @@ const Header = () => {
       label: "পরিচিতি", 
       href: "#", 
       dropdown: [
-        { label: "মুহতামিমের বাণী ও সংক্ষিপ্ত জীবনবৃত্তান্ত", href: "/principal-message" },
-        { label: "কমিটি বিন্দু", href: "/committee" },
-        { label: "প্রতিষ্ঠার লক্ষ্য", href: "/goals" },
-        { label: "বৈশিষ্ট্য", href: "/features" },
-        { label: "শিক্ষক পরিচিতি", href: "/teachers" },
-        { label: "হাফেজ ছাত্রের পরিচিতি", href: "/students" }
+        { label: "মুহতামিমের বাণী ও সংক্ষিপ্ত জীবনবৃত্তান্ত", href: "/principal-message", icon: User },
+        { label: "কমিটি বিন্দু", href: "/committee", icon: Users },
+        { label: "প্রতিষ্ঠার লক্ষ্য", href: "/goals", icon: Target },
+        { label: "বৈশিষ্ট্য", href: "/features", icon: Award },
+        { label: "শিক্ষক পরিচিতি", href: "/teachers", icon: GraduationCap },
+        { label: "হাফেজ ছাত্রের পরিচিতি", href: "/students", icon: BookOpen }
       ]
     },
     { 
       label: "বিভাগ সমূহ", 
       href: "#", 
       dropdown: [
-        { label: "হিফজুল কুরআন", href: "/hifz-department" },
-        { label: "কওমি বিভাগ", href: "/qawmi-department" },
-        { label: "নূরানী বিভাগ", href: "/nurani-department" },
-        { label: "লিল্লাহ বোডিং", href: "/lillah-boarding" },
-        { label: "রিভিশন", href: "/revision" }
+        { label: "হিফজুল কুরআন", href: "/hifz-department", icon: Book },
+        { label: "কওমি বিভাগ", href: "/qawmi-department", icon: School },
+        { label: "নূরানী বিভাগ", href: "/nurani-department", icon: BookOpen },
+        { label: "লিল্লাহ বোডিং", href: "/lillah-boarding", icon: HomeIcon },
+        { label: "রিভিশন", href: "/revision", icon: ClipboardCheck }
       ]
     },
     { 
       label: "আবাসন", 
       href: "#", 
       dropdown: [
-        { label: "আবাসিক হল ও পরিচালকবৃন্দ", href: "/residential-halls" },
-        { label: "আবাসন চার্জ", href: "/accommodation-charges" },
-        { label: "আবাসিক নীতিমাল", href: "/residential-policies" },
-        { label: "দৈনিক আবাসিক কার্যসূচি", href: "/daily-schedule" }
+        { label: "আবাসিক হল ও পরিচালকবৃন্দ", href: "/residential-halls", icon: Building },
+        { label: "আবাসন চার্জ", href: "/accommodation-charges", icon: DollarSign },
+        { label: "আবাসিক নীতিমাল", href: "/residential-policies", icon: FileText },
+        { label: "দৈনিক আবাসিক কার্যসূচি", href: "/daily-schedule", icon: Clock }
       ]
     },
     { 
       label: "ভর্তি", 
       href: "#", 
       dropdown: [
-        { label: "ভর্তির সময়", href: "/admission-time" },
-        { label: "ভর্তি পরীক্ষা", href: "/admission-exam" },
-        { label: "ভর্তির শর্তাবলী", href: "/admission-terms" }
+        { label: "ভর্তির সময়", href: "/admission-time", icon: Clock },
+        { label: "ভর্তি পরীক্ষা", href: "/admission-exam", icon: ClipboardCheck },
+        { label: "ভর্তির শর্তাবলী", href: "/admission-terms", icon: FileText }
       ]
     },
     { label: "নিউজ", href: "/news" },
@@ -200,11 +219,19 @@ const Header = () => {
                       <DropdownMenuTrigger className="px-6 py-3 rounded transition-smooth font-semibold hover:bg-white/10 flex items-center gap-1">
                         {item.label} <ChevronDown className="h-4 w-4" />
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent className="bg-white">
+                      <DropdownMenuContent className="bg-white min-w-[280px] shadow-xl border-2 border-primary/10">
                         {item.dropdown.map((subItem) => (
                           <DropdownMenuItem key={subItem.label} asChild>
-                            <Link to={subItem.href} className="font-bengali cursor-pointer">
-                              {subItem.label}
+                            <Link 
+                              to={subItem.href} 
+                              className="font-bengali cursor-pointer flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-smooth group"
+                            >
+                              {subItem.icon && (
+                                <subItem.icon className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
+                              )}
+                              <span className="group-hover:text-primary transition-colors">
+                                {subItem.label}
+                              </span>
                             </Link>
                           </DropdownMenuItem>
                         ))}
