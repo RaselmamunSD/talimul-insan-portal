@@ -48,38 +48,39 @@ const Programs = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
           {programs.map((program, index) => (
             <Card 
               key={index} 
-              className="shadow-elegant hover:shadow-xl transition-smooth border-t-4 border-t-primary"
+              className="shadow-2xl hover:shadow-3xl transition-all hover:-translate-y-2 border-t-8 border-t-primary bg-gradient-to-br from-white to-muted/30 rounded-2xl overflow-hidden"
             >
-              <CardHeader>
-                <div className="flex items-start justify-between mb-2">
-                  <Badge variant="secondary" className="font-bengali">
-                    {program.duration}
+              <CardHeader className="pb-6 pt-8 px-8">
+                <div className="flex items-start justify-between mb-4">
+                  <Badge variant="secondary" className="font-bengali text-base px-4 py-2 shadow-md">
+                    ⏱️ {program.duration}
                   </Badge>
                 </div>
-                <CardTitle className="text-2xl font-bengali text-primary">
+                <CardTitle className="text-3xl font-bengali text-primary mb-3 leading-snug">
                   {program.titleBn}
                 </CardTitle>
-                <CardDescription className="text-lg font-arabic text-secondary">
+                <CardDescription className="text-xl font-arabic text-secondary">
                   {program.titleAr}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <p className="text-base font-bengali text-muted-foreground mb-4 leading-relaxed">
+              <CardContent className="px-8 pb-8">
+                <p className="text-lg font-bengali text-muted-foreground mb-6 leading-relaxed">
                   {program.description}
                 </p>
-                <div className="space-y-2">
-                  <p className="text-sm font-bengali font-semibold text-primary">
+                <div className="space-y-3 bg-muted/50 p-6 rounded-xl border border-primary/10">
+                  <p className="text-base font-bengali font-bold text-primary mb-4 flex items-center">
+                    <span className="mr-2">✨</span>
                     বৈশিষ্ট্যসমূহ:
                   </p>
-                  <ul className="space-y-1">
+                  <ul className="space-y-3">
                     {program.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center text-sm font-bengali">
-                        <span className="text-primary mr-2">✓</span>
-                        {feature}
+                      <li key={idx} className="flex items-start text-base font-bengali">
+                        <span className="text-primary mr-3 text-xl mt-0.5">✓</span>
+                        <span className="leading-relaxed">{feature}</span>
                       </li>
                     ))}
                   </ul>

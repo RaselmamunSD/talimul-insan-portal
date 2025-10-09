@@ -1,4 +1,5 @@
 import { Facebook, Youtube, Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 import madrasahLogo from "@/assets/madrasah-logo.png";
 
 const Footer = () => {
@@ -57,13 +58,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {links.quick.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="font-bengali text-sm hover:text-secondary transition-smooth flex items-center"
                   >
                     <span className="mr-2">›</span>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -77,13 +78,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {links.programs.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="font-bengali text-sm hover:text-secondary transition-smooth flex items-center"
                   >
                     <span className="mr-2">›</span>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -131,17 +132,17 @@ const Footer = () => {
         <div className="border-t border-white/20 mt-8 pt-8">
           <div className="text-center mb-4">
             <div className="flex flex-wrap justify-center gap-4 mb-4">
-              <a href="/terms" className="text-sm font-bengali hover:text-secondary transition-smooth">
+              <Link to="/terms" className="text-sm font-bengali hover:text-secondary transition-smooth">
                 শর্তবলী
-              </a>
+              </Link>
               <span className="text-white/40">|</span>
-              <a href="/privacy-policy" className="text-sm font-bengali hover:text-secondary transition-smooth">
+              <Link to="/privacy-policy" className="text-sm font-bengali hover:text-secondary transition-smooth">
                 গোপনীয়তা নীতি
-              </a>
+              </Link>
               <span className="text-white/40">|</span>
-              <a href="/help" className="text-sm font-bengali hover:text-secondary transition-smooth">
+              <Link to="/help" className="text-sm font-bengali hover:text-secondary transition-smooth">
                 সাহায্য
-              </a>
+              </Link>
             </div>
           </div>
           <p className="text-sm font-bengali text-center">

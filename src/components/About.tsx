@@ -59,31 +59,41 @@ const About = () => {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto mb-12">
-          <Card className="shadow-elegant bg-white border-2">
-            <CardContent className="p-8">
-              <p className="text-lg font-bengali leading-relaxed mb-4">
-                হাড়ীভাঙ্গা তা'লিমুল ইন্‌সান হাফেজিয়া কওমী মাদ্রাসা ও লিল্লাহ বোডিং লালমনিরহাটে অবস্থিত একটি 
-                স্বনামধন্য ইসলামী শিক্ষা প্রতিষ্ঠান। আমরা কুরআনিক শিক্ষা, হাদিস, ফিকহ এবং আরবি ভাষা শিক্ষার 
-                মাধ্যমে ছাত্রদের পরিপূর্ণ ইসলামী জ্ঞান প্রদান করি।
-              </p>
-              <p className="text-lg font-bengali leading-relaxed mb-4">
-                আমাদের মূল লক্ষ্য হলো কুরআন ও সুন্নাহর আলোকে প্রকৃত মুসলিম হিসেবে শিক্ষার্থীদের গড়ে তোলা। 
-                এখানে শুধু কিতাবি শিক্ষা নয়, বরং ব্যবহারিক ও নৈতিক শিক্ষার মাধ্যমে আদর্শ চরিত্রবান মানুষ 
-                হিসেবে তৈরি করা হয়। প্রতিষ্ঠানটি ২০০৮ সাল থেকে নিরলসভাবে দ্বীনি শিক্ষা বিস্তারে কাজ করে আসছে।
-              </p>
-              <p className="text-base font-english text-muted-foreground">
-                Located near Haribhanga Airport in Lalmonirhat, our institution has been serving 
-                the community by providing quality Islamic education and shelter for orphans since 2008. 
-                We combine traditional Qawmi curriculum with modern teaching methods to prepare 
-                students for both spiritual and worldly success. Our experienced faculty members 
-                are dedicated to nurturing young minds in an environment of Islamic values and discipline.
-              </p>
-            </CardContent>
-          </Card>
+        <div className="max-w-7xl mx-auto mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <Card className="shadow-elegant bg-white border-2">
+              <CardContent className="p-8">
+                <p className="text-lg font-bengali leading-relaxed mb-4">
+                  হাড়ীভাঙ্গা তা'লিমুল ইন্‌সান হাফেজিয়া কওমী মাদ্রাসা ও লিল্লাহ বোডিং লালমনিরহাটে অবস্থিত একটি 
+                  স্বনামধন্য ইসলামী শিক্ষা প্রতিষ্ঠান। আমরা কুরআনিক শিক্ষা, হাদিস, ফিকহ এবং আরবি ভাষা শিক্ষার 
+                  মাধ্যমে ছাত্রদের পরিপূর্ণ ইসলামী জ্ঞান প্রদান করি।
+                </p>
+                <p className="text-lg font-bengali leading-relaxed mb-4">
+                  আমাদের মূল লক্ষ্য হলো কুরআন ও সুন্নাহর আলোকে প্রকৃত মুসলিম হিসেবে শিক্ষার্থীদের গড়ে তোলা। 
+                  এখানে শুধু কিতাবি শিক্ষা নয়, বরং ব্যবহারিক ও নৈতিক শিক্ষার মাধ্যমে আদর্শ চরিত্রবান মানুষ 
+                  হিসেবে তৈরি করা হয়। প্রতিষ্ঠানটি ২০০৮ সাল থেকে নিরলসভাবে দ্বীনি শিক্ষা বিস্তারে কাজ করে আসছে।
+                </p>
+                <p className="text-base font-english text-muted-foreground">
+                  Located near Haribhanga Airport in Lalmonirhat, our institution has been serving 
+                  the community by providing quality Islamic education and shelter for orphans since 2008. 
+                  We combine traditional Qawmi curriculum with modern teaching methods to prepare 
+                  students for both spiritual and worldly success. Our experienced faculty members 
+                  are dedicated to nurturing young minds in an environment of Islamic values and discipline.
+                </p>
+              </CardContent>
+            </Card>
+
+            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/20">
+              <img 
+                src="/src/assets/madrasah-building.jpg" 
+                alt="তা'লিমুল ইন্সান মাদ্রাসা ভবন" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => {
             const bgColors = [
               "bg-blue-50/80 border-blue-200",
@@ -103,33 +113,33 @@ const About = () => {
             return (
               <Card 
                 key={index}
-                className={`${bgColors[index % 5]} border-2 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 rounded-2xl`}
+                className={`${bgColors[index % 5]} border-2 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 rounded-2xl h-full`}
               >
-                <CardContent className="p-6 text-center">
-                  <div className={`${iconBgColors[index % 5]} w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 text-white shadow-md`}>
+                <CardContent className="p-8 text-center flex flex-col h-full">
+                  <div className={`${iconBgColors[index % 5]} w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-5 text-white shadow-md`}>
                     {feature.icon}
                   </div>
                   
-                  <div className="mb-3">
-                    <span className="text-sm font-bengali font-semibold text-primary">ধাপ {index + 1}</span>
+                  <div className="mb-4">
+                    <span className="text-base font-bengali font-semibold text-primary">ধাপ {index + 1}</span>
                   </div>
                   
-                  <h3 className="text-xl font-bold font-bengali text-foreground mb-3">
+                  <h3 className="text-2xl font-bold font-bengali text-foreground mb-4">
                     {feature.titleBn}
                   </h3>
                   
-                  <p className="text-sm font-bengali text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-base font-bengali text-muted-foreground leading-relaxed mb-6 flex-grow">
                     {feature.descBn}
                   </p>
                   
                   <Button 
                     asChild 
                     variant="ghost" 
-                    size="sm"
-                    className="text-primary hover:text-primary hover:bg-primary/10 font-bengali"
+                    size="lg"
+                    className="text-primary hover:text-primary hover:bg-primary/10 font-bengali w-full"
                   >
                     <Link to={feature.link}>
-                      বিস্তারিত →
+                      বিস্তারিত দেখুন →
                     </Link>
                   </Button>
                 </CardContent>
