@@ -176,13 +176,13 @@ const Students = () => {
           </Card>
 
           {/* Students Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredStudents.map(student => (
-              <Card key={student.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <div className="flex flex-col items-center text-center space-y-3">
+              <Card key={student.id} className="overflow-hidden hover:shadow-lg transition-shadow min-h-[380px]">
+                <CardContent className="p-8">
+                  <div className="flex flex-col items-center text-center space-y-4">
                     {/* Student Image */}
-                    <div className="w-24 h-24 rounded-full overflow-hidden bg-islamic-green/10 flex items-center justify-center">
+                    <div className="w-32 h-32 rounded-full overflow-hidden bg-islamic-green/10 flex items-center justify-center">
                       <img 
                         src={student.image} 
                         alt={student.name}
