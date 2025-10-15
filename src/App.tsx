@@ -13,6 +13,7 @@ import News from "./pages/News";
 import Gallery from "./pages/Gallery";
 import Media from "./pages/Media";
 import Donate from "./pages/Donate";
+import DonationForm from "./pages/DonationForm";
 import Contact from "./pages/ContactPage";
 import PrincipalMessage from "./pages/PrincipalMessage";
 import Committee from "./pages/Committee";
@@ -68,6 +69,7 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/media" element={<Media />} />
           <Route path="/donate" element={<Donate />} />
+          <Route path="/donation-form" element={<DonationForm />} />
           <Route path="/admission" element={<AdmissionInstructions />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
