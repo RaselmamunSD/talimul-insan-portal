@@ -281,24 +281,48 @@ const Header = () => {
             </div>
           </div>
 
+          {/* Mobile Menu Overlay */}
+          {isMenuOpen && (
+            <div 
+              className="fixed inset-0 bg-black/50 z-40 lg:hidden animate-fade-in"
+              onClick={() => setIsMenuOpen(false)}
+            />
+          )}
+
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="lg:hidden pb-4">
-              <ul className="font-bengali">
+            <div className="fixed top-0 right-0 bottom-0 w-80 bg-islamic-dark-green text-white z-50 lg:hidden animate-slide-in-right overflow-y-auto shadow-2xl">
+              {/* Close Button */}
+              <div className="flex justify-between items-center p-4 border-b border-white/10">
+                <span className="font-bengali font-bold text-lg">মেনু</span>
+                <button
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-2 hover:bg-white/10 rounded-full transition-smooth"
+                  aria-label="Close menu"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+
+              <ul className="font-bengali py-4">
                 {menuItems.map((item) => (
-                  <li key={item.label}>
+                  <li key={item.label} className="border-b border-white/5">
                     {item.dropdown ? (
                       <div>
-                        <div className="block px-4 py-3 font-semibold">
+                        <div className="flex items-center px-6 py-4 font-semibold text-white/90">
+                          <ChevronDown className="h-4 w-4 mr-2" />
                           {item.label}
                         </div>
                         {item.dropdown.map((subItem) => (
                           <Link
                             key={subItem.label}
                             to={subItem.href}
-                            className="block px-8 py-2 hover:bg-white/10"
+                            className="flex items-center px-10 py-3 hover:bg-white/10 transition-smooth text-sm"
                             onClick={() => setIsMenuOpen(false)}
                           >
+                            {subItem.icon && (
+                              <subItem.icon className="h-4 w-4 mr-3 text-islamic-green" />
+                            )}
                             {subItem.label}
                           </Link>
                         ))}
@@ -306,7 +330,7 @@ const Header = () => {
                     ) : (
                       <Link
                         to={item.href}
-                        className={`block px-4 py-3 rounded transition-smooth font-semibold ${
+                        className={`flex items-center px-6 py-4 transition-smooth font-semibold ${
                           item.active
                             ? "bg-white text-primary"
                             : "hover:bg-white/10"
@@ -319,12 +343,22 @@ const Header = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-4 px-4 space-y-2">
+
+              <div className="p-6 space-y-3 border-t border-white/10">
                 <Button 
                   asChild
-                  className="w-full bg-islamic-green hover:bg-islamic-green/90 text-white font-bengali font-bold border-2 border-white"
+                  className="w-full bg-islamic-green hover:bg-islamic-green/90 text-white font-bengali font-bold border-2 border-white shadow-lg"
                 >
-                  <Link to="/donate">💝 দান করুন</Link>
+                  <Link to="/donate" onClick={() => setIsMenuOpen(false)}>💝 দান করুন</Link>
+                </Button>
+                
+                <Button
+                  variant="outline"
+                  className="w-full border-white text-white hover:bg-white/10 font-bengali"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  <Globe className="h-4 w-4 mr-2" />
+                  {language === "bn" ? "বাংলা" : "English"}
                 </Button>
               </div>
             </div>
