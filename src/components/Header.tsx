@@ -33,6 +33,7 @@ const Header = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState<"bn" | "en">("bn");
+  const [openDropdowns, setOpenDropdowns] = useState<string[]>([]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -40,6 +41,14 @@ const Header = () => {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
+
+  const toggleDropdown = (label: string) => {
+    setOpenDropdowns(prev => 
+      prev.includes(label) 
+        ? prev.filter(item => item !== label)
+        : [...prev, label]
+    );
+  };
 
   const formatTime = (date: Date) => {
     return date.toLocaleTimeString("en-US", {
@@ -309,23 +318,38 @@ const Header = () => {
                   <li key={item.label} className="border-b border-white/5">
                     {item.dropdown ? (
                       <div>
-                        <div className="flex items-center px-6 py-4 font-semibold text-white/90">
-                          <ChevronDown className="h-4 w-4 mr-2" />
-                          {item.label}
+                        <button
+                          onClick={() => toggleDropdown(item.label)}
+                          className="w-full flex items-center justify-between px-6 py-4 font-semibold text-white/90 hover:bg-white/10 transition-smooth"
+                        >
+                          <span>{item.label}</span>
+                          <ChevronDown 
+                            className={`h-5 w-5 transition-transform duration-300 ${
+                              openDropdowns.includes(item.label) ? 'rotate-180' : ''
+                            }`} 
+                          />
+                        </button>
+                        <div 
+                          className={`overflow-hidden transition-all duration-300 ${
+                            openDropdowns.includes(item.label) 
+                              ? 'max-h-[500px] opacity-100' 
+                              : 'max-h-0 opacity-0'
+                          }`}
+                        >
+                          {item.dropdown.map((subItem) => (
+                            <Link
+                              key={subItem.label}
+                              to={subItem.href}
+                              className="flex items-center px-10 py-3 hover:bg-white/10 transition-smooth text-sm bg-white/5"
+                              onClick={() => setIsMenuOpen(false)}
+                            >
+                              {subItem.icon && (
+                                <subItem.icon className="h-4 w-4 mr-3 text-islamic-green" />
+                              )}
+                              {subItem.label}
+                            </Link>
+                          ))}
                         </div>
-                        {item.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.label}
-                            to={subItem.href}
-                            className="flex items-center px-10 py-3 hover:bg-white/10 transition-smooth text-sm"
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {subItem.icon && (
-                              <subItem.icon className="h-4 w-4 mr-3 text-islamic-green" />
-                            )}
-                            {subItem.label}
-                          </Link>
-                        ))}
                       </div>
                     ) : (
                       <Link
