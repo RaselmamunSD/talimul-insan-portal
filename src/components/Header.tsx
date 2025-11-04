@@ -114,7 +114,8 @@ const Header = () => {
   ];
 
   return (
-    <header className="w-full shadow-elegant bg-background">
+    <>
+      <header className="w-full shadow-elegant bg-background">
       {/* Top Bar */}
       <div className="bg-white text-foreground py-2 px-4 border-b">
         <div className="container mx-auto flex flex-wrap items-center justify-between gap-2 text-sm">
@@ -205,6 +206,8 @@ const Header = () => {
           </div>
         </div>
       </div>
+
+      </header>
 
       {/* Navigation Menu */}
       <nav className="bg-islamic-dark-green text-white sticky top-0 z-50">
@@ -392,7 +395,7 @@ const Header = () => {
           )}
         </div>
       </nav>
-    </header>
+    </>
   );
 };
 
