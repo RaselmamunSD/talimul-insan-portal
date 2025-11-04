@@ -300,7 +300,10 @@ const Header = () => {
 
           {/* Mobile Menu */}
           {isMenuOpen && (
-            <div className="fixed top-0 right-0 bottom-0 w-80 bg-islamic-dark-green text-white z-50 lg:hidden animate-slide-in-right overflow-y-auto shadow-2xl">
+            <div 
+              className="fixed top-0 right-0 bottom-0 w-80 bg-islamic-dark-green text-white z-50 lg:hidden animate-slide-in-right overflow-y-auto shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
               {/* Close Button */}
               <div className="flex justify-between items-center p-4 border-b border-white/10">
                 <span className="font-bengali font-bold text-lg">মেনু</span>
