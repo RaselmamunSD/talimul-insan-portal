@@ -29,22 +29,40 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-16 px-4 bg-muted relative">
+    <>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 py-20 overflow-hidden">
+        {/* Islamic Pattern Background */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url(${new URL('../assets/islamic-pattern.png', import.meta.url).href})`,
+            backgroundSize: '350px',
+            backgroundRepeat: 'repeat'
+          }}
+        />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <div className="mb-4 inline-block px-5 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+              <p className="font-arabic text-lg">اتصل بنا</p>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold font-bengali mb-3 drop-shadow-lg">
+              যোগাযোগ
+            </h1>
+            
+            <p className="font-english text-lg md:text-xl opacity-90 drop-shadow-md">
+              Contact Us
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="py-16 px-4 bg-muted relative">
       <div className="absolute inset-0 islamic-pattern"></div>
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
-            যোগাযোগ
-          </h2>
-          <p className="text-xl font-arabic text-secondary">
-            اتصل بنا
-          </p>
-          <p className="text-lg font-english text-muted-foreground mt-2">
-            Contact Us
-          </p>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
           <Card className="shadow-elegant">
@@ -150,6 +168,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 
