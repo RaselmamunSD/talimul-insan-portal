@@ -69,16 +69,44 @@ const Donate = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       
-      <main className="flex-1 container mx-auto px-4 py-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-islamic-teal via-islamic-green to-islamic-gold py-20 overflow-hidden">
+        {/* Islamic Pattern Background */}
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url(${new URL('../assets/islamic-pattern.png', import.meta.url).href})`,
+            backgroundSize: '400px',
+            backgroundRepeat: 'repeat'
+          }}
+        />
+        
+        {/* Mosque Silhouette */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background/20 to-transparent" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <div className="mb-6 inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+              <p className="font-bengali text-lg">صَدَقَةٌ جَارِيَةٌ</p>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold font-bengali mb-6 drop-shadow-lg">
               দান করুন
             </h1>
-            <p className="font-bengali text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              "যে ব্যক্তি আল্লাহর পথে সুন্দর ঋণ দেয়, আল্লাহ তার জন্য তা বহুগুণ বৃদ্ধি করে দেন।" (সূরা আল-বাকারা: ২৪৫)
+            
+            <p className="font-bengali text-xl md:text-2xl mb-4 leading-relaxed drop-shadow-md">
+              "যে ব্যক্তি আল্লাহর পথে সুন্দর ঋণ দেয়, আল্লাহ তার জন্য তা বহুগুণ বৃদ্ধি করে দেন।"
+            </p>
+            
+            <p className="font-bengali text-lg opacity-90 drop-shadow-md">
+              (সূরা আল-বাকারা: ২৪৫)
             </p>
           </div>
+        </div>
+      </section>
+
+      <main className="flex-1 container mx-auto px-4 py-12">
+        <div className="max-w-7xl mx-auto">
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {donationCategories.map((category) => {
