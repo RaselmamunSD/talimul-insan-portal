@@ -2,6 +2,7 @@ import { Facebook, Youtube, Mail, Phone, Linkedin, Instagram, ArrowUp, MapPin } 
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import madrasahLogo from "@/assets/madrasah-logo.png";
+import mosqueSkyline from "@/assets/mosque-skyline.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -46,17 +47,14 @@ const Footer = () => {
   return (
     <>
       <footer className="relative bg-gradient-to-b from-[hsl(200,60%,15%)] via-[hsl(200,65%,10%)] to-[hsl(200,70%,8%)] text-white overflow-hidden">
-        {/* Mosque Skyline SVG Pattern at Top */}
-        <div className="absolute top-0 left-0 right-0 h-32 opacity-40 text-islamic-gold">
-          <svg
-            viewBox="0 0 1440 200"
-            preserveAspectRatio="xMidYMid slice"
-            className="w-full h-full"
-            fill="currentColor"
-          >
-            <path d="M0 150 L50 140 L60 120 L65 100 L70 90 L75 100 L80 120 L90 140 L140 150 L150 130 L155 110 L160 90 L165 80 L170 90 L175 110 L180 130 L230 150 L240 135 L245 120 L250 100 L255 85 L260 100 L265 120 L270 135 L320 150 L330 125 L335 100 L340 80 L345 70 L350 80 L355 100 L360 125 L410 150 L420 130 L425 110 L430 95 L435 85 L440 95 L445 110 L450 130 L500 150 L510 135 L515 115 L520 95 L525 80 L530 95 L535 115 L540 135 L590 150 L600 125 L605 105 L610 85 L615 70 L620 85 L625 105 L630 125 L680 150 L690 130 L695 110 L700 90 L705 75 L710 90 L715 110 L720 130 L770 150 L780 135 L785 115 L790 95 L795 85 L800 95 L805 115 L810 135 L860 150 L870 125 L875 105 L880 85 L885 75 L890 85 L895 105 L900 125 L950 150 L960 130 L965 110 L970 90 L975 80 L980 90 L985 110 L990 130 L1040 150 L1050 135 L1055 115 L1060 95 L1065 85 L1070 95 L1075 115 L1080 135 L1130 150 L1140 125 L1145 105 L1150 85 L1155 75 L1160 85 L1165 105 L1170 125 L1220 150 L1230 130 L1235 110 L1240 90 L1245 80 L1250 90 L1255 110 L1260 130 L1310 150 L1320 135 L1325 115 L1330 95 L1335 85 L1340 95 L1345 115 L1350 135 L1440 150 L1440 200 L0 200 Z" />
-          </svg>
-        </div>
+        {/* Mosque Skyline Background Image at Top */}
+        <div 
+          className="absolute top-0 left-0 right-0 h-40 bg-no-repeat bg-center bg-cover opacity-30"
+          style={{
+            backgroundImage: `url(${mosqueSkyline})`,
+            backgroundPosition: 'center bottom'
+          }}
+        />
 
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
