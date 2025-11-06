@@ -7,10 +7,35 @@ const Media = () => {
     <div className="min-h-screen flex flex-col">
       <Header />
       
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-indigo-500 to-purple-500 py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url(${new URL('../assets/islamic-pattern.png', import.meta.url).href})`,
+            backgroundSize: '350px',
+            backgroundRepeat: 'repeat'
+          }}
+        />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <div className="mb-4 inline-block px-5 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+              <p className="font-arabic text-lg">الوسائط</p>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold font-bengali mb-3 drop-shadow-lg">
+              মিডিয়া
+            </h1>
+            
+            <p className="font-english text-lg md:text-xl opacity-90 drop-shadow-md">
+              Media
+            </p>
+          </div>
+        </div>
+      </section>
+      
       <main className="flex-1 container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold font-bengali text-primary mb-8 text-center">
-          মিডিয়া
-        </h1>
         
         <div className="max-w-4xl mx-auto space-y-8">
           <section>

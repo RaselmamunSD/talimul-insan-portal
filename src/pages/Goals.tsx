@@ -30,14 +30,37 @@ const Goals = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
+      
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-cyan-600 via-teal-500 to-green-500 py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: `url(${new URL('../assets/islamic-pattern.png', import.meta.url).href})`,
+            backgroundSize: '350px',
+            backgroundRepeat: 'repeat'
+          }}
+        />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <div className="mb-4 inline-block px-5 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+              <p className="font-arabic text-lg">الأهداف</p>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold font-bengali mb-3 drop-shadow-lg">
+              প্রতিষ্ঠার লক্ষ্য
+            </h1>
+            
+            <p className="font-english text-lg md:text-xl opacity-90 drop-shadow-md">
+              Our Goals
+            </p>
+          </div>
+        </div>
+      </section>
+      
       <main className="flex-1 py-12 bg-muted/30">
         <div className="container mx-auto px-4">
-          <h1 className="text-3xl lg:text-4xl font-bold text-center mb-4 font-bengali text-primary">
-            প্রতিষ্ঠার লক্ষ্য
-          </h1>
-          <p className="text-center font-bengali text-lg mb-12 max-w-3xl mx-auto">
-            তা'লিমুল ইন্সান হাফেজিয়া কওমী মাদ্রাসা ও লিল্লাহ বোডিং এর মূল লক্ষ্য ও উদ্দেশ্য
-          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
             {goals.map((goal, index) => (
