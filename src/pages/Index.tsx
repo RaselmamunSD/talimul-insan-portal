@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Welcome from "@/components/Welcome";
 import PrincipalMessageHome from "@/components/PrincipalMessageHome";
 import SuccessStatistics from "@/components/SuccessStatistics";
 import About from "@/components/About";
@@ -16,6 +17,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <Welcome />
         <PrincipalMessageHome />
         <SuccessStatistics />
         <About />
