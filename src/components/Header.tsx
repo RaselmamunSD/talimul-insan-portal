@@ -116,8 +116,8 @@ const Header = () => {
   return (
     <>
       <header className="w-full shadow-elegant bg-background">
-      {/* Top Bar */}
-      <div className="bg-white text-foreground py-2 px-4 border-b">
+      {/* Top Bar - Hidden on Mobile */}
+      <div className="hidden md:block bg-white text-foreground py-2 px-4 border-b">
         <div className="container mx-auto flex flex-wrap items-center justify-between gap-2 text-sm">
           <div className="flex items-center gap-4 flex-wrap">
             <span className="font-semibold">
@@ -222,6 +222,16 @@ const Header = () => {
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
 
+            {/* Mobile Donate Button */}
+            <div className="lg:hidden">
+              <Button 
+                asChild
+                className="bg-islamic-green hover:bg-islamic-green/90 text-white font-bengali font-bold border-2 border-white px-4 py-2 text-sm shadow-lg animate-electric-glow"
+              >
+                <Link to="/donate">💝 দান করুন</Link>
+              </Button>
+            </div>
+
             {/* Desktop Menu */}
             <ul className="hidden lg:flex items-center space-x-1 py-3 font-bengali flex-1">
               {menuItems.map((item) => (
@@ -269,7 +279,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center gap-3">
               <Button 
                 asChild
-                className="bg-islamic-green hover:bg-islamic-green/90 text-white font-bengali font-bold border-2 border-white px-6 py-3 shadow-lg hover:shadow-xl transition-smooth"
+                className="bg-islamic-green hover:bg-islamic-green/90 text-white font-bengali font-bold border-2 border-white px-6 py-3 shadow-lg hover:shadow-xl transition-smooth animate-electric-glow"
               >
                 <Link to="/donate">💝 দান করুন</Link>
               </Button>
