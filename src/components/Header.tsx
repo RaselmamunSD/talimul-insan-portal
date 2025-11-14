@@ -306,103 +306,124 @@ const Header = () => {
           {/* Mobile Menu Overlay */}
           {isMenuOpen && (
             <div 
-              className="fixed inset-0 bg-black/50 z-40 lg:hidden animate-fade-in"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden animate-fade-in"
               onClick={() => setIsMenuOpen(false)}
             />
           )}
 
           {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div 
-              className="fixed top-0 right-0 bottom-0 w-80 bg-islamic-dark-green text-white z-50 lg:hidden animate-slide-in-right overflow-y-auto shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Close Button */}
-              <div className="flex justify-between items-center p-4 border-b border-white/10">
-                <span className="font-bengali font-bold text-lg">মেনু</span>
+          <div 
+            className={`fixed top-0 right-0 bottom-0 w-[85%] max-w-sm bg-gradient-to-b from-islamic-dark-green to-islamic-dark-green/95 text-white z-50 lg:hidden overflow-y-auto shadow-2xl transition-transform duration-300 ease-out ${
+              isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header with Pattern */}
+            <div className="relative bg-gradient-to-r from-primary to-islamic-green p-6 border-b border-white/20">
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.1)_1px,_transparent_1px)] bg-[length:20px_20px]"></div>
+              </div>
+              <div className="relative flex justify-between items-center">
+                <div>
+                  <span className="font-bengali font-bold text-xl text-white drop-shadow-lg">মেনু</span>
+                  <p className="font-bengali text-xs text-white/80 mt-1">তা'লিমুল ইন্‌স্সান মাদ্রাসা</p>
+                </div>
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="p-2 hover:bg-white/10 rounded-full transition-smooth"
+                  className="p-2.5 hover:bg-white/20 rounded-full transition-all duration-200 hover:rotate-90"
                   aria-label="Close menu"
                 >
-                  <X size={24} />
+                  <X size={24} className="text-white" />
                 </button>
               </div>
+            </div>
 
-              <ul className="font-bengali py-4">
-                {menuItems.map((item) => (
-                  <li key={item.label} className="border-b border-white/5">
-                    {item.dropdown ? (
-                      <div>
-                        <button
-                          onClick={() => toggleDropdown(item.label)}
-                          className="w-full flex items-center justify-between px-6 py-4 font-semibold text-white/90 hover:bg-white/10 transition-smooth"
-                        >
-                          <span>{item.label}</span>
-                          <ChevronDown 
-                            className={`h-5 w-5 transition-transform duration-300 ${
-                              openDropdowns.includes(item.label) ? 'rotate-180' : ''
-                            }`} 
-                          />
-                        </button>
-                        <div 
-                          className={`overflow-hidden transition-all duration-300 ${
-                            openDropdowns.includes(item.label) 
-                              ? 'max-h-[500px] opacity-100' 
-                              : 'max-h-0 opacity-0'
-                          }`}
-                        >
-                          {item.dropdown.map((subItem) => (
+            <ul className="font-bengali py-2">
+              {menuItems.map((item, index) => (
+                <li 
+                  key={item.label} 
+                  className="border-b border-white/5"
+                  style={{ 
+                    animation: isMenuOpen ? `fade-in 0.3s ease-out ${index * 0.05}s both` : 'none'
+                  }}
+                >
+                  {item.dropdown ? (
+                    <div>
+                      <button
+                        onClick={() => toggleDropdown(item.label)}
+                        className="w-full flex items-center justify-between px-6 py-4 font-semibold text-white hover:bg-white/10 transition-all duration-200 active:bg-white/20"
+                      >
+                        <span className="text-[15px]">{item.label}</span>
+                        <ChevronDown 
+                          className={`h-5 w-5 transition-all duration-300 ${
+                            openDropdowns.includes(item.label) ? 'rotate-180 text-islamic-green' : 'text-white/60'
+                          }`} 
+                        />
+                      </button>
+                      <div 
+                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                          openDropdowns.includes(item.label) 
+                            ? 'max-h-[600px] opacity-100' 
+                            : 'max-h-0 opacity-0'
+                        }`}
+                      >
+                        <div className="bg-white/5 backdrop-blur-sm">
+                          {item.dropdown.map((subItem, subIndex) => (
                             <Link
                               key={subItem.label}
                               to={subItem.href}
-                              className="flex items-center px-10 py-3 hover:bg-white/10 transition-smooth text-sm bg-white/5"
+                              className="flex items-center gap-3 px-8 py-3.5 hover:bg-islamic-green/20 hover:pl-10 transition-all duration-200 text-sm text-white/90 hover:text-white border-l-2 border-transparent hover:border-islamic-green"
                               onClick={() => setIsMenuOpen(false)}
+                              style={{
+                                animation: openDropdowns.includes(item.label) 
+                                  ? `fade-in 0.2s ease-out ${subIndex * 0.05}s both` 
+                                  : 'none'
+                              }}
                             >
                               {subItem.icon && (
-                                <subItem.icon className="h-4 w-4 mr-3 text-islamic-green" />
+                                <subItem.icon className="h-4 w-4 text-islamic-green flex-shrink-0" />
                               )}
-                              {subItem.label}
+                              <span className="leading-tight">{subItem.label}</span>
                             </Link>
                           ))}
                         </div>
                       </div>
-                    ) : (
-                      <Link
-                        to={item.href}
-                        className={`flex items-center px-6 py-4 transition-smooth font-semibold ${
-                          item.active
-                            ? "bg-white text-primary"
-                            : "hover:bg-white/10"
-                        }`}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={`flex items-center px-6 py-4 transition-all duration-200 font-semibold text-[15px] ${
+                        item.active
+                          ? "bg-gradient-to-r from-islamic-green to-islamic-green/80 text-white shadow-lg"
+                          : "hover:bg-white/10 text-white/90 hover:text-white active:bg-white/20"
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
 
-              <div className="p-6 space-y-3 border-t border-white/10">
-                <Button 
-                  asChild
-                  className="w-full bg-islamic-green hover:bg-islamic-green/90 text-white font-bengali font-bold border-2 border-white shadow-lg"
-                >
-                  <Link to="/donate" onClick={() => setIsMenuOpen(false)}>💝 দান করুন</Link>
-                </Button>
-                
-                <Button
-                  variant="outline"
-                  className="w-full border-white text-white hover:bg-white/10 font-bengali"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <Globe className="h-4 w-4 mr-2" />
-                  {language === "bn" ? "বাংলা" : "English"}
-                </Button>
-              </div>
+            <div className="p-6 space-y-3 border-t border-white/10 mt-auto">
+              <Button 
+                asChild
+                className="w-full bg-gradient-to-r from-islamic-green to-primary hover:from-islamic-green/90 hover:to-primary/90 text-white font-bengali font-bold border border-white/20 shadow-lg"
+              >
+                <Link to="/donate" onClick={() => setIsMenuOpen(false)}>💝 দান করুন</Link>
+              </Button>
+              
+              <Button
+                variant="outline"
+                className="w-full border-white/30 text-white hover:bg-white/10 font-bengali backdrop-blur-sm"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <Globe className="h-4 w-4 mr-2" />
+                {language === "bn" ? "বাংলা" : "English"}
+              </Button>
             </div>
-          )}
+          </div>
         </div>
       </nav>
     </>
