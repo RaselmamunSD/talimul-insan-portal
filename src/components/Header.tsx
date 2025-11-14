@@ -212,14 +212,14 @@ const Header = () => {
       {/* Navigation Menu */}
       <nav className="bg-islamic-dark-green text-white sticky top-0 z-50">
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between h-16 lg:h-auto">
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-2"
+              className="lg:hidden p-3"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
 
             {/* Mobile Donate Button */}
