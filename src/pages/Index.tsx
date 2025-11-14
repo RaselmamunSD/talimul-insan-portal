@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Welcome from "@/components/Welcome";
+import RecentNews from "@/components/RecentNews";
 import PrincipalMessageHome from "@/components/PrincipalMessageHome";
 import SuccessStatistics from "@/components/SuccessStatistics";
 import About from "@/components/About";
@@ -18,6 +19,7 @@ const Index = () => {
       <main>
         <Hero />
         <Welcome />
+        <RecentNews />
         <PrincipalMessageHome />
         <SuccessStatistics />
         <About />
