@@ -47,7 +47,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Image Slider */}
       <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
