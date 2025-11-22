@@ -60,13 +60,13 @@ const About = () => {
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
           <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
-            আমাদের সম্পর্কে
+            আমাদের কার্যক্রমসমূহ
           </h2>
           <p className="text-xl font-arabic text-secondary">
-            مدرستنا - معلومات عنا
+            أنشطتنا وبرامجنا
           </p>
           <p className="text-lg font-english text-muted-foreground mt-2">
-            About Our Madrasah
+            Our Activities & Programs
           </p>
         </div>
 
