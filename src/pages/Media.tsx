@@ -2,6 +2,30 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 
+// YouTube ভিডিও লিংক যোগ করুন (embed URL format: https://www.youtube.com/embed/VIDEO_ID)
+const youtubeVideos = [
+  {
+    id: 1,
+    title: "মাদ্রাসার কার্যক্রম",
+    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // এখানে আপনার YouTube ভিডিও ID দিন
+  },
+  {
+    id: 2,
+    title: "বার্ষিক অনুষ্ঠান",
+    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // এখানে আপনার YouTube ভিডিও ID দিন
+  },
+  {
+    id: 3,
+    title: "ছাত্রদের অর্জন",
+    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // এখানে আপনার YouTube ভিডিও ID দিন
+  },
+  {
+    id: 4,
+    title: "মাদ্রাসা পরিচিতি",
+    embedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ", // এখানে আপনার YouTube ভিডিও ID দিন
+  },
+];
+
 const Media = () => {
   return (
     <div className="min-h-screen flex flex-col">
@@ -41,14 +65,20 @@ const Media = () => {
           <section>
             <h2 className="text-2xl font-bold font-bengali text-islamic-green mb-4">ভিডিও</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[1, 2].map((item) => (
-                <Card key={item}>
+              {youtubeVideos.map((video) => (
+                <Card key={video.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
                   <CardContent className="p-0">
-                    <div className="aspect-video bg-islamic-green/10 flex items-center justify-center text-6xl">
-                      🎥
+                    <div className="aspect-video">
+                      <iframe
+                        src={video.embedUrl}
+                        title={video.title}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      />
                     </div>
-                    <div className="p-4">
-                      <h3 className="font-bengali font-semibold">মাদ্রাসার কার্যক্রম</h3>
+                    <div className="p-4 bg-gradient-to-r from-islamic-green/5 to-islamic-teal/5">
+                      <h3 className="font-bengali font-semibold text-foreground">{video.title}</h3>
                     </div>
                   </CardContent>
                 </Card>
