@@ -57,10 +57,14 @@ const generateStudentData = () => {
 
 const Students = () => {
   const [selectedBatch, setSelectedBatch] = useState<string>("all");
+  const [selectedBloodGroup, setSelectedBloodGroup] = useState<string>("all");
+  const [selectedAddress, setSelectedAddress] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
   
   const students = useMemo(() => generateStudentData(), []);
   const years = [1967, 1999, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2019, 2020, 2022, 2024, 2025];
+  const bloodGroups = ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"];
+  const addresses = ["ঢাকা", "চট্টগ্রাম", "সিলেট", "রাজশাহী", "খুলনা", "বরিশাল", "রংপুর", "ময়মনসিংহ"];
   
   const filteredStudents = useMemo(() => {
     let filtered = students;
@@ -68,6 +72,16 @@ const Students = () => {
     // Filter by batch
     if (selectedBatch !== "all") {
       filtered = filtered.filter(student => student.year.toString() === selectedBatch);
+    }
+    
+    // Filter by blood group
+    if (selectedBloodGroup !== "all") {
+      filtered = filtered.filter(student => student.bloodGroup === selectedBloodGroup);
+    }
+    
+    // Filter by address
+    if (selectedAddress !== "all") {
+      filtered = filtered.filter(student => student.address.includes(selectedAddress));
     }
     
     // Filter by search query
@@ -80,7 +94,7 @@ const Students = () => {
     }
     
     return filtered;
-  }, [students, selectedBatch, searchQuery]);
+  }, [students, selectedBatch, selectedBloodGroup, selectedAddress, searchQuery]);
   
   return (
     <div className="min-h-screen flex flex-col">
@@ -180,9 +194,9 @@ const Students = () => {
           {/* Search and Filter Section */}
           <Card>
             <CardContent className="p-6">
-              <div className="flex flex-col md:flex-row gap-4 items-center">
+              <div className="space-y-4">
                 {/* Search Bar */}
-                <div className="relative flex-1 w-full">
+                <div className="relative w-full">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-5 w-5" />
                   <Input
                     type="text"
@@ -193,28 +207,78 @@ const Students = () => {
                   />
                 </div>
                 
-                {/* Batch Buttons */}
-                <div className="flex gap-3">
-                  <Button
-                    variant={selectedBatch === "all" ? "default" : "outline"}
-                    onClick={() => setSelectedBatch("all")}
-                    className="font-bengali"
-                  >
-                    Batch - All
-                  </Button>
+                {/* Filter Controls */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+                  {/* Batch Filter */}
+                  <div className="space-y-2">
+                    <label className="text-sm font-bengali text-muted-foreground">ব্যাচ</label>
+                    <Select value={selectedBatch} onValueChange={setSelectedBatch}>
+                      <SelectTrigger className="font-bengali">
+                        <SelectValue placeholder="সকল ব্যাচ" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all" className="font-bengali">সকল ব্যাচ</SelectItem>
+                        {years.map(year => (
+                          <SelectItem key={year} value={year.toString()} className="font-bengali">
+                            {year}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
                   
-                  <Select value={selectedBatch} onValueChange={setSelectedBatch}>
-                    <SelectTrigger className="w-[180px] font-bengali">
-                      <SelectValue placeholder="Batch - Select" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {years.map(year => (
-                        <SelectItem key={year} value={year.toString()} className="font-bengali">
-                          {year}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  {/* Blood Group Filter */}
+                  <div className="space-y-2">
+                    <label className="text-sm font-bengali text-muted-foreground">ব্লাড গ্রুপ</label>
+                    <Select value={selectedBloodGroup} onValueChange={setSelectedBloodGroup}>
+                      <SelectTrigger className="font-bengali">
+                        <SelectValue placeholder="সকল গ্রুপ" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all" className="font-bengali">সকল গ্রুপ</SelectItem>
+                        {bloodGroups.map(group => (
+                          <SelectItem key={group} value={group}>
+                            {group}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  {/* Address Filter */}
+                  <div className="space-y-2">
+                    <label className="text-sm font-bengali text-muted-foreground">ঠিকানা</label>
+                    <Select value={selectedAddress} onValueChange={setSelectedAddress}>
+                      <SelectTrigger className="font-bengali">
+                        <SelectValue placeholder="সকল জেলা" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all" className="font-bengali">সকল জেলা</SelectItem>
+                        {addresses.map(address => (
+                          <SelectItem key={address} value={address} className="font-bengali">
+                            {address}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  {/* Clear Filters Button */}
+                  <div className="space-y-2">
+                    <label className="text-sm font-bengali text-muted-foreground opacity-0">ফিল্টার</label>
+                    <Button
+                      variant="outline"
+                      onClick={() => {
+                        setSelectedBatch("all");
+                        setSelectedBloodGroup("all");
+                        setSelectedAddress("all");
+                        setSearchQuery("");
+                      }}
+                      className="w-full font-bengali"
+                    >
+                      ফিল্টার রিসেট করুন
+                    </Button>
+                  </div>
                 </div>
               </div>
               
