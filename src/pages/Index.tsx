@@ -13,6 +13,7 @@ import Contact from "@/components/Contact";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -34,6 +35,7 @@ const Index = () => {
       <Newsletter />
       <Footer />
       <ScrollToTop />
+      <WhatsAppButton />
     </div>
   );
 };
