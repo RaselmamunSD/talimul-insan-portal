@@ -12,7 +12,6 @@ import DonationFunds from "@/components/DonationFunds";
 import Contact from "@/components/Contact";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
@@ -34,7 +33,6 @@ const Index = () => {
       </main>
       <Newsletter />
       <Footer />
-      <ScrollToTop />
       <WhatsAppButton />
     </div>
   );
