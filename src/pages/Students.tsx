@@ -225,63 +225,82 @@ const Students = () => {
           </Card>
 
           {/* Students Grid - 3D Flip Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredStudents.map(student => (
-              <div key={student.id} className="flip-card-container group" style={{ perspective: '1000px' }}>
-                <div className="flip-card-inner relative w-full h-[420px] transition-transform duration-700 ease-out transform-style-3d group-hover:rotate-y-180">
+              <div key={student.id} className="flip-card-container group" style={{ perspective: '1500px' }}>
+                <div className="flip-card-inner relative w-full h-[450px] transition-transform duration-700 ease-out transform-style-3d group-hover:rotate-y-180">
                   
                   {/* Front Side */}
                   <div className="flip-card-face flip-card-front absolute inset-0 backface-hidden">
-                    <Card className="h-full overflow-hidden shadow-lg border-2 hover:shadow-2xl transition-shadow">
-                      <CardContent className="p-8 h-full flex flex-col justify-center">
-                        <div className="flex flex-col items-center text-center space-y-4">
-                          {/* Student Image */}
-                          <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-islamic-green/20 to-islamic-teal/20 flex items-center justify-center ring-4 ring-islamic-green/20 shadow-lg">
-                            <img 
-                              src={student.image} 
-                              alt={student.name}
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-                          
-                          {/* Student Info */}
-                          <div className="space-y-2 w-full">
-                            <h3 className="font-bold text-xl font-bengali text-primary">
-                              {student.name}
-                            </h3>
-                            
-                            <div className="space-y-2 text-sm">
-                              <div className="flex items-center gap-2 text-muted-foreground justify-center">
-                                <User className="h-4 w-4 flex-shrink-0" />
-                                <span className="font-bengali">{student.fatherName}</span>
-                              </div>
-                              
-                              <div className="flex items-center gap-2 text-muted-foreground justify-center">
-                                <MapPin className="h-4 w-4 flex-shrink-0" />
-                                <span className="font-bengali">{student.address}</span>
-                              </div>
-                              
-                              <div className="flex items-center gap-2 text-muted-foreground justify-center">
-                                <Phone className="h-4 w-4 flex-shrink-0" />
-                                <span>{student.phone}</span>
-                              </div>
-                              
-                              <div className="flex items-center justify-center gap-6 pt-3 border-t mt-3">
-                                <div className="flex items-center gap-1.5 px-3 py-1 bg-islamic-green/10 rounded-full">
-                                  <Droplet className="h-4 w-4 text-islamic-green" />
-                                  <span className="font-semibold text-islamic-green">{student.bloodGroup}</span>
-                                </div>
-                                
-                                <div className="flex items-center gap-1.5 px-3 py-1 bg-islamic-gold/10 rounded-full">
-                                  <Calendar className="h-4 w-4 text-islamic-gold" />
-                                  <span className="font-semibold text-islamic-gold">{student.year}</span>
-                                </div>
-                              </div>
+                    <Card className="h-full overflow-hidden shadow-xl border-2 border-islamic-green/10 hover:shadow-2xl hover:border-islamic-green/30 transition-all duration-300 bg-gradient-to-br from-background via-background to-islamic-green/5">
+                      <CardContent className="p-8 h-full flex flex-col justify-between">
+                        {/* Top Decorative Border */}
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-islamic-green to-transparent"></div>
+                        
+                        <div className="flex flex-col items-center text-center space-y-5 mt-4">
+                          {/* Student Image with Enhanced Ring */}
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-islamic-green to-islamic-teal rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                            <div className="relative w-36 h-36 rounded-full overflow-hidden bg-gradient-to-br from-islamic-green/20 via-islamic-teal/20 to-islamic-gold/10 flex items-center justify-center ring-4 ring-islamic-green/30 shadow-2xl group-hover:ring-islamic-green/50 transition-all duration-300">
+                              <img 
+                                src={student.image} 
+                                alt={student.name}
+                                className="w-full h-full object-cover"
+                              />
                             </div>
                           </div>
                           
-                          <p className="text-xs text-muted-foreground font-bengali mt-4 italic">
-                            আরও দেখতে হোভার করুন
+                          {/* Student Info */}
+                          <div className="space-y-3 w-full">
+                            <div className="space-y-1">
+                              <h3 className="font-bold text-2xl font-bengali text-primary group-hover:text-islamic-green transition-colors">
+                                {student.name}
+                              </h3>
+                              <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-islamic-teal to-transparent mx-auto"></div>
+                            </div>
+                            
+                            <div className="space-y-2.5 text-sm pt-2">
+                              <div className="flex items-center gap-2 text-muted-foreground justify-center hover:text-islamic-green transition-colors">
+                                <div className="w-8 h-8 rounded-full bg-islamic-green/10 flex items-center justify-center">
+                                  <User className="h-4 w-4 text-islamic-green" />
+                                </div>
+                                <span className="font-bengali">{student.fatherName}</span>
+                              </div>
+                              
+                              <div className="flex items-center gap-2 text-muted-foreground justify-center hover:text-islamic-teal transition-colors">
+                                <div className="w-8 h-8 rounded-full bg-islamic-teal/10 flex items-center justify-center">
+                                  <MapPin className="h-4 w-4 text-islamic-teal" />
+                                </div>
+                                <span className="font-bengali">{student.address}</span>
+                              </div>
+                              
+                              <div className="flex items-center gap-2 text-muted-foreground justify-center hover:text-islamic-gold transition-colors">
+                                <div className="w-8 h-8 rounded-full bg-islamic-gold/10 flex items-center justify-center">
+                                  <Phone className="h-4 w-4 text-islamic-gold" />
+                                </div>
+                                <span>{student.phone}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Bottom Info with Enhanced Design */}
+                        <div className="space-y-3">
+                          <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+                          <div className="flex items-center justify-center gap-3">
+                            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-br from-islamic-green/15 to-islamic-green/5 rounded-full border border-islamic-green/30 shadow-sm">
+                              <Droplet className="h-4 w-4 text-islamic-green" />
+                              <span className="font-bold text-islamic-green">{student.bloodGroup}</span>
+                            </div>
+                            
+                            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-br from-islamic-gold/15 to-islamic-gold/5 rounded-full border border-islamic-gold/30 shadow-sm">
+                              <Calendar className="h-4 w-4 text-islamic-gold" />
+                              <span className="font-bold text-islamic-gold">{student.year}</span>
+                            </div>
+                          </div>
+                          
+                          <p className="text-xs text-muted-foreground font-bengali italic opacity-70 group-hover:opacity-100 transition-opacity">
+                            আরও দেখতে হোভার করুন ↻
                           </p>
                         </div>
                       </CardContent>
@@ -290,48 +309,85 @@ const Students = () => {
                   
                   {/* Back Side */}
                   <div className="flip-card-face flip-card-back absolute inset-0 backface-hidden rotate-y-180">
-                    <Card className="h-full overflow-hidden shadow-2xl border-2 bg-gradient-to-br from-islamic-green/5 via-background to-islamic-teal/5 backdrop-blur-sm">
-                      <CardContent className="p-8 h-full flex flex-col justify-center">
+                    <Card className="h-full overflow-hidden shadow-2xl border-2 border-islamic-teal/20 bg-gradient-to-br from-islamic-green/10 via-background to-islamic-teal/10 backdrop-blur-sm relative">
+                      {/* Decorative Pattern Overlay */}
+                      <div 
+                        className="absolute inset-0 opacity-5"
+                        style={{
+                          backgroundImage: `url(${new URL('../assets/islamic-pattern.png', import.meta.url).href})`,
+                          backgroundSize: '200px',
+                          backgroundRepeat: 'repeat'
+                        }}
+                      />
+                      
+                      <CardContent className="p-8 h-full flex flex-col justify-center relative z-10">
+                        {/* Top Decorative Border */}
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-islamic-teal to-transparent"></div>
+                        
                         <div className="space-y-6 text-center">
-                          {/* Header with decorative element */}
-                          <div className="space-y-2">
-                            <div className="w-16 h-1 bg-gradient-to-r from-transparent via-islamic-green to-transparent mx-auto rounded-full"></div>
-                            <h3 className="font-bold text-xl font-bengali text-primary">
+                          {/* Header with Enhanced Decorative Elements */}
+                          <div className="space-y-3">
+                            <div className="flex items-center justify-center gap-2">
+                              <div className="w-12 h-px bg-gradient-to-r from-transparent to-islamic-green"></div>
+                              <div className="w-2 h-2 rounded-full bg-islamic-green shadow-lg shadow-islamic-green/50"></div>
+                              <div className="w-12 h-px bg-gradient-to-l from-transparent to-islamic-green"></div>
+                            </div>
+                            
+                            <h3 className="font-bold text-xl font-bengali text-primary px-4">
                               {student.name}
                             </h3>
-                            <div className="w-16 h-1 bg-gradient-to-r from-transparent via-islamic-teal to-transparent mx-auto rounded-full"></div>
+                            
+                            <div className="flex items-center justify-center gap-2">
+                              <div className="w-12 h-px bg-gradient-to-r from-transparent to-islamic-teal"></div>
+                              <div className="w-2 h-2 rounded-full bg-islamic-teal shadow-lg shadow-islamic-teal/50"></div>
+                              <div className="w-12 h-px bg-gradient-to-l from-transparent to-islamic-teal"></div>
+                            </div>
                           </div>
                           
-                          {/* Current Position */}
-                          <div className="space-y-3 bg-gradient-to-br from-islamic-green/10 to-islamic-teal/10 p-5 rounded-xl border border-islamic-green/20 shadow-inner">
-                            <div className="text-sm font-semibold text-islamic-green font-bengali">
-                              বর্তমান অবস্থান
+                          {/* Current Position with Enhanced Card Design */}
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-islamic-green/20 to-islamic-teal/20 rounded-2xl blur-xl"></div>
+                            <div className="relative space-y-3 bg-gradient-to-br from-islamic-green/15 via-background/50 to-islamic-teal/15 p-6 rounded-2xl border-2 border-islamic-green/30 shadow-lg backdrop-blur-sm">
+                              <div className="inline-block px-3 py-1 bg-islamic-green/20 rounded-full border border-islamic-green/30">
+                                <span className="text-xs font-bold text-islamic-green font-bengali tracking-wide">
+                                  বর্তমান অবস্থান
+                                </span>
+                              </div>
+                              <div className="space-y-2">
+                                <p className="font-bold text-lg font-bengali text-primary leading-relaxed">
+                                  {student.position.title}
+                                </p>
+                                <div className="flex items-center justify-center gap-2">
+                                  <div className="w-8 h-px bg-gradient-to-r from-transparent via-islamic-teal to-transparent"></div>
+                                  <p className="text-sm text-muted-foreground font-bengali">
+                                    {student.position.org}
+                                  </p>
+                                  <div className="w-8 h-px bg-gradient-to-l from-transparent via-islamic-teal to-transparent"></div>
+                                </div>
+                              </div>
                             </div>
-                            <div className="space-y-1">
-                              <p className="font-bold text-lg font-bengali text-primary">
-                                {student.position.title}
+                          </div>
+                          
+                          {/* Biography with Enhanced Design */}
+                          <div className="relative">
+                            <div className="absolute inset-0 bg-gradient-to-br from-islamic-teal/20 to-islamic-green/20 rounded-2xl blur-xl"></div>
+                            <div className="relative space-y-3 bg-gradient-to-br from-islamic-teal/15 via-background/50 to-islamic-green/15 p-6 rounded-2xl border-2 border-islamic-teal/30 shadow-lg backdrop-blur-sm">
+                              <div className="inline-block px-3 py-1 bg-islamic-teal/20 rounded-full border border-islamic-teal/30">
+                                <span className="text-xs font-bold text-islamic-teal font-bengali tracking-wide">
+                                  সংক্ষিপ্ত পরিচিতি
+                                </span>
+                              </div>
+                              <p className="text-sm leading-relaxed font-bengali text-foreground/90">
+                                {student.bio}
                               </p>
-                              <p className="text-sm text-muted-foreground font-bengali">
-                                {student.position.org}
-                              </p>
                             </div>
                           </div>
                           
-                          {/* Biography */}
-                          <div className="space-y-3 bg-gradient-to-br from-islamic-teal/10 to-islamic-green/10 p-5 rounded-xl border border-islamic-teal/20 shadow-inner">
-                            <div className="text-sm font-semibold text-islamic-teal font-bengali">
-                              সংক্ষিপ্ত পরিচিতি
-                            </div>
-                            <p className="text-sm leading-relaxed font-bengali text-foreground/90">
-                              {student.bio}
-                            </p>
-                          </div>
-                          
-                          {/* Batch Year Badge */}
-                          <div className="flex justify-center">
-                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-islamic-gold/10 rounded-full border border-islamic-gold/30">
+                          {/* Bottom Batch Badge with Enhanced Styling */}
+                          <div className="flex justify-center pt-2">
+                            <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-islamic-gold/20 via-islamic-gold/15 to-islamic-gold/20 rounded-full border-2 border-islamic-gold/40 shadow-lg">
                               <Calendar className="h-4 w-4 text-islamic-gold" />
-                              <span className="font-semibold text-islamic-gold">ব্যাচ {student.year}</span>
+                              <span className="font-bold text-islamic-gold font-bengali">ব্যাচ {student.year}</span>
                             </div>
                           </div>
                         </div>
