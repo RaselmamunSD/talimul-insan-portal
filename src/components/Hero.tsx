@@ -48,14 +48,8 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Image Slider with Parallax Effect */}
-      <div 
-        className="absolute inset-0 z-0 will-change-transform"
-        style={{
-          transform: `translateY(${scrollY * 0.5}px)`,
-          transition: 'transform 0.1s ease-out'
-        }}
-      >
+      {/* Image Slider */}
+      <div className="absolute inset-0 z-0">
         {images.map((img, index) => (
           <div
             key={index}
@@ -66,27 +60,26 @@ const Hero = () => {
             <img
               src={img}
               alt={`Talimul Insan Madrasah ${index + 1}`}
-              className="w-full h-full object-cover scale-110"
+              className="w-full h-full object-cover"
             />
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/90"></div>
       </div>
 
       {/* Slider Controls */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 hover:scale-110 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-300"
         aria-label="Previous slide"
       >
-        <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-5 h-5" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 hover:scale-110 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-black/30 hover:bg-black/50 text-white p-2 rounded-full transition-all duration-300"
         aria-label="Next slide"
       >
-        <ChevronRight className="w-6 h-6" />
+        <ChevronRight className="w-5 h-5" />
       </button>
 
       {/* Slide Indicators */}
@@ -95,22 +88,13 @@ const Hero = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`h-3 rounded-full transition-all duration-300 hover:scale-110 ${
-              index === currentSlide ? "bg-white w-8" : "bg-white/50 w-3"
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === currentSlide ? "bg-white w-8" : "bg-white/60 w-2"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
-
-      {/* Islamic Pattern Overlay with Parallax */}
-      <div 
-        className="absolute inset-0 islamic-pattern z-10 will-change-transform"
-        style={{
-          transform: `translateY(${scrollY * 0.3}px)`,
-          transition: 'transform 0.1s ease-out'
-        }}
-      ></div>
 
     </section>
   );
