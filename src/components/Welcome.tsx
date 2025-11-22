@@ -1,8 +1,11 @@
 import { Sparkles } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Welcome = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="relative py-20 bg-gradient-to-br from-background via-islamic-green/5 to-background overflow-hidden">
+    <section ref={ref} className="relative py-20 bg-gradient-to-br from-background via-islamic-green/5 to-background overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-72 h-72 bg-islamic-green rounded-full blur-3xl"></div>
@@ -10,16 +13,22 @@ const Welcome = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}>
           {/* Arabic Greeting */}
-          <div className="mb-6">
+          <div className={`mb-6 transition-all duration-1000 delay-100 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}>
             <p className="text-3xl md:text-4xl font-arabic text-islamic-gold mb-2">
               السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
             </p>
           </div>
 
           {/* Welcome Icon */}
-          <div className="flex justify-center mb-6">
+          <div className={`flex justify-center mb-6 transition-all duration-1000 delay-200 ${
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-75"
+          }`}>
             <div className="relative">
               <Sparkles className="w-16 h-16 text-islamic-teal animate-pulse" />
               <div className="absolute inset-0 bg-islamic-teal/20 rounded-full blur-xl"></div>
@@ -27,12 +36,16 @@ const Welcome = () => {
           </div>
 
           {/* Bengali Welcome Title */}
-          <h2 className="font-bengali text-4xl md:text-5xl font-bold text-foreground mb-6">
+          <h2 className={`font-bengali text-4xl md:text-5xl font-bold text-foreground mb-6 transition-all duration-1000 delay-300 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}>
             স্বাগতম
           </h2>
 
           {/* Welcome Message */}
-          <div className="space-y-4 font-bengali text-lg md:text-xl text-muted-foreground leading-relaxed">
+          <div className={`space-y-4 font-bengali text-lg md:text-xl text-muted-foreground leading-relaxed transition-all duration-1000 delay-500 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}>
             <p>
               আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহি ওয়া বারাকাতুহু।
             </p>

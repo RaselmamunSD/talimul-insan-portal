@@ -1,7 +1,9 @@
 import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "./ui/card";
 import { Badge } from "./ui/badge";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Programs = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const programs = [
     {
       titleBn: "হিফজুল কুরআন (হাফেজিয়া)",
@@ -34,9 +36,11 @@ const Programs = () => {
   ];
 
   return (
-    <section id="programs" className="py-16 px-4 bg-background">
+    <section ref={ref} id="programs" className="py-16 px-4 bg-background">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}>
           <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
             শিক্ষা কার্যক্রম
           </h2>
@@ -52,7 +56,10 @@ const Programs = () => {
           {programs.map((program, index) => (
             <Card 
               key={index} 
-              className="shadow-2xl hover:shadow-3xl transition-all hover:-translate-y-2 border-t-8 border-t-primary bg-gradient-to-br from-white to-muted/30 rounded-2xl overflow-hidden"
+              className={`shadow-2xl hover:shadow-3xl transition-all hover:-translate-y-2 border-t-8 border-t-primary bg-gradient-to-br from-white to-muted/30 rounded-2xl overflow-hidden ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
+              style={{ transitionDelay: `${200 + index * 150}ms` }}
             >
               <CardHeader className="pb-6 pt-8 px-8">
                 <div className="flex items-start justify-between mb-4">

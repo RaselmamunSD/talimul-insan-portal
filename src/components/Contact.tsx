@@ -3,8 +3,10 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Contact = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -59,13 +61,15 @@ const Contact = () => {
         </div>
       </section>
 
-      <section id="contact" className="py-16 px-4 bg-muted relative">
+      <section ref={ref} id="contact" className="py-16 px-4 bg-muted relative">
       <div className="absolute inset-0 islamic-pattern"></div>
       
       <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="shadow-elegant">
+          <Card className={`shadow-elegant transition-all duration-1000 ${
+            isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+          }`}>
             <CardHeader>
               <CardTitle className="text-2xl font-bengali text-primary">
                 আমাদের সাথে যোগাযোগ করুন
@@ -125,7 +129,9 @@ const Contact = () => {
           </Card>
 
           {/* Contact Information */}
-          <div className="space-y-6">
+          <div className={`space-y-6 transition-all duration-1000 delay-200 ${
+            isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+          }`}>
             <Card className="shadow-elegant">
               <CardHeader>
                 <CardTitle className="text-2xl font-bengali text-primary">

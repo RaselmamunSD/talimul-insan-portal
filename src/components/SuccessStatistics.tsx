@@ -1,6 +1,8 @@
 import { Users, User, Heart, HeartHandshake } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const SuccessStatistics = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const stats = [
     {
       icon: <Users className="w-12 h-12" />,
@@ -33,9 +35,11 @@ const SuccessStatistics = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-gradient-to-br from-[#1a4d4d] to-[#0d3333]">
+    <section ref={ref} className="py-16 px-4 bg-gradient-to-br from-[#1a4d4d] to-[#0d3333]">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}>
           <h2 className="text-4xl md:text-5xl font-bold font-bengali text-white mb-4">
             আমাদের সাফল্যের পরিসংখ্যান
           </h2>
@@ -48,7 +52,10 @@ const SuccessStatistics = () => {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className={`relative bg-gradient-to-br ${stat.bgColor} rounded-2xl p-8 text-center text-white shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2`}
+              className={`relative bg-gradient-to-br ${stat.bgColor} rounded-2xl p-8 text-center text-white shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2 ${
+                isVisible ? "opacity-100 scale-100" : "opacity-0 scale-90"
+              }`}
+              style={{ transitionDelay: `${200 + index * 100}ms` }}
             >
               <div className={`${stat.iconBg} w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
                 {stat.icon}

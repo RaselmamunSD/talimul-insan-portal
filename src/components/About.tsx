@@ -2,8 +2,10 @@ import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { BookOpen, Heart, Users, GraduationCap, Star } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const About = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const features = [
     {
       icon: <BookOpen className="w-12 h-12 text-primary" />,
@@ -43,11 +45,13 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-16 px-4 bg-muted relative">
+    <section ref={ref} id="about" className="py-16 px-4 bg-muted relative">
       <div className="absolute inset-0 islamic-pattern opacity-30"></div>
       
       <div className="container mx-auto relative z-10">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}>
           <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
             আমাদের সম্পর্কে
           </h2>
@@ -61,7 +65,9 @@ const About = () => {
 
         <div className="max-w-7xl mx-auto mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <Card className="shadow-elegant bg-white border-2">
+            <Card className={`shadow-elegant bg-white border-2 transition-all duration-1000 delay-200 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+            }`}>
               <CardContent className="p-8">
                 <p className="text-lg font-bengali leading-relaxed mb-4">
                   হাড়ীভাঙ্গা তা'লিমুল ইন্‌সান হাফেজিয়া কওমী মাদ্রাসা ও লিল্লাহ বোডিং লালমনিরহাটে অবস্থিত একটি 
@@ -83,7 +89,9 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/20">
+            <div className={`rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/20 transition-all duration-1000 delay-300 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"
+            }`}>
               <img 
                 src="/src/assets/madrasah-building.jpg" 
                 alt="তা'লিমুল ইন্সান মাদ্রাসা ভবন" 
@@ -113,7 +121,10 @@ const About = () => {
             return (
               <Card 
                 key={index}
-                className={`${bgColors[index % 5]} border-2 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 rounded-2xl h-full`}
+                className={`${bgColors[index % 5]} border-2 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 rounded-2xl h-full ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{ transitionDelay: `${500 + index * 100}ms` }}
               >
                 <CardContent className="p-8 text-center flex flex-col h-full">
                   <div className={`${iconBgColors[index % 5]} w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-5 text-white shadow-md`}>
