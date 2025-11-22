@@ -7,11 +7,33 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Search, User, Phone, MapPin, Droplet, Calendar } from "lucide-react";
 import { useState, useMemo } from "react";
 
-// Sample student data
+// Sample student data with career info
 const generateStudentData = () => {
   const years = [1967, 1999, 2000, 2002, 2004, 2006, 2008, 2010, 2012, 2014, 2016, 2019, 2020, 2022, 2024, 2025];
   const students = [];
   const bloodGroups = ["A+", "A-", "B+", "B-", "O+", "O-", "AB+", "AB-"];
+  
+  const positions = [
+    { title: "প্রধান ইমাম", org: "কেন্দ্রীয় মসজিদ" },
+    { title: "কুরআন শিক্ষক", org: "জামিয়া মাদরাসা" },
+    { title: "হিফজ উস্তাদ", org: "দারুল কুরআন" },
+    { title: "ইমাম ও খতীব", org: "বায়তুল মুকাররম" },
+    { title: "ক্বারী", org: "ইসলামিক ফাউন্ডেশন" },
+    { title: "মুয়াজ্জিন", org: "জাতীয় মসজিদ" },
+    { title: "কুরআন প্রশিক্ষক", org: "ইসলামিক একাডেমি" },
+    { title: "তাজবিদ শিক্ষক", org: "মাদানি মাদরাসা" }
+  ];
+  
+  const bios = [
+    "আলহামদুলিল্লাহ, কুরআন হিফজ সম্পন্ন করে বিভিন্ন ইসলামিক প্রতিষ্ঠানে সেবা প্রদান করছি।",
+    "কুরআনের খেদমতে নিয়োজিত। শত শত ছাত্রকে কুরআন শিক্ষা প্রদান করছি।",
+    "হিফজ সম্পন্ন করে তাজবিদ ও ক্বিরাত নিয়ে উচ্চতর পড়াশোনা করেছি।",
+    "মাদরাসা থেকে হিফজ সম্পন্ন করে বর্তমানে ইমামতির দায়িত্ব পালন করছি।",
+    "কুরআনের সুমধুর তেলাওয়াত ও শিক্ষাদানে ব্যস্ত রয়েছি।",
+    "হিফজুল কুরআন সম্পন্ন করে বর্তমানে ইসলামিক শিক্ষা প্রচারে নিয়োজিত।",
+    "কুরআন হিফজ ও তাজবিদ শিক্ষাদানে নিয়োজিত একজন উস্তাদ।",
+    "আলহামদুলিল্লাহ, পবিত্র কুরআন হিফজ করে ইসলামিক শিক্ষা বিস্তারে কাজ করছি।"
+  ];
   
   years.forEach(year => {
     for (let i = 1; i <= 20; i++) {
@@ -23,7 +45,9 @@ const generateStudentData = () => {
         phone: `01${Math.floor(Math.random() * 900000000) + 100000000}`,
         bloodGroup: bloodGroups[i % bloodGroups.length],
         year: year,
-        image: `https://api.dicebear.com/7.x/avataaars/svg?seed=${year}-${i}`
+        image: `https://api.dicebear.com/7.x/avataaars/svg?seed=${year}-${i}`,
+        position: positions[i % positions.length],
+        bio: bios[i % bios.length]
       });
     }
   });
@@ -200,61 +224,162 @@ const Students = () => {
             </CardContent>
           </Card>
 
-          {/* Students Grid */}
+          {/* Students Grid - 3D Flip Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredStudents.map(student => (
-              <Card key={student.id} className="overflow-hidden hover:shadow-lg transition-shadow min-h-[380px]">
-                <CardContent className="p-8">
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    {/* Student Image */}
-                    <div className="w-32 h-32 rounded-full overflow-hidden bg-islamic-green/10 flex items-center justify-center">
-                      <img 
-                        src={student.image} 
-                        alt={student.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    
-                    {/* Student Info */}
-                    <div className="space-y-2 w-full">
-                      <h3 className="font-bold text-lg font-bengali text-primary">
-                        {student.name}
-                      </h3>
-                      
-                      <div className="space-y-1.5 text-sm">
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <User className="h-4 w-4 flex-shrink-0" />
-                          <span className="font-bengali text-left">{student.fatherName}</span>
-                        </div>
-                        
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <MapPin className="h-4 w-4 flex-shrink-0" />
-                          <span className="font-bengali text-left">{student.address}</span>
-                        </div>
-                        
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <Phone className="h-4 w-4 flex-shrink-0" />
-                          <span className="text-left">{student.phone}</span>
-                        </div>
-                        
-                        <div className="flex items-center justify-between pt-2 border-t">
-                          <div className="flex items-center gap-1">
-                            <Droplet className="h-4 w-4 text-islamic-green" />
-                            <span className="font-semibold">{student.bloodGroup}</span>
+              <div key={student.id} className="flip-card-container group" style={{ perspective: '1000px' }}>
+                <div className="flip-card-inner relative w-full h-[420px] transition-transform duration-700 ease-out transform-style-3d group-hover:rotate-y-180">
+                  
+                  {/* Front Side */}
+                  <div className="flip-card-face flip-card-front absolute inset-0 backface-hidden">
+                    <Card className="h-full overflow-hidden shadow-lg border-2 hover:shadow-2xl transition-shadow">
+                      <CardContent className="p-8 h-full flex flex-col justify-center">
+                        <div className="flex flex-col items-center text-center space-y-4">
+                          {/* Student Image */}
+                          <div className="w-32 h-32 rounded-full overflow-hidden bg-gradient-to-br from-islamic-green/20 to-islamic-teal/20 flex items-center justify-center ring-4 ring-islamic-green/20 shadow-lg">
+                            <img 
+                              src={student.image} 
+                              alt={student.name}
+                              className="w-full h-full object-cover"
+                            />
                           </div>
                           
-                          <div className="flex items-center gap-1">
-                            <Calendar className="h-4 w-4 text-islamic-gold" />
-                            <span className="font-semibold">{student.year}</span>
+                          {/* Student Info */}
+                          <div className="space-y-2 w-full">
+                            <h3 className="font-bold text-xl font-bengali text-primary">
+                              {student.name}
+                            </h3>
+                            
+                            <div className="space-y-2 text-sm">
+                              <div className="flex items-center gap-2 text-muted-foreground justify-center">
+                                <User className="h-4 w-4 flex-shrink-0" />
+                                <span className="font-bengali">{student.fatherName}</span>
+                              </div>
+                              
+                              <div className="flex items-center gap-2 text-muted-foreground justify-center">
+                                <MapPin className="h-4 w-4 flex-shrink-0" />
+                                <span className="font-bengali">{student.address}</span>
+                              </div>
+                              
+                              <div className="flex items-center gap-2 text-muted-foreground justify-center">
+                                <Phone className="h-4 w-4 flex-shrink-0" />
+                                <span>{student.phone}</span>
+                              </div>
+                              
+                              <div className="flex items-center justify-center gap-6 pt-3 border-t mt-3">
+                                <div className="flex items-center gap-1.5 px-3 py-1 bg-islamic-green/10 rounded-full">
+                                  <Droplet className="h-4 w-4 text-islamic-green" />
+                                  <span className="font-semibold text-islamic-green">{student.bloodGroup}</span>
+                                </div>
+                                
+                                <div className="flex items-center gap-1.5 px-3 py-1 bg-islamic-gold/10 rounded-full">
+                                  <Calendar className="h-4 w-4 text-islamic-gold" />
+                                  <span className="font-semibold text-islamic-gold">{student.year}</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <p className="text-xs text-muted-foreground font-bengali mt-4 italic">
+                            আরও দেখতে হোভার করুন
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                  
+                  {/* Back Side */}
+                  <div className="flip-card-face flip-card-back absolute inset-0 backface-hidden rotate-y-180">
+                    <Card className="h-full overflow-hidden shadow-2xl border-2 bg-gradient-to-br from-islamic-green/5 via-background to-islamic-teal/5 backdrop-blur-sm">
+                      <CardContent className="p-8 h-full flex flex-col justify-center">
+                        <div className="space-y-6 text-center">
+                          {/* Header with decorative element */}
+                          <div className="space-y-2">
+                            <div className="w-16 h-1 bg-gradient-to-r from-transparent via-islamic-green to-transparent mx-auto rounded-full"></div>
+                            <h3 className="font-bold text-xl font-bengali text-primary">
+                              {student.name}
+                            </h3>
+                            <div className="w-16 h-1 bg-gradient-to-r from-transparent via-islamic-teal to-transparent mx-auto rounded-full"></div>
+                          </div>
+                          
+                          {/* Current Position */}
+                          <div className="space-y-3 bg-gradient-to-br from-islamic-green/10 to-islamic-teal/10 p-5 rounded-xl border border-islamic-green/20 shadow-inner">
+                            <div className="text-sm font-semibold text-islamic-green font-bengali">
+                              বর্তমান অবস্থান
+                            </div>
+                            <div className="space-y-1">
+                              <p className="font-bold text-lg font-bengali text-primary">
+                                {student.position.title}
+                              </p>
+                              <p className="text-sm text-muted-foreground font-bengali">
+                                {student.position.org}
+                              </p>
+                            </div>
+                          </div>
+                          
+                          {/* Biography */}
+                          <div className="space-y-3 bg-gradient-to-br from-islamic-teal/10 to-islamic-green/10 p-5 rounded-xl border border-islamic-teal/20 shadow-inner">
+                            <div className="text-sm font-semibold text-islamic-teal font-bengali">
+                              সংক্ষিপ্ত পরিচিতি
+                            </div>
+                            <p className="text-sm leading-relaxed font-bengali text-foreground/90">
+                              {student.bio}
+                            </p>
+                          </div>
+                          
+                          {/* Batch Year Badge */}
+                          <div className="flex justify-center">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-islamic-gold/10 rounded-full border border-islamic-gold/30">
+                              <Calendar className="h-4 w-4 text-islamic-gold" />
+                              <span className="font-semibold text-islamic-gold">ব্যাচ {student.year}</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      </CardContent>
+                    </Card>
                   </div>
-                </CardContent>
-              </Card>
+                  
+                </div>
+              </div>
             ))}
           </div>
+          
+          <style>{`
+            .flip-card-container {
+              perspective: 1000px;
+            }
+            
+            .flip-card-inner {
+              transform-style: preserve-3d;
+              transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+            }
+            
+            .flip-card-container:hover .flip-card-inner {
+              transform: rotateY(180deg);
+            }
+            
+            .flip-card-face {
+              backface-visibility: hidden;
+              -webkit-backface-visibility: hidden;
+            }
+            
+            .flip-card-back {
+              transform: rotateY(180deg);
+            }
+            
+            .rotate-y-180 {
+              transform: rotateY(180deg);
+            }
+            
+            .backface-hidden {
+              backface-visibility: hidden;
+              -webkit-backface-visibility: hidden;
+            }
+            
+            .transform-style-3d {
+              transform-style: preserve-3d;
+            }
+          `}</style>
           
           {filteredStudents.length === 0 && (
             <Card>
