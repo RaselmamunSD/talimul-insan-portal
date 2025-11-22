@@ -6,7 +6,6 @@ import RecentNews from "@/components/RecentNews";
 import PrincipalMessageHome from "@/components/PrincipalMessageHome";
 import SuccessStatistics from "@/components/SuccessStatistics";
 import About from "@/components/About";
-import Contribute from "@/components/Contribute";
 import Programs from "@/components/Programs";
 import DonationFunds from "@/components/DonationFunds";
 import Contact from "@/components/Contact";
@@ -26,7 +25,6 @@ const Index = () => {
         <PrincipalMessageHome />
         <SuccessStatistics />
         <About />
-        <Contribute />
         <Programs />
         <DonationFunds />
         <Contact />
