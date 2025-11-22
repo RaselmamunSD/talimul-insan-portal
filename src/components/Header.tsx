@@ -34,6 +34,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState<"bn" | "en">("bn");
   const [openDropdowns, setOpenDropdowns] = useState<string[]>([]);
+  const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -67,7 +68,7 @@ const Header = () => {
     { label: "হোম", href: "/", active: true },
     { 
       label: "পরিচিতি", 
-      href: "#", 
+      href: "/principal-message", 
       dropdown: [
         { label: "মুহতামিমের বাণী ও সংক্ষিপ্ত জীবনবৃত্তান্ত", href: "/principal-message", icon: User },
         { label: "কমিটি বিন্দু", href: "/committee", icon: Users },
@@ -79,7 +80,7 @@ const Header = () => {
     },
     { 
       label: "বিভাগ সমূহ", 
-      href: "#", 
+      href: "/hifz-department", 
       dropdown: [
         { label: "হিফজুল কুরআন", href: "/hifz-department", icon: Book },
         { label: "কওমি বিভাগ", href: "/qawmi-department", icon: School },
@@ -90,7 +91,7 @@ const Header = () => {
     },
     { 
       label: "আবাসন", 
-      href: "#", 
+      href: "/residential-halls", 
       dropdown: [
         { label: "আবাসিক হল ও পরিচালকবৃন্দ", href: "/residential-halls", icon: Building },
         { label: "আবাসন চার্জ", href: "/accommodation-charges", icon: DollarSign },
@@ -100,7 +101,7 @@ const Header = () => {
     },
     { 
       label: "ভর্তি", 
-      href: "#", 
+      href: "/admission-time", 
       dropdown: [
         { label: "ভর্তির সময়", href: "/admission-time", icon: Clock },
         { label: "ভর্তি পরীক্ষা", href: "/admission-exam", icon: ClipboardCheck },
@@ -237,34 +238,48 @@ const Header = () => {
               {menuItems.map((item) => (
                 <li key={item.label}>
                   {item.dropdown ? (
-                    <DropdownMenu>
-                      <DropdownMenuTrigger className="nav-link px-6 py-3 rounded transition-smooth font-semibold hover:bg-white/10 flex items-center gap-1 group">
-                        {item.label} 
-                        <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent className="bg-white min-w-[280px] shadow-xl border-2 border-primary/10 dropdown-animate">
-                        {item.dropdown.map((subItem, index) => (
-                          <DropdownMenuItem 
-                            key={subItem.label} 
-                            asChild
-                            className="transition-all duration-200"
-                            style={{ animationDelay: `${index * 30}ms` }}
+                    <DropdownMenu open={hoveredMenu === item.label} onOpenChange={(open) => !open && setHoveredMenu(null)}>
+                      <div 
+                        onMouseEnter={() => setHoveredMenu(item.label)}
+                        onMouseLeave={() => setHoveredMenu(null)}
+                      >
+                        <DropdownMenuTrigger asChild>
+                          <Link
+                            to={item.href}
+                            className="nav-link px-6 py-3 rounded transition-smooth font-semibold hover:bg-white/10 flex items-center gap-1 group"
                           >
-                            <Link 
-                              to={subItem.href} 
-                              className="font-bengali cursor-pointer flex items-center gap-3 px-4 py-3 hover:bg-gradient-to-r hover:from-primary/5 hover:to-islamic-teal/5 transition-all duration-300 group relative overflow-hidden"
+                            {item.label} 
+                            <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+                          </Link>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent 
+                          className="bg-white min-w-[280px] shadow-xl border-2 border-primary/10 dropdown-animate"
+                          onMouseEnter={() => setHoveredMenu(item.label)}
+                          onMouseLeave={() => setHoveredMenu(null)}
+                        >
+                          {item.dropdown.map((subItem, index) => (
+                            <DropdownMenuItem 
+                              key={subItem.label} 
+                              asChild
+                              className="transition-all duration-200"
+                              style={{ animationDelay: `${index * 30}ms` }}
                             >
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-islamic-teal/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-                              {subItem.icon && (
-                                <subItem.icon className="h-5 w-5 text-primary group-hover:scale-125 group-hover:rotate-3 transition-all duration-300 relative z-10" />
-                              )}
-                              <span className="group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 relative z-10">
-                                {subItem.label}
-                              </span>
-                            </Link>
-                          </DropdownMenuItem>
-                        ))}
-                      </DropdownMenuContent>
+                              <Link 
+                                to={subItem.href} 
+                                className="font-bengali cursor-pointer flex items-center gap-3 px-4 py-3 hover:bg-gradient-to-r hover:from-primary/5 hover:to-islamic-teal/5 transition-all duration-300 group relative overflow-hidden"
+                              >
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-islamic-teal/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                                {subItem.icon && (
+                                  <subItem.icon className="h-5 w-5 text-primary group-hover:scale-125 group-hover:rotate-3 transition-all duration-300 relative z-10" />
+                                )}
+                                <span className="group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 relative z-10">
+                                  {subItem.label}
+                                </span>
+                              </Link>
+                            </DropdownMenuItem>
+                          ))}
+                        </DropdownMenuContent>
+                      </div>
                     </DropdownMenu>
                   ) : (
                     <Link
