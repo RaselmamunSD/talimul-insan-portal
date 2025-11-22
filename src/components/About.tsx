@@ -56,21 +56,22 @@ const About = () => {
       <div className="absolute inset-0 islamic-pattern opacity-30"></div>
       
       <div className="container mx-auto relative z-10">
+        {/* About Us Section */}
         <div className={`text-center mb-12 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
           <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
-            আমাদের কার্যক্রমসমূহ
+            আমাদের সম্পর্কে
           </h2>
           <p className="text-xl font-arabic text-secondary">
-            أنشطتنا وبرامجنا
+            معلومات عنا
           </p>
           <p className="text-lg font-english text-muted-foreground mt-2">
-            Our Activities & Programs
+            About Our Madrasah
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto mb-12">
+        <div className="max-w-7xl mx-auto mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <Card className={`shadow-elegant bg-white border-2 transition-all duration-1000 delay-200 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
@@ -108,6 +109,21 @@ const About = () => {
           </div>
         </div>
 
+        {/* Our Activities Section */}
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}>
+          <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
+            আমাদের কার্যক্রমসমূহ
+          </h2>
+          <p className="text-xl font-arabic text-secondary">
+            أنشطتنا وبرامجنا
+          </p>
+          <p className="text-lg font-english text-muted-foreground mt-2">
+            Our Activities & Programs
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => {
             const bgColors = [
@@ -136,12 +152,8 @@ const About = () => {
                 style={{ transitionDelay: `${500 + index * 100}ms` }}
               >
                 <CardContent className="p-8 text-center flex flex-col h-full">
-                  <div className={`${iconBgColors[index % 6]} w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-5 text-white shadow-md`}>
+                  <div className={`${iconBgColors[index % 6]} w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-md`}>
                     {feature.icon}
-                  </div>
-                  
-                  <div className="mb-4">
-                    <span className="text-base font-bengali font-semibold text-primary">ধাপ {index + 1}</span>
                   </div>
                   
                   <h3 className="text-2xl font-bold font-bengali text-foreground mb-4">
