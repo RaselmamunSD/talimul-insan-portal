@@ -47,7 +47,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="relative h-[50vh] sm:h-[55vh] md:h-[60vh] lg:h-[65vh] w-full overflow-hidden">
+    <section id="home" className="relative h-[40vh] sm:h-[45vh] md:h-[50vh] lg:h-[55vh] w-full overflow-hidden">
       {/* Image Slider */}
       <div className="absolute inset-0 w-full h-full">
         {images.map((img, index) => (
