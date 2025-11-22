@@ -5,6 +5,7 @@ import madrasahBuilding from "@/assets/madrasah-building.jpg";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   // Using the same image 5 times as placeholder - can be replaced with different images
   const images = [
@@ -22,6 +23,16 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, [images.length]);
 
+  // Parallax scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % images.length);
   };
@@ -32,8 +43,14 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-[600px] flex items-center justify-center overflow-hidden">
-      {/* Image Slider */}
-      <div className="absolute inset-0 z-0">
+      {/* Image Slider with Parallax Effect */}
+      <div 
+        className="absolute inset-0 z-0 will-change-transform"
+        style={{
+          transform: `translateY(${scrollY * 0.5}px)`,
+          transition: 'transform 0.1s ease-out'
+        }}
+      >
         {images.map((img, index) => (
           <div
             key={index}
@@ -44,7 +61,7 @@ const Hero = () => {
             <img
               src={img}
               alt={`Talimul Insan Madrasah ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover scale-110"
             />
           </div>
         ))}
@@ -54,14 +71,14 @@ const Hero = () => {
       {/* Slider Controls */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-smooth"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 hover:scale-110 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 text-white p-3 rounded-full backdrop-blur-sm transition-smooth"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 bg-white/20 hover:bg-white/30 hover:scale-110 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300"
         aria-label="Next slide"
       >
         <ChevronRight className="w-6 h-6" />
@@ -73,19 +90,32 @@ const Hero = () => {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-smooth ${
-              index === currentSlide ? "bg-white w-8" : "bg-white/50"
+            className={`h-3 rounded-full transition-all duration-300 hover:scale-110 ${
+              index === currentSlide ? "bg-white w-8" : "bg-white/50 w-3"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Islamic Pattern Overlay */}
-      <div className="absolute inset-0 islamic-pattern z-10"></div>
+      {/* Islamic Pattern Overlay with Parallax */}
+      <div 
+        className="absolute inset-0 islamic-pattern z-10 will-change-transform"
+        style={{
+          transform: `translateY(${scrollY * 0.3}px)`,
+          transition: 'transform 0.1s ease-out'
+        }}
+      ></div>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 relative z-20 text-center text-white">
+      {/* Content with Fade Effect */}
+      <div 
+        className="container mx-auto px-4 relative z-20 text-center text-white will-change-opacity"
+        style={{
+          opacity: Math.max(0, 1 - scrollY / 500),
+          transform: `translateY(${scrollY * 0.2}px)`,
+          transition: 'opacity 0.1s ease-out, transform 0.1s ease-out'
+        }}
+      >
         <div className="max-w-4xl mx-auto space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-bengali leading-tight">
             স্বাগতম
@@ -112,14 +142,14 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
             <Button 
               size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-foreground font-bengali font-semibold text-lg px-8 py-6"
+              className="bg-secondary hover:bg-secondary/90 hover:scale-105 text-foreground font-bengali font-semibold text-lg px-8 py-6 shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               ভর্তির জন্য আবেদন করুন
             </Button>
             <Button 
               size="lg"
               variant="outline"
-              className="bg-white/10 hover:bg-white/20 text-white border-white/30 font-bengali font-semibold text-lg px-8 py-6 backdrop-blur-sm"
+              className="bg-white/10 hover:bg-white/20 hover:scale-105 text-white border-white/30 font-bengali font-semibold text-lg px-8 py-6 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               দান করুন
             </Button>
