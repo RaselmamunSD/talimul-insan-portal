@@ -1,19 +1,24 @@
 import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import madrasahBuilding from "@/assets/madrasah-building.jpg";
+import madrasah1 from "@/assets/madrasah-1.png";
+import madrasah2 from "@/assets/madrasah-2.png";
+import madrasah3 from "@/assets/madrasah-3.png";
+import madrasah4 from "@/assets/madrasah-4.png";
+import madrasah5 from "@/assets/madrasah-5.png";
+import madrasah6 from "@/assets/madrasah-6.png";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [scrollY, setScrollY] = useState(0);
 
-  // Using the same image 5 times as placeholder - can be replaced with different images
   const images = [
-    madrasahBuilding,
-    madrasahBuilding,
-    madrasahBuilding,
-    madrasahBuilding,
-    madrasahBuilding,
+    madrasah1,
+    madrasah2,
+    madrasah3,
+    madrasah4,
+    madrasah5,
+    madrasah6,
   ];
 
   useEffect(() => {
@@ -107,55 +112,6 @@ const Hero = () => {
         }}
       ></div>
 
-      {/* Content with Fade Effect */}
-      <div 
-        className="container mx-auto px-4 relative z-20 text-center text-white will-change-opacity"
-        style={{
-          opacity: Math.max(0, 1 - scrollY / 500),
-          transform: `translateY(${scrollY * 0.2}px)`,
-          transition: 'opacity 0.1s ease-out, transform 0.1s ease-out'
-        }}
-      >
-        <div className="max-w-4xl mx-auto space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-bengali leading-tight">
-            স্বাগতম
-          </h1>
-          
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold font-arabic text-secondary leading-relaxed">
-            بسم الله الرحمن الرحيم
-          </h2>
-
-          <div className="bg-white/10 backdrop-blur-md p-8 rounded-lg border border-white/20 shadow-2xl">
-            <p className="text-xl md:text-2xl font-bengali leading-relaxed mb-4">
-              আমাদের মিশন
-            </p>
-            <p className="text-lg md:text-xl font-bengali leading-relaxed">
-              কুরআনিক মুখস্থকরণ (হাফেজিয়া), জাতীয় কওমী শিক্ষা এবং এতিমদের জন্য আশ্রয় প্রদানের মাধ্যমে 
-              তরুণ মনকে লালন করার জন্য নিবেদিত।
-            </p>
-            <p className="text-base md:text-lg font-english mt-4 text-secondary font-semibold">
-              Dedicated to nurturing young minds through Quranic memorization, 
-              national Qawmi education, and providing shelter for orphans.
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            <Button 
-              size="lg"
-              className="bg-secondary hover:bg-secondary/90 hover:scale-105 text-foreground font-bengali font-semibold text-lg px-8 py-6 shadow-lg hover:shadow-2xl transition-all duration-300"
-            >
-              ভর্তির জন্য আবেদন করুন
-            </Button>
-            <Button 
-              size="lg"
-              variant="outline"
-              className="bg-white/10 hover:bg-white/20 hover:scale-105 text-white border-white/30 font-bengali font-semibold text-lg px-8 py-6 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300"
-            >
-              দান করুন
-            </Button>
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
