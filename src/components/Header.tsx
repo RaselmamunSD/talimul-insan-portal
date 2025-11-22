@@ -261,18 +261,18 @@ const Header = () => {
                             <DropdownMenuItem 
                               key={subItem.label} 
                               asChild
-                              className="transition-all duration-200"
+                              className="transition-all duration-200 border border-transparent hover:border-primary/20 hover:shadow-lg rounded-lg mb-1"
                               style={{ animationDelay: `${index * 30}ms` }}
                             >
                               <Link 
                                 to={subItem.href} 
-                                className="font-bengali cursor-pointer flex items-center gap-3 px-4 py-3 hover:bg-gradient-to-r hover:from-primary/5 hover:to-islamic-teal/5 transition-all duration-300 group relative overflow-hidden"
+                                className="font-bengali cursor-pointer flex items-center gap-3 px-4 py-3 hover:bg-gradient-to-r hover:from-primary/10 hover:via-accent/5 hover:to-islamic-teal/10 transition-all duration-300 group relative overflow-hidden rounded-lg"
                               >
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-islamic-teal/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                                 {subItem.icon && (
-                                  <subItem.icon className="h-5 w-5 text-primary group-hover:scale-125 group-hover:rotate-3 transition-all duration-300 relative z-10" />
+                                  <subItem.icon className="h-5 w-5 text-primary group-hover:text-islamic-teal group-hover:scale-125 group-hover:rotate-6 transition-all duration-300 relative z-10 drop-shadow-md" />
                                 )}
-                                <span className="group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 relative z-10">
+                                <span className="group-hover:text-primary group-hover:translate-x-1 group-hover:font-semibold transition-all duration-300 relative z-10">
                                   {subItem.label}
                                 </span>
                               </Link>
