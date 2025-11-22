@@ -1,12 +1,17 @@
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const PrincipalMessageHome = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-16 px-4 bg-background">
+    <section ref={ref} className="py-16 px-4 bg-background">
       <div className="container mx-auto">
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}>
           <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
             মুহতামিমের বাণী
           </h2>
@@ -19,7 +24,9 @@ const PrincipalMessageHome = () => {
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <Card className="shadow-elegant overflow-hidden">
+          <Card className={`shadow-elegant overflow-hidden transition-all duration-1000 delay-300 ${
+            isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          }`}>
             <CardContent className="p-0">
               <div className="grid md:grid-cols-3 gap-6">
                 {/* Principal Image */}

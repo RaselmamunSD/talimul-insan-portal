@@ -1,12 +1,17 @@
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { HandHeart } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Contribute = () => {
+  const { ref, isVisible } = useScrollAnimation();
+
   return (
-    <section className="py-16 px-4 bg-muted">
+    <section ref={ref} className="py-16 px-4 bg-muted">
       <div className="container mx-auto max-w-5xl">
-        <div className="bg-gradient-to-br from-islamic-green to-islamic-teal rounded-3xl p-12 text-center text-white shadow-2xl">
+        <div className={`bg-gradient-to-br from-islamic-green to-islamic-teal rounded-3xl p-12 text-center text-white shadow-2xl transition-all duration-1000 ${
+          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}>
           <div className="bg-white/20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
             <HandHeart className="w-10 h-10" />
           </div>

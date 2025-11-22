@@ -1,8 +1,10 @@
 import { Calendar, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const RecentNews = () => {
+  const { ref, isVisible } = useScrollAnimation();
   const newsItems = [
     {
       id: 1,
@@ -28,7 +30,7 @@ const RecentNews = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-to-br from-background via-islamic-teal/5 to-background overflow-hidden">
+    <section ref={ref} className="relative py-20 bg-gradient-to-br from-background via-islamic-teal/5 to-background overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('/src/assets/islamic-pattern.png')] bg-repeat opacity-10"></div>
@@ -40,7 +42,9 @@ const RecentNews = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className={`text-center mb-12 transition-all duration-1000 ${
+          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+        }`}>
           <div className="inline-block mb-4">
             <div className="flex items-center gap-2 px-4 py-2 bg-islamic-teal/10 rounded-full">
               <Calendar className="w-5 h-5 text-islamic-teal" />
@@ -71,8 +75,10 @@ const RecentNews = () => {
           {newsItems.map((news, index) => (
             <Card 
               key={news.id}
-              className="group hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-islamic-teal/20 bg-card/80 backdrop-blur-sm animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`group hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-islamic-teal/20 bg-card/80 backdrop-blur-sm ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
+              style={{ transitionDelay: `${300 + index * 150}ms` }}
             >
               <CardContent className="p-6">
                 {/* Category Badge */}
@@ -109,7 +115,9 @@ const RecentNews = () => {
         </div>
 
         {/* View All Button */}
-        <div className="text-center mt-12">
+        <div className={`text-center mt-12 transition-all duration-1000 delay-700 ${
+          isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
+        }`}>
           <Button 
             size="lg"
             className="font-bengali text-base px-8 py-6 bg-gradient-to-r from-islamic-teal to-islamic-green hover:from-islamic-green hover:to-islamic-teal transition-all duration-300 shadow-lg hover:shadow-xl"
