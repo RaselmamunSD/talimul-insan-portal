@@ -37,11 +37,8 @@ const WhatsAppButton = () => {
         <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75"></div>
         
         {/* Main button */}
-        <div className="relative bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 hover:rotate-12">
-          <MessageCircle className="h-8 w-8" fill="white" />
-          
-          {/* Online indicator */}
-          <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white animate-pulse"></div>
+        <div className="relative bg-gradient-to-br from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 hover:rotate-12">
+          <MessageCircle className="h-6 w-6" fill="white" />
         </div>
       </div>
     </a>
