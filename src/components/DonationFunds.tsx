@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import { Heart, Building2, Construction, Church, HandCoins, UtensilsCrossed, Users } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
 
 const donationCategories = [
   {
@@ -97,34 +98,40 @@ const DonationFunds = () => {
         </div>
 
         {/* Carousel */}
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           <Carousel
             opts={{
               align: "start",
               loop: true,
             }}
+            plugins={[
+              Autoplay({
+                delay: 3000,
+                stopOnInteraction: true,
+              }),
+            ]}
             className="w-full"
           >
-            <CarouselContent className="-ml-4">
+            <CarouselContent className="-ml-2 md:-ml-4">
               {donationCategories.map((category) => {
                 const IconComponent = category.icon;
                 return (
-                  <CarouselItem key={category.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={category.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
                     <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-white/20 bg-white/95 backdrop-blur-sm h-full">
-                      <CardHeader className={`${category.bgColor} pb-6`}>
-                        <div className={`w-16 h-16 rounded-full ${category.bgColor} flex items-center justify-center mb-4 mx-auto border-2 border-white shadow-lg`}>
-                          <IconComponent className={`w-8 h-8 ${category.color}`} />
+                      <CardHeader className={`${category.bgColor} pb-4 md:pb-6`}>
+                        <div className={`w-14 h-14 md:w-16 md:h-16 rounded-full ${category.bgColor} flex items-center justify-center mb-3 md:mb-4 mx-auto border-2 border-white shadow-lg`}>
+                          <IconComponent className={`w-7 h-7 md:w-8 md:h-8 ${category.color}`} />
                         </div>
-                        <CardTitle className="font-bengali text-xl text-center min-h-[60px] flex items-center justify-center">
+                        <CardTitle className="font-bengali text-lg md:text-xl text-center min-h-[50px] md:min-h-[60px] flex items-center justify-center px-2">
                           {category.title}
                         </CardTitle>
                       </CardHeader>
-                      <CardContent className="pt-6 pb-6">
-                        <CardDescription className="font-bengali text-base text-center mb-6 min-h-[60px]">
+                      <CardContent className="pt-4 pb-4 md:pt-6 md:pb-6 px-4">
+                        <CardDescription className="font-bengali text-sm md:text-base text-center mb-4 md:mb-6 min-h-[50px] md:min-h-[60px]">
                           {category.description}
                         </CardDescription>
                         <Link to={`/donation-form?category=${category.id}`}>
-                          <Button className="w-full bg-islamic-green hover:bg-islamic-green/90 font-bengali text-lg py-6 shadow-lg hover:shadow-xl transition-smooth">
+                          <Button className="w-full bg-islamic-green hover:bg-islamic-green/90 font-bengali text-base md:text-lg py-5 md:py-6 shadow-lg hover:shadow-xl transition-smooth">
                             💝 দান করুন
                           </Button>
                         </Link>
@@ -134,9 +141,18 @@ const DonationFunds = () => {
                 );
               })}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 bg-white/90 hover:bg-white text-islamic-green border-2 border-islamic-green" />
-            <CarouselNext className="hidden md:flex -right-12 bg-white/90 hover:bg-white text-islamic-green border-2 border-islamic-green" />
+            <CarouselPrevious className="hidden lg:flex -left-4 xl:-left-12 bg-white/90 hover:bg-white text-islamic-green border-2 border-islamic-green shadow-lg" />
+            <CarouselNext className="hidden lg:flex -right-4 xl:-right-12 bg-white/90 hover:bg-white text-islamic-green border-2 border-islamic-green shadow-lg" />
           </Carousel>
+          
+          {/* Mobile Navigation Dots */}
+          <div className="flex justify-center gap-2 mt-6 lg:hidden">
+            <div className="flex gap-1.5">
+              {donationCategories.map((_, index) => (
+                <div key={index} className="w-2 h-2 rounded-full bg-white/50" />
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* View All Button */}
