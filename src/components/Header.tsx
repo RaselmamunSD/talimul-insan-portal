@@ -216,17 +216,17 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden p-3"
+              className="lg:hidden p-3 hover:bg-white/20 rounded-lg transition-all duration-300 hover:scale-110 active:scale-95"
               aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              {isMenuOpen ? <X size={28} className="transition-transform duration-300 rotate-90" /> : <Menu size={28} className="transition-transform duration-300" />}
             </button>
 
             {/* Mobile Donate Button */}
             <div className="lg:hidden">
               <Button 
                 asChild
-                className="bg-islamic-green hover:bg-islamic-green/90 text-white font-bengali font-bold border-2 border-white px-4 py-2 text-sm shadow-lg animate-electric-glow"
+                className="bg-islamic-green hover:bg-islamic-green/90 hover:scale-105 text-white font-bengali font-bold border-2 border-white px-4 py-2 text-sm shadow-lg animate-electric-glow transition-all duration-300"
               >
                 <Link to="/donate">💝 দান করুন</Link>
               </Button>
@@ -238,20 +238,27 @@ const Header = () => {
                 <li key={item.label}>
                   {item.dropdown ? (
                     <DropdownMenu>
-                      <DropdownMenuTrigger className="px-6 py-3 rounded transition-smooth font-semibold hover:bg-white/10 flex items-center gap-1">
-                        {item.label} <ChevronDown className="h-4 w-4" />
+                      <DropdownMenuTrigger className="nav-link px-6 py-3 rounded transition-smooth font-semibold hover:bg-white/10 flex items-center gap-1 group">
+                        {item.label} 
+                        <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent className="bg-white min-w-[280px] shadow-xl border-2 border-primary/10">
-                        {item.dropdown.map((subItem) => (
-                          <DropdownMenuItem key={subItem.label} asChild>
+                      <DropdownMenuContent className="bg-white min-w-[280px] shadow-xl border-2 border-primary/10 dropdown-animate">
+                        {item.dropdown.map((subItem, index) => (
+                          <DropdownMenuItem 
+                            key={subItem.label} 
+                            asChild
+                            className="transition-all duration-200"
+                            style={{ animationDelay: `${index * 30}ms` }}
+                          >
                             <Link 
                               to={subItem.href} 
-                              className="font-bengali cursor-pointer flex items-center gap-3 px-4 py-3 hover:bg-primary/5 transition-smooth group"
+                              className="font-bengali cursor-pointer flex items-center gap-3 px-4 py-3 hover:bg-gradient-to-r hover:from-primary/5 hover:to-islamic-teal/5 transition-all duration-300 group relative overflow-hidden"
                             >
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-islamic-teal/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                               {subItem.icon && (
-                                <subItem.icon className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />
+                                <subItem.icon className="h-5 w-5 text-primary group-hover:scale-125 group-hover:rotate-3 transition-all duration-300 relative z-10" />
                               )}
-                              <span className="group-hover:text-primary transition-colors">
+                              <span className="group-hover:text-primary group-hover:translate-x-1 transition-all duration-300 relative z-10">
                                 {subItem.label}
                               </span>
                             </Link>
@@ -262,10 +269,10 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className={`px-6 py-3 rounded transition-smooth font-semibold ${
+                      className={`nav-link px-6 py-3 rounded transition-all duration-300 font-semibold inline-block ${
                         item.active
-                          ? "bg-white text-primary"
-                          : "hover:bg-white/10"
+                          ? "bg-white text-primary shadow-md"
+                          : "hover:bg-white/10 hover:-translate-y-0.5"
                       }`}
                     >
                       {item.label}
@@ -279,23 +286,23 @@ const Header = () => {
             <div className="hidden lg:flex items-center gap-3">
               <Button 
                 asChild
-                className="bg-islamic-green hover:bg-islamic-green/90 text-white font-bengali font-bold border-2 border-white px-6 py-3 shadow-lg hover:shadow-xl transition-smooth animate-electric-glow"
+                className="bg-islamic-green hover:bg-islamic-green/90 hover:scale-105 text-white font-bengali font-bold border-2 border-white px-6 py-3 shadow-lg hover:shadow-2xl transition-all duration-300 animate-electric-glow"
               >
                 <Link to="/donate">💝 দান করুন</Link>
               </Button>
               
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="sm" className="gap-2">
-                    <Globe className="h-4 w-4" />
+                  <Button variant="ghost" size="sm" className="gap-2 hover:bg-white/20 transition-all duration-300">
+                    <Globe className="h-4 w-4 transition-transform duration-300 hover:rotate-12" />
                     {language === "bn" ? "বাংলা" : "English"}
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-white">
-                  <DropdownMenuItem onClick={() => setLanguage("bn")} className="cursor-pointer">
+                <DropdownMenuContent className="bg-white dropdown-animate">
+                  <DropdownMenuItem onClick={() => setLanguage("bn")} className="cursor-pointer hover:bg-primary/5 transition-colors">
                     বাংলা
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => setLanguage("en")} className="cursor-pointer">
+                  <DropdownMenuItem onClick={() => setLanguage("en")} className="cursor-pointer hover:bg-primary/5 transition-colors">
                     English
                   </DropdownMenuItem>
                 </DropdownMenuContent>
@@ -351,12 +358,12 @@ const Header = () => {
                     <div>
                       <button
                         onClick={() => toggleDropdown(item.label)}
-                        className="w-full flex items-center justify-between px-6 py-4 font-semibold text-white hover:bg-white/10 transition-all duration-200 active:bg-white/20"
+                        className="w-full flex items-center justify-between px-6 py-4 font-semibold text-white hover:bg-white/10 transition-all duration-300 active:bg-white/20 group"
                       >
-                        <span className="text-[15px]">{item.label}</span>
+                        <span className="text-[15px] group-hover:translate-x-1 transition-transform duration-300">{item.label}</span>
                         <ChevronDown 
                           className={`h-5 w-5 transition-all duration-300 ${
-                            openDropdowns.includes(item.label) ? 'rotate-180 text-islamic-green' : 'text-white/60'
+                            openDropdowns.includes(item.label) ? 'rotate-180 text-islamic-green' : 'text-white/60 group-hover:translate-y-0.5'
                           }`} 
                         />
                       </button>
@@ -372,7 +379,7 @@ const Header = () => {
                             <Link
                               key={subItem.label}
                               to={subItem.href}
-                              className="flex items-center gap-3 px-8 py-3.5 hover:bg-islamic-green/20 hover:pl-10 transition-all duration-200 text-sm text-white/90 hover:text-white border-l-2 border-transparent hover:border-islamic-green"
+                              className="flex items-center gap-3 px-8 py-3.5 hover:bg-gradient-to-r hover:from-islamic-green/20 hover:to-islamic-teal/20 hover:pl-10 transition-all duration-300 text-sm text-white/90 hover:text-white border-l-2 border-transparent hover:border-islamic-green group relative overflow-hidden"
                               onClick={() => setIsMenuOpen(false)}
                               style={{
                                 animation: openDropdowns.includes(item.label) 
@@ -380,10 +387,11 @@ const Header = () => {
                                   : 'none'
                               }}
                             >
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-islamic-teal/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                               {subItem.icon && (
-                                <subItem.icon className="h-4 w-4 text-islamic-green flex-shrink-0" />
+                                <subItem.icon className="h-4 w-4 text-islamic-green flex-shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 relative z-10" />
                               )}
-                              <span className="leading-tight">{subItem.label}</span>
+                              <span className="leading-tight relative z-10">{subItem.label}</span>
                             </Link>
                           ))}
                         </div>
@@ -392,14 +400,15 @@ const Header = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className={`flex items-center px-6 py-4 transition-all duration-200 font-semibold text-[15px] ${
+                      className={`flex items-center px-6 py-4 transition-all duration-300 font-semibold text-[15px] relative group overflow-hidden ${
                         item.active
                           ? "bg-gradient-to-r from-islamic-green to-islamic-green/80 text-white shadow-lg"
-                          : "hover:bg-white/10 text-white/90 hover:text-white active:bg-white/20"
+                          : "hover:bg-white/10 text-white/90 hover:text-white active:bg-white/20 hover:pl-8"
                       }`}
                       onClick={() => setIsMenuOpen(false)}
                     >
-                      {item.label}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-islamic-teal/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
+                      <span className="relative z-10">{item.label}</span>
                     </Link>
                   )}
                 </li>
@@ -409,14 +418,14 @@ const Header = () => {
             <div className="p-6 space-y-3 border-t border-white/10 mt-auto">
               <Button 
                 asChild
-                className="w-full bg-gradient-to-r from-islamic-green to-primary hover:from-islamic-green/90 hover:to-primary/90 text-white font-bengali font-bold border border-white/20 shadow-lg"
+                className="w-full bg-gradient-to-r from-islamic-green to-primary hover:from-islamic-green/90 hover:to-primary/90 hover:scale-105 text-white font-bengali font-bold border border-white/20 shadow-lg transition-all duration-300"
               >
                 <Link to="/donate" onClick={() => setIsMenuOpen(false)}>💝 দান করুন</Link>
               </Button>
               
               <Button
                 variant="outline"
-                className="w-full border-white/30 text-white hover:bg-white/10 font-bengali backdrop-blur-sm"
+                className="w-full border-white/30 text-white hover:bg-white/20 hover:scale-105 font-bengali backdrop-blur-sm transition-all duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Globe className="h-4 w-4 mr-2" />
