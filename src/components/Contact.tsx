@@ -61,8 +61,20 @@ const Contact = () => {
         </div>
       </section>
 
-      <section ref={ref} id="contact" className="py-16 px-4 bg-muted relative">
-      <div className="absolute inset-0 islamic-pattern"></div>
+      <section ref={ref} id="contact" className="py-16 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
+      {/* Islamic Pattern Background */}
+      <div 
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `url(${new URL('../assets/islamic-pattern.png', import.meta.url).href})`,
+          backgroundSize: '400px',
+          backgroundRepeat: 'repeat'
+        }}
+      />
+      
+      {/* Decorative Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-islamic-green/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-islamic-teal/5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
