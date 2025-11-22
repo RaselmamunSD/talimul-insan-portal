@@ -9,8 +9,10 @@ import {
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
+import { Maximize2 } from "lucide-react";
 import madrasahBuilding from "@/assets/madrasah-building.jpg";
 import mosqueSkyline from "@/assets/mosque-skyline.png";
+import Lightbox from "./Lightbox";
 
 // Sample gallery images - replace with actual madrasah activity images
 const galleryImages = [
@@ -44,6 +46,8 @@ const galleryImages = [
 const ImageGallerySlider = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     if (!api) {
@@ -67,6 +71,11 @@ const ImageGallerySlider = () => {
 
     return () => clearInterval(autoplay);
   }, [api]);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <section className="py-16 bg-gradient-to-b from-background to-muted/30">
@@ -100,8 +109,8 @@ const ImageGallerySlider = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {galleryImages.map((image, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="border-2 border-border/50 overflow-hidden group hover:border-primary transition-all duration-300 hover:shadow-xl">
-                    <CardContent className="p-0">
+                  <Card className="border-2 border-border/50 overflow-hidden group hover:border-primary transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <CardContent className="p-0" onClick={() => openLightbox(index)}>
                       <div className="relative aspect-[4/3] overflow-hidden">
                         <img
                           src={image.src}
@@ -109,6 +118,12 @@ const ImageGallerySlider = () => {
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        {/* Zoom Icon */}
+                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                          <Maximize2 className="h-5 w-5 text-primary" />
+                        </div>
+
                         <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                           <h3 className="text-white font-bengali font-semibold text-lg mb-1">
                             {image.title}
@@ -142,6 +157,14 @@ const ImageGallerySlider = () => {
           </div>
         </div>
       </div>
+
+      {/* Lightbox */}
+      <Lightbox
+        images={galleryImages}
+        currentIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+      />
     </section>
   );
 };
