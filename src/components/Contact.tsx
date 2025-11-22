@@ -33,7 +33,7 @@ const Contact = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-500 py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-blue-500 via-blue-400 to-cyan-400 py-20 overflow-hidden">
         {/* Islamic Pattern Background */}
         <div 
           className="absolute inset-0 opacity-10"
@@ -44,17 +44,21 @@ const Contact = () => {
           }}
         />
         
+        {/* Decorative Gradient Overlays */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-600/20 rounded-full blur-3xl"></div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <div className="mb-4 inline-block px-5 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+            <div className="mb-6 inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full animate-fade-in">
               <p className="font-arabic text-lg">اتصل بنا</p>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold font-bengali mb-3 drop-shadow-lg">
+            <h1 className="text-5xl md:text-6xl font-bold font-bengali mb-4 drop-shadow-lg animate-fade-in" style={{ animationDelay: '0.1s' }}>
               যোগাযোগ
             </h1>
             
-            <p className="font-english text-lg md:text-xl opacity-90 drop-shadow-md">
+            <p className="font-english text-xl md:text-2xl opacity-95 drop-shadow-md animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Contact Us
             </p>
           </div>
