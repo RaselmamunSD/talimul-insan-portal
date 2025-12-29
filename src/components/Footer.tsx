@@ -195,11 +195,16 @@ const Footer = () => {
           {/* Developer Bar */}
           <div className="border-t border-white/10 pt-6 pb-4">
             <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
-              <div className="flex items-center gap-2">
+              <a 
+                href="https://higzendev.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-300"
+              >
                 <Code2 className="w-4 h-4 text-islamic-gold" />
                 <span className="text-white/80 font-bengali text-sm">ডেভেলপার:</span>
                 <span className="text-islamic-gold font-english font-semibold">HigzenDev</span>
-              </div>
+              </a>
               <div className="flex gap-2">
                 <a href="#" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] transition-all duration-300">
                   <Facebook className="w-4 h-4" />
@@ -228,10 +233,10 @@ const Footer = () => {
                 <Link to="/terms" className="text-white/70 hover:text-islamic-gold font-bengali text-sm transition-colors duration-300">
                   শর্তাবলী
                 </Link>
-                <div className="flex items-center gap-1 text-white/70">
+                <Link to="/developer" className="flex items-center gap-1 text-white/70 hover:text-islamic-gold transition-colors duration-300">
                   <Code2 className="w-3.5 h-3.5 text-islamic-gold" />
                   <span className="font-bengali text-sm">ডেভেলপার</span>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

@@ -34,6 +34,7 @@ import AdmissionTerms from "./pages/AdmissionTerms";
 import Terms from "./pages/Terms";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Help from "./pages/Help";
+import Developer from "./pages/Developer";
 
 const queryClient = new QueryClient();
 
@@ -75,6 +76,7 @@ const App = () => (
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/help" element={<Help />} />
+          <Route path="/developer" element={<Developer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
