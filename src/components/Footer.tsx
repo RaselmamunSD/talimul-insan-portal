@@ -1,4 +1,4 @@
-import { Facebook, Youtube, Mail, Phone, Linkedin, Instagram, ArrowUp, MapPin } from "lucide-react";
+import { Facebook, Youtube, Mail, Phone, Linkedin, Instagram, ArrowUp, MapPin, Code2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import madrasahLogo from "@/assets/madrasah-logo.png";
@@ -192,15 +192,47 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Bottom Copyright Section */}
-          <div className="border-t border-white/10 pt-6">
+          {/* Developer Bar */}
+          <div className="border-t border-white/10 pt-6 pb-4">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+              <div className="flex items-center gap-2">
+                <Code2 className="w-4 h-4 text-islamic-gold" />
+                <span className="text-white/80 font-bengali text-sm">ডেভেলপার:</span>
+                <span className="text-islamic-gold font-english font-semibold">HigzenDev</span>
+              </div>
+              <div className="flex gap-2">
+                <a href="#" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] transition-all duration-300">
+                  <Facebook className="w-4 h-4" />
+                </a>
+                <a href="#" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] transition-all duration-300">
+                  <Youtube className="w-4 h-4" />
+                </a>
+                <a href="#" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] transition-all duration-300">
+                  <Instagram className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Copyright Bar */}
+          <div className="border-t border-white/10 py-4">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
               <p className="text-white/70 font-bengali text-center md:text-left">
-                © {currentYear} তা'লিমুল ইন্সান হাফেজিয়া কওমী মাদ্রাসা ও লিল্লাহ বোডিং | সর্বস্বত্ব সংরক্ষিত।
+                © {currentYear} তা'লিমুল ইন্সান হাফেজিয়া কওমী মাদ্রাসা | সর্বস্বত্ব সংরক্ষিত।
               </p>
-              <p className="text-white/60 text-xs font-english">
-                Designed & Developed by <span className="text-islamic-gold">American Best IT Limited</span>
-              </p>
+              
+              <div className="flex items-center gap-4 md:gap-6">
+                <Link to="/privacy-policy" className="text-white/70 hover:text-islamic-gold font-bengali text-sm transition-colors duration-300">
+                  গোপনীয়তা নীতি
+                </Link>
+                <Link to="/terms" className="text-white/70 hover:text-islamic-gold font-bengali text-sm transition-colors duration-300">
+                  শর্তাবলী
+                </Link>
+                <div className="flex items-center gap-1 text-white/70">
+                  <Code2 className="w-3.5 h-3.5 text-islamic-gold" />
+                  <span className="font-bengali text-sm">ডেভেলপার</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
