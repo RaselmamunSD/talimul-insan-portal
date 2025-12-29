@@ -199,11 +199,11 @@ const Footer = () => {
                 href="https://higzendev.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 hover:opacity-80 transition-opacity duration-300"
+                className="flex items-center gap-2 group transition-all duration-300"
               >
-                <Code2 className="w-4 h-4 text-islamic-gold" />
-                <span className="text-white/80 font-bengali text-sm">ডেভেলপার:</span>
-                <span className="text-islamic-gold font-english font-semibold">HigzenDev</span>
+                <Code2 className="w-4 h-4 text-islamic-gold group-hover:text-white transition-colors duration-300" />
+                <span className="text-white/80 font-bengali text-sm group-hover:text-islamic-gold transition-colors duration-300">ডেভেলপার:</span>
+                <span className="text-islamic-gold font-english font-semibold group-hover:text-white transition-colors duration-300">HigzenDev</span>
               </a>
               <div className="flex gap-2">
                 <a href="#" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] transition-all duration-300">
@@ -233,8 +233,8 @@ const Footer = () => {
                 <Link to="/terms" className="text-white/70 hover:text-islamic-gold font-bengali text-sm transition-colors duration-300">
                   শর্তাবলী
                 </Link>
-                <Link to="/developer" className="flex items-center gap-1 text-white/70 hover:text-islamic-gold transition-colors duration-300">
-                  <Code2 className="w-3.5 h-3.5 text-islamic-gold" />
+                <Link to="/developer" className="flex items-center gap-1 text-white/70 hover:text-islamic-gold transition-colors duration-300 group">
+                  <Code2 className="w-3.5 h-3.5 text-islamic-gold group-hover:text-white transition-colors duration-300" />
                   <span className="font-bengali text-sm">ডেভেলপার</span>
                 </Link>
               </div>
