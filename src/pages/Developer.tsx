@@ -43,12 +43,12 @@ const Developer = () => {
       <Header />
       
       {/* Hero Section - Premium Design */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-[#0a1628] via-[#0f2847] to-[#0a1628] overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-islamic-dark-green via-emerald-800 to-teal-900 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-islamic-gold/20 rounded-full blur-[100px] animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-islamic-teal/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-islamic-green/10 rounded-full blur-[150px]"></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-islamic-gold/30 rounded-full blur-[100px] animate-pulse"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-400/15 rounded-full blur-[150px]"></div>
         </div>
         
         {/* Grid Pattern Overlay */}
@@ -89,23 +89,23 @@ const Developer = () => {
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex flex-wrap justify-center gap-8">
               <a 
                 href="https://higzendev.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-islamic-gold to-yellow-500 text-[#0a1628] px-10 py-5 rounded-full font-bold text-lg hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500 transform hover:scale-105"
+                className="group inline-flex items-center gap-4 bg-gradient-to-r from-islamic-gold via-yellow-400 to-islamic-gold text-islamic-dark-green px-12 py-6 rounded-full font-bold text-xl hover:shadow-[0_0_60px_rgba(212,175,55,0.6)] transition-all duration-500 transform hover:scale-105"
               >
-                <Globe className="w-6 h-6" />
+                <Globe className="w-7 h-7" />
                 <span className="font-english">Visit Website</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
               </a>
               
               <a 
                 href="mailto:info@higzendev.com"
-                className="group inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-10 py-5 rounded-full font-bold text-lg hover:bg-white/20 hover:border-islamic-gold transition-all duration-500"
+                className="group inline-flex items-center gap-4 bg-white/15 backdrop-blur-md text-white border-2 border-white/40 px-12 py-6 rounded-full font-bold text-xl hover:bg-white/25 hover:border-islamic-gold transition-all duration-500"
               >
-                <Mail className="w-6 h-6" />
+                <Mail className="w-7 h-7" />
                 <span className="font-bengali">যোগাযোগ করুন</span>
               </a>
             </div>
