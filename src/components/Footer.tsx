@@ -144,7 +144,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link
                       to={link.href}
-                      className="font-bengali text-sm text-white/75 hover:text-islamic-gold transition-all duration-300 inline-block relative story-link"
+                      className="font-bengali text-sm text-white/75 hover:text-islamic-green transition-all duration-300 inline-block relative story-link"
                     >
                       {link.label}
                     </Link>
@@ -163,7 +163,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link
                       to={link.href}
-                      className="font-bengali text-sm text-white/75 hover:text-islamic-gold transition-all duration-300 inline-block relative story-link"
+                      className="font-bengali text-sm text-white/75 hover:text-islamic-green transition-all duration-300 inline-block relative story-link"
                     >
                       {link.label}
                     </Link>
@@ -182,7 +182,7 @@ const Footer = () => {
                   <li key={index}>
                     <Link
                       to={link.href}
-                      className="font-bengali text-sm text-white/75 hover:text-islamic-gold transition-all duration-300 inline-block relative story-link"
+                      className="font-bengali text-sm text-white/75 hover:text-islamic-green transition-all duration-300 inline-block relative story-link"
                     >
                       {link.label}
                     </Link>
