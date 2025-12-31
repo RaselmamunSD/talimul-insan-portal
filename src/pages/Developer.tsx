@@ -89,23 +89,23 @@ const Developer = () => {
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center gap-5">
               <a 
                 href="https://higzendev.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-4 bg-gradient-to-r from-islamic-gold via-yellow-400 to-islamic-gold text-islamic-dark-green px-12 py-6 rounded-full font-bold text-xl hover:shadow-[0_0_60px_rgba(212,175,55,0.6)] transition-all duration-500 transform hover:scale-105"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-islamic-gold via-yellow-400 to-islamic-gold text-islamic-dark-green px-8 py-4 rounded-full font-bold text-base hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] transition-all duration-500 transform hover:scale-105"
               >
-                <Globe className="w-7 h-7" />
+                <Globe className="w-5 h-5" />
                 <span className="font-english">Visit Website</span>
-                <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
               
               <a 
                 href="mailto:info@higzendev.com"
-                className="group inline-flex items-center gap-4 bg-white/15 backdrop-blur-md text-white border-2 border-white/40 px-12 py-6 rounded-full font-bold text-xl hover:bg-white/25 hover:border-islamic-gold transition-all duration-500"
+                className="group inline-flex items-center gap-3 bg-white/15 backdrop-blur-md text-white border-2 border-white/40 px-8 py-4 rounded-full font-bold text-base hover:bg-white/25 hover:border-islamic-gold transition-all duration-500"
               >
-                <Mail className="w-7 h-7" />
+                <Mail className="w-5 h-5" />
                 <span className="font-bengali">যোগাযোগ করুন</span>
               </a>
             </div>
@@ -131,7 +131,9 @@ const Developer = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-islamic-gold/20 to-islamic-teal/20 rounded-3xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100"></div>
                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 text-center hover:border-islamic-gold/50 transition-all duration-500 hover:transform hover:scale-105">
-                  <stat.icon className="w-10 h-10 text-islamic-gold mx-auto mb-4" />
+                  <div className="w-14 h-14 bg-gradient-to-br from-islamic-gold/30 to-islamic-teal/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-8 h-8 text-islamic-gold" />
+                  </div>
                   <h3 className="text-4xl md:text-5xl font-bold text-white mb-2 font-bengali">{stat.value}</h3>
                   <p className="text-white/60 font-bengali">{stat.label}</p>
                 </div>
