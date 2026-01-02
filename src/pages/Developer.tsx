@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
 import { Code2, Globe, Mail, Phone, Facebook, Linkedin, Instagram, Youtube, ExternalLink, CheckCircle2, Sparkles, Rocket, Zap, Award, Users, Target, Star, ArrowRight, MessageCircle } from "lucide-react";
 
 const Developer = () => {
@@ -39,7 +38,6 @@ const Developer = () => {
 
   return (
     <div className="min-h-screen font-bengali">
-      <ScrollToTop />
       <Header />
       
       {/* Hero Section - Premium Design */}
