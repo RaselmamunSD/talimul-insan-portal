@@ -5,7 +5,6 @@ import { Maximize2 } from "lucide-react";
 import madrasahBuilding from "@/assets/madrasah-building.jpg";
 import mosqueSkyline from "@/assets/mosque-skyline.png";
 import Lightbox from "@/components/Lightbox";
-import ScrollToTop from "@/components/ScrollToTop";
 
 const galleryImages = [
   {
@@ -121,7 +120,6 @@ const Gallery = () => {
       />
       
       <Footer />
-      <ScrollToTop />
     </div>
   );
 };

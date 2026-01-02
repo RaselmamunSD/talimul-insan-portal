@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Contact from "@/components/Contact";
-import ScrollToTop from "@/components/ScrollToTop";
 
 const ContactPage = () => {
   return (
@@ -9,7 +8,6 @@ const ContactPage = () => {
       <Header />
       <Contact />
       <Footer />
-      <ScrollToTop />
     </div>
   );
 };
