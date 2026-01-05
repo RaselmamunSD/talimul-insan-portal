@@ -221,23 +221,10 @@ const Footer = () => {
 
           {/* Bottom Copyright Bar */}
           <div className="border-t border-white/10 py-4">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-              <p className="text-white/70 font-bengali text-center md:text-left">
+            <div className="flex justify-center items-center text-sm">
+              <p className="text-white/70 font-bengali text-center">
                 © {currentYear} তা'লিমুল ইন্সান হাফেজিয়া কওমী মাদ্রাসা | সর্বস্বত্ব সংরক্ষিত।
               </p>
-              
-              <div className="flex items-center gap-4 md:gap-6">
-                <Link to="/privacy-policy" className="text-white/70 hover:text-islamic-green font-bengali text-sm transition-colors duration-300">
-                  গোপনীয়তা নীতি
-                </Link>
-                <Link to="/terms" className="text-white/70 hover:text-islamic-green font-bengali text-sm transition-colors duration-300">
-                  শর্তাবলী
-                </Link>
-                <Link to="/developer" className="flex items-center gap-1 text-white/70 hover:text-islamic-green transition-colors duration-300 group">
-                  <Code2 className="w-3.5 h-3.5 text-islamic-gold group-hover:text-islamic-green transition-colors duration-300" />
-                  <span className="font-bengali text-sm">ডেভেলপার</span>
-                </Link>
-              </div>
             </div>
           </div>
         </div>
