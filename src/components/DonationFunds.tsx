@@ -1,66 +1,60 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
-import { Heart, Building2, Construction, Church, HandCoins, UtensilsCrossed, Users } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
+
+// Import donation images
+import donateOrphan from "@/assets/donate-orphan.jpg";
+import donateDevelopment from "@/assets/donate-development.jpg";
+import donateNewBuilding from "@/assets/donate-new-building.jpg";
+import donateMosque from "@/assets/donate-mosque.jpg";
+import donateZakat from "@/assets/donate-zakat.jpg";
+import donateRamadan from "@/assets/donate-ramadan.jpg";
+import donateMahfil from "@/assets/donate-mahfil.jpg";
 
 const donationCategories = [
   {
     id: "orphan-students",
     title: "এতিম ও অসহায় ছাত্রদের সাহায্য",
     description: "এতিম ও অসহায় ছাত্রদের শিক্ষা ও জীবনযাত্রার ব্যয় নির্বাহে সহায়তা করুন",
-    icon: Heart,
-    color: "text-red-500",
-    bgColor: "bg-red-50"
+    image: donateOrphan
   },
   {
     id: "madrasah-development",
     title: "মাদ্রাসার উন্নয়ন",
     description: "মাদ্রাসার সার্বিক উন্নয়ন ও রক্ষণাবেক্ষণে অবদান রাখুন",
-    icon: Building2,
-    color: "text-blue-500",
-    bgColor: "bg-blue-50"
+    image: donateDevelopment
   },
   {
     id: "new-building",
-    title: "মাদ্রাসার নতুন নির্মাণাধীন ভবনের জন্য",
+    title: "নতুন নির্মাণাধীন ভবন",
     description: "নতুন শিক্ষা ভবন নির্মাণে আপনার অবদান রাখুন",
-    icon: Construction,
-    color: "text-orange-500",
-    bgColor: "bg-orange-50"
+    image: donateNewBuilding
   },
   {
     id: "new-mosque",
-    title: "নতুন মসজিদ নির্মাণাধীন ভবনের জন্য",
+    title: "নতুন মসজিদ নির্মাণ",
     description: "নতুন মসজিদ নির্মাণে সাদাকায়ে জারিয়ায় অংশীদার হোন",
-    icon: Church,
-    color: "text-green-500",
-    bgColor: "bg-green-50"
+    image: donateMosque
   },
   {
     id: "zakat-fund",
-    title: "যাকাত ফান্ড",
+    title: "যাকাত তহবিল",
     description: "আপনার যাকাত দিয়ে দরিদ্র ছাত্রদের সাহায্য করুন",
-    icon: HandCoins,
-    color: "text-purple-500",
-    bgColor: "bg-purple-50"
+    image: donateZakat
   },
   {
     id: "ramadan-iftar",
-    title: "রমাদান ইফতার ও সেহেরী ফান্ড",
+    title: "রমাদান ইফতার ও সেহেরী",
     description: "রমাদান মাসে ছাত্রদের ইফতার ও সেহেরীর ব্যবস্থায় অংশ নিন",
-    icon: UtensilsCrossed,
-    color: "text-yellow-600",
-    bgColor: "bg-yellow-50"
+    image: donateRamadan
   },
   {
     id: "annual-mahfil",
     title: "বাৎসরিক মাহফিল",
     description: "বার্ষিক ওয়াজ মাহফিল আয়োজনে সহযোগিতা করুন",
-    icon: Users,
-    color: "text-indigo-500",
-    bgColor: "bg-indigo-50"
+    image: donateMahfil
   }
 ];
 
@@ -113,33 +107,41 @@ const DonationFunds = () => {
             className="w-full"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
-              {donationCategories.map((category) => {
-                const IconComponent = category.icon;
-                return (
-                  <CarouselItem key={category.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
-                    <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-white/20 bg-white/95 backdrop-blur-sm h-full">
-                      <CardHeader className={`${category.bgColor} pb-4 md:pb-6`}>
-                        <div className={`w-14 h-14 md:w-16 md:h-16 rounded-full ${category.bgColor} flex items-center justify-center mb-3 md:mb-4 mx-auto border-2 border-white shadow-lg`}>
-                          <IconComponent className={`w-7 h-7 md:w-8 md:h-8 ${category.color}`} />
-                        </div>
-                        <CardTitle className="font-bengali text-lg md:text-xl text-center min-h-[50px] md:min-h-[60px] flex items-center justify-center px-2">
-                          {category.title}
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="pt-4 pb-4 md:pt-6 md:pb-6 px-4">
-                        <CardDescription className="font-bengali text-sm md:text-base text-center mb-4 md:mb-6 min-h-[50px] md:min-h-[60px]">
-                          {category.description}
-                        </CardDescription>
-                        <Link to={`/donation-form?category=${category.id}`}>
-                          <Button className="w-full bg-islamic-green hover:bg-islamic-green/90 font-bengali text-base md:text-lg py-5 md:py-6 shadow-lg hover:shadow-xl transition-smooth">
-                            💝 দান করুন
-                          </Button>
-                        </Link>
-                      </CardContent>
-                    </Card>
-                  </CarouselItem>
-                );
-              })}
+              {donationCategories.map((category) => (
+                <CarouselItem key={category.id} className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3">
+                  <Card className="group overflow-hidden bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border-0 h-full">
+                    {/* Image Section */}
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={category.image} 
+                        alt={category.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
+                    
+                    {/* Content Section */}
+                    <CardContent className="p-5 text-center">
+                      {/* Title */}
+                      <h3 className="font-bengali text-xl font-bold text-islamic-dark-green mb-3 leading-tight min-h-[56px] flex items-center justify-center">
+                        {category.title}
+                      </h3>
+                      
+                      {/* Description */}
+                      <p className="font-bengali text-gray-600 text-sm leading-relaxed mb-5 min-h-[48px]">
+                        {category.description}
+                      </p>
+                      
+                      {/* Donate Button */}
+                      <Link to={`/donation-form?category=${category.id}`} className="block">
+                        <Button className="w-full bg-islamic-green hover:bg-islamic-dark-green text-white font-bengali text-base py-5 rounded-xl transition-all duration-300 hover:shadow-lg">
+                          দান করুন
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
             </CarouselContent>
             <CarouselPrevious className="hidden lg:flex -left-4 xl:-left-12 bg-white/90 hover:bg-white text-islamic-green border-2 border-islamic-green shadow-lg" />
             <CarouselNext className="hidden lg:flex -right-4 xl:-right-12 bg-white/90 hover:bg-white text-islamic-green border-2 border-islamic-green shadow-lg" />
