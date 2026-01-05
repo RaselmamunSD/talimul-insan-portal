@@ -152,14 +152,13 @@ const Header = () => {
       </div>
 
       {/* Main Header */}
-      <div className="bg-islamic-dark-green text-white py-4 lg:py-6 px-4">
+      <div className="bg-islamic-dark-green text-white py-3 px-4">
         <div className="container mx-auto">
-          {/* Top Row - English, Logo, Arabic */}
-          <div className="flex items-center justify-between gap-4 lg:gap-8">
+          <div className="flex items-center justify-center gap-4">
             {/* Left - English Name */}
             <div className="hidden lg:block text-left flex-1">
-              <p className="text-base lg:text-lg font-english font-bold leading-tight tracking-wide">
-                Talimul Insan Hafizia Qawmi Madrasah & Lillah Boarding
+              <p className="text-sm font-english font-semibold leading-tight">
+                Talimul Insan Hafizia<br />Qawmi Madrasah & Lillah Boarding
               </p>
             </div>
 
@@ -168,24 +167,24 @@ const Header = () => {
               <img 
                 src={madrasahLogo} 
                 alt="Madrasah Logo" 
-                className="w-20 h-20 lg:w-28 lg:h-28 object-contain rounded-full bg-white p-2 shadow-lg"
+                className="w-16 h-16 lg:w-20 lg:h-20 object-contain rounded-full bg-white p-2"
               />
             </div>
 
             {/* Right - Arabic Name */}
             <div className="hidden lg:block text-right flex-1">
-              <p className="text-base lg:text-lg font-arabic leading-relaxed tracking-wide">
-                المدرسة الحافظية و القومية تعليم الانسان و دار الايتام
+              <p className="text-sm font-arabic leading-relaxed">
+                المدرسة الحافظية و القومية<br />تعليم الانسان و دار الايتام
               </p>
             </div>
           </div>
           
-          {/* Bottom Row - Bengali Names */}
-          <div className="text-center mt-3 lg:mt-4">
-            <h1 className="text-xl lg:text-3xl font-bold font-bengali leading-tight">
+          {/* Bengali Names - Center */}
+          <div className="text-center mt-2">
+            <h1 className="text-lg lg:text-2xl font-bold font-bengali leading-tight">
               হাড়ীভাঙ্গা তা'লিমুল ইন্‌স্সান হাফেজিয়া কওমী মাদ্রাসা ও লিল্লাহ বোডিং
             </h1>
-            <p className="text-sm lg:text-base font-bengali mt-2 opacity-90">
+            <p className="text-xs lg:text-sm font-bengali mt-1">
               হাড়ীভাঙ্গা এয়ারপোর্ট সংলগ্ন, লালমনিরহাট।
             </p>
           </div>
