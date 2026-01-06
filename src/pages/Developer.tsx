@@ -234,102 +234,184 @@ const Developer = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-24 bg-gradient-to-br from-islamic-dark-green via-islamic-green to-islamic-teal relative overflow-hidden">
-        {/* Background Elements */}
+      {/* Contact Section - Premium Design */}
+      <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-[#0a1628] via-[#0f2847] to-[#0a1628] relative overflow-hidden">
+        {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-islamic-gold/10 rounded-full blur-[150px]"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-[150px]"></div>
+          <div className="absolute top-10 left-5 md:top-0 md:left-0 w-48 h-48 md:w-72 lg:w-96 md:h-72 lg:h-96 bg-islamic-gold/20 rounded-full blur-[80px] md:blur-[120px] animate-pulse"></div>
+          <div className="absolute bottom-10 right-5 md:bottom-0 md:right-0 w-48 h-48 md:w-72 lg:w-96 md:h-72 lg:h-96 bg-islamic-teal/20 rounded-full blur-[80px] md:blur-[120px] animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 lg:w-[500px] md:h-96 lg:h-[500px] bg-cyan-500/10 rounded-full blur-[100px] md:blur-[150px]"></div>
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <span className="inline-block px-6 py-2 bg-white/20 text-white rounded-full font-semibold mb-4">যোগাযোগ</span>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              আজই যোগাযোগ করুন
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:30px_30px] md:bg-[size:50px_50px]"></div>
+        
+        {/* Floating Particles */}
+        <div className="absolute inset-0 overflow-hidden hidden md:block">
+          {[...Array(15)].map((_, i) => (
+            <div 
+              key={i}
+              className="absolute w-1.5 h-1.5 bg-islamic-gold/30 rounded-full animate-pulse"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random() * 3}s`
+              }}
+            ></div>
+          ))}
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-10 md:mb-16">
+            <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-islamic-gold/20 to-islamic-teal/20 backdrop-blur-xl px-5 py-2 md:px-8 md:py-3 rounded-full mb-6 md:mb-8 border border-islamic-gold/30">
+              <div className="w-2 h-2 md:w-3 md:h-3 bg-islamic-gold rounded-full animate-pulse"></div>
+              <span className="text-islamic-gold font-semibold text-sm md:text-base">যোগাযোগ করুন</span>
+              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-islamic-gold" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+              আজই <span className="text-transparent bg-clip-text bg-gradient-to-r from-islamic-gold via-yellow-400 to-islamic-teal">যোগাযোগ</span> করুন
             </h2>
-            <div className="w-32 h-1.5 bg-islamic-gold mx-auto rounded-full"></div>
+            <p className="text-white/60 text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-6 px-4">
+              আপনার প্রজেক্ট নিয়ে আলোচনা করতে বা কোনো প্রশ্ন থাকলে যোগাযোগ করুন
+            </p>
+            <div className="w-24 md:w-32 h-1 md:h-1.5 bg-gradient-to-r from-islamic-gold via-islamic-teal to-cyan-400 mx-auto rounded-full"></div>
           </div>
           
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-xl rounded-[2rem] p-10 md:p-14 border border-white/20 shadow-2xl">
-              <div className="grid md:grid-cols-2 gap-8">
-                <a 
-                  href="https://higzendev.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-5 text-white hover:text-islamic-gold transition-all duration-300 group bg-white/5 rounded-2xl p-6 hover:bg-white/10"
-                >
-                  <div className="w-14 h-14 bg-gradient-to-br from-islamic-gold to-yellow-500 rounded-2xl flex items-center justify-center text-islamic-dark-green shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Globe className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <p className="text-white/60 text-sm mb-1">ওয়েবসাইট</p>
-                    <span className="font-english font-semibold text-lg">higzendev.com</span>
-                  </div>
-                </a>
-                
-                <a 
-                  href="mailto:info@higzendev.com"
-                  className="flex items-center gap-5 text-white hover:text-islamic-gold transition-all duration-300 group bg-white/5 rounded-2xl p-6 hover:bg-white/10"
-                >
-                  <div className="w-14 h-14 bg-gradient-to-br from-islamic-teal to-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <p className="text-white/60 text-sm mb-1">ইমেইল</p>
-                    <span className="font-english font-semibold text-lg">info@higzendev.com</span>
-                  </div>
-                </a>
-                
-                <a 
-                  href="tel:+8801700000000"
-                  className="flex items-center gap-5 text-white hover:text-islamic-gold transition-all duration-300 group bg-white/5 rounded-2xl p-6 hover:bg-white/10"
-                >
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Phone className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <p className="text-white/60 text-sm mb-1">ফোন</p>
-                    <span className="font-english font-semibold text-lg">+880 1700-000000</span>
-                  </div>
-                </a>
-                
-                <a 
-                  href="#"
-                  className="flex items-center gap-5 text-white hover:text-islamic-gold transition-all duration-300 group bg-white/5 rounded-2xl p-6 hover:bg-white/10"
-                >
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <MessageCircle className="w-7 h-7" />
-                  </div>
-                  <div>
-                    <p className="text-white/60 text-sm mb-1">হোয়াটসঅ্যাপ</p>
-                    <span className="font-english font-semibold text-lg">Chat Now</span>
-                  </div>
-                </a>
-              </div>
+          {/* Main Contact Card */}
+          <div className="max-w-5xl mx-auto">
+            <div className="relative">
+              {/* Card Glow Effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-islamic-gold/30 via-islamic-teal/30 to-cyan-500/30 rounded-[2rem] md:rounded-[2.5rem] blur-xl opacity-50"></div>
               
-              {/* Social Links */}
-              <div className="mt-12 pt-10 border-t border-white/20">
-                <p className="text-white/70 text-center mb-8 text-lg">সোশ্যাল মিডিয়াতে অনুসরণ করুন</p>
-                <div className="flex justify-center gap-5">
+              <div className="relative bg-white/10 backdrop-blur-2xl rounded-2xl md:rounded-[2rem] p-6 sm:p-8 md:p-10 lg:p-14 border border-white/20 shadow-2xl">
+                {/* Contact Info Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+                  {/* Website */}
+                  <a 
+                    href="https://higzendev.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-islamic-gold/50 transition-all duration-500 hover:scale-[1.02]"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-islamic-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-center gap-4 md:gap-5">
+                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-islamic-gold via-yellow-400 to-amber-500 rounded-xl md:rounded-2xl flex items-center justify-center text-islamic-dark-green shadow-lg shadow-islamic-gold/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                        <Globe className="w-6 h-6 md:w-7 lg:w-8 md:h-7 lg:h-8" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-white/50 text-xs md:text-sm mb-0.5 md:mb-1">ওয়েবসাইট</p>
+                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-islamic-gold transition-colors duration-300 truncate block">higzendev.com</span>
+                      </div>
+                      <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-white/40 group-hover:text-islamic-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0" />
+                    </div>
+                  </a>
+                  
+                  {/* Email */}
+                  <a 
+                    href="mailto:info@higzendev.com"
+                    className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-islamic-teal/50 transition-all duration-500 hover:scale-[1.02]"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-islamic-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-center gap-4 md:gap-5">
+                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-islamic-teal via-cyan-400 to-blue-500 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shadow-islamic-teal/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                        <Mail className="w-6 h-6 md:w-7 lg:w-8 md:h-7 lg:h-8" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-white/50 text-xs md:text-sm mb-0.5 md:mb-1">ইমেইল</p>
+                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-islamic-teal transition-colors duration-300 truncate block">info@higzendev.com</span>
+                      </div>
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white/40 group-hover:text-islamic-teal group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+                    </div>
+                  </a>
+                  
+                  {/* Phone */}
+                  <a 
+                    href="tel:+8801700000000"
+                    className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-green-500/50 transition-all duration-500 hover:scale-[1.02]"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-center gap-4 md:gap-5">
+                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shadow-green-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                        <Phone className="w-6 h-6 md:w-7 lg:w-8 md:h-7 lg:h-8" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-white/50 text-xs md:text-sm mb-0.5 md:mb-1">ফোন</p>
+                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-green-400 transition-colors duration-300 truncate block">+880 1700-000000</span>
+                      </div>
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white/40 group-hover:text-green-400 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+                    </div>
+                  </a>
+                  
+                  {/* WhatsApp */}
+                  <a 
+                    href="#"
+                    className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:scale-[1.02]"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-center gap-4 md:gap-5">
+                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-purple-500 via-pink-500 to-rose-500 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                        <MessageCircle className="w-6 h-6 md:w-7 lg:w-8 md:h-7 lg:h-8" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-white/50 text-xs md:text-sm mb-0.5 md:mb-1">হোয়াটসঅ্যাপ</p>
+                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-purple-400 transition-colors duration-300">Chat Now</span>
+                      </div>
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white/40 group-hover:text-purple-400 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+                    </div>
+                  </a>
+                </div>
+                
+                {/* Divider */}
+                <div className="relative my-8 md:my-10 lg:my-12">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-white/10"></div>
+                  </div>
+                  <div className="relative flex justify-center">
+                    <div className="bg-[#0f2847] px-4 md:px-6">
+                      <div className="flex items-center gap-2 md:gap-3">
+                        <div className="w-2 h-2 bg-islamic-gold rounded-full animate-pulse"></div>
+                        <span className="text-white/50 text-sm md:text-base">সোশ্যাল মিডিয়া</span>
+                        <div className="w-2 h-2 bg-islamic-teal rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Social Links */}
+                <div className="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-5">
                   {[
-                    { icon: Facebook, color: "from-blue-500 to-blue-700", label: "Facebook" },
-                    { icon: Youtube, color: "from-red-500 to-red-700", label: "YouTube" },
-                    { icon: Instagram, color: "from-pink-500 to-purple-600", label: "Instagram" },
-                    { icon: Linkedin, color: "from-blue-600 to-blue-800", label: "LinkedIn" }
+                    { icon: Facebook, color: "from-blue-500 to-blue-700", hoverColor: "hover:shadow-blue-500/40", label: "Facebook" },
+                    { icon: Youtube, color: "from-red-500 to-red-700", hoverColor: "hover:shadow-red-500/40", label: "YouTube" },
+                    { icon: Instagram, color: "from-pink-500 via-purple-500 to-orange-400", hoverColor: "hover:shadow-pink-500/40", label: "Instagram" },
+                    { icon: Linkedin, color: "from-blue-600 to-blue-800", hoverColor: "hover:shadow-blue-600/40", label: "LinkedIn" }
                   ].map((social, index) => (
                     <a 
                       key={index}
                       href="#" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className={`w-14 h-14 bg-gradient-to-br ${social.color} rounded-2xl flex items-center justify-center text-white shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-110`}
+                      className={`group w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br ${social.color} rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg ${social.hoverColor} hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-1`}
                       aria-label={social.label}
                     >
-                      <social.icon className="w-6 h-6" />
+                      <social.icon className="w-5 h-5 md:w-6 lg:w-7 md:h-6 lg:h-7 group-hover:scale-110 transition-transform duration-300" />
                     </a>
                   ))}
+                </div>
+                
+                {/* CTA Button */}
+                <div className="mt-8 md:mt-10 lg:mt-12 text-center">
+                  <a 
+                    href="https://higzendev.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-islamic-gold via-yellow-400 to-amber-500 text-islamic-dark-green px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-full font-bold text-sm md:text-base lg:text-lg hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] transition-all duration-500 transform hover:scale-105"
+                  >
+                    <Rocket className="w-4 h-4 md:w-5 lg:w-6 md:h-5 lg:h-6 group-hover:rotate-12 transition-transform duration-300" />
+                    <span className="font-bengali">আপনার প্রজেক্ট শুরু করুন</span>
+                    <ArrowRight className="w-4 h-4 md:w-5 lg:w-6 md:h-5 lg:h-6 group-hover:translate-x-1 transition-transform duration-300" />
+                  </a>
                 </div>
               </div>
             </div>
