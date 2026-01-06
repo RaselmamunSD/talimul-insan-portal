@@ -62,6 +62,24 @@ const Footer = () => {
         </div>
 
         <div className="container mx-auto px-4 pt-24 pb-8 relative z-10">
+          {/* Quick Links Bar */}
+          <div className="border-b border-white/10 pb-6 mb-10">
+            <div className="flex flex-wrap justify-center items-center gap-4 md:gap-8">
+              <Link to="/privacy-policy" className="text-white/70 hover:text-islamic-green font-bengali text-sm transition-colors duration-300">
+                গোপনীয়তা নীতি
+              </Link>
+              <span className="text-white/30">|</span>
+              <Link to="/terms" className="text-white/70 hover:text-islamic-green font-bengali text-sm transition-colors duration-300">
+                শর্তাবলী
+              </Link>
+              <span className="text-white/30">|</span>
+              <Link to="/developer" className="flex items-center gap-1 text-white/70 hover:text-islamic-green transition-colors duration-300 group">
+                <Code2 className="w-3.5 h-3.5 text-islamic-gold group-hover:text-islamic-green transition-colors duration-300" />
+                <span className="font-bengali text-sm">ডেভেলপার</span>
+              </Link>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
             {/* Company Info - Logo, Name, Address, Contact, Social */}
             <div className="space-y-5">
