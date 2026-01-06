@@ -61,13 +61,13 @@ const Footer = () => {
           <div className="islamic-pattern h-full w-full"></div>
         </div>
 
-        <div className="container mx-auto px-4 pt-24 pb-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-6 sm:pb-8 relative z-10">
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mb-8 sm:mb-12">
             {/* Company Info - Logo, Name, Address, Contact, Social */}
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5 col-span-2 sm:col-span-2 md:col-span-2 lg:col-span-1">
               <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-full bg-white/5 backdrop-blur-sm p-2 border border-islamic-gold/30">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white/5 backdrop-blur-sm p-1.5 sm:p-2 border border-islamic-gold/30">
                   <img 
                     src={madrasahLogo} 
                     alt="Madrasah Logo" 
@@ -75,7 +75,7 @@ const Footer = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-bengali font-bold text-lg text-islamic-gold">
+                  <h3 className="font-bengali font-bold text-base sm:text-lg text-islamic-gold">
                     তা'লিমুল ইন্সান
                   </h3>
                   <p className="text-xs text-white/70 font-bengali">
@@ -85,8 +85,8 @@ const Footer = () => {
               </div>
 
               {/* Address */}
-              <div className="flex items-start gap-3 text-sm text-white/80">
-                <MapPin className="w-4 h-4 mt-1 flex-shrink-0 text-islamic-gold" />
+              <div className="flex items-start gap-2 sm:gap-3 text-xs sm:text-sm text-white/80">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-islamic-gold" />
                 <p className="font-bengali leading-relaxed">
                   হাড়ীভাঙ্গা এয়ারপোর্ট সংলগ্ন,<br />
                   লালমনিরহাট, বাংলাদেশ
@@ -94,42 +94,42 @@ const Footer = () => {
               </div>
 
               {/* Phone */}
-              <div className="flex items-center gap-3 text-sm text-white/80">
+              <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-white/80">
                 <Phone className="w-4 h-4 flex-shrink-0 text-islamic-gold" />
                 <span>+880 1XXX-XXXXXX</span>
               </div>
 
               {/* Social Media */}
               <div className="pt-2">
-                <p className="font-bengali text-sm mb-3 text-white/90">আমাদের সাথে যুক্ত থাকুন</p>
+                <p className="font-bengali text-xs sm:text-sm mb-2 sm:mb-3 text-white/90">আমাদের সাথে যুক্ত থাকুন</p>
                 <div className="flex gap-2">
                   <a
                     href="#"
-                    className="w-9 h-9 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] border border-white/10 hover:border-islamic-gold transition-all duration-300 transform hover:scale-110"
+                    className="w-8 h-8 sm:w-9 sm:h-9 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] border border-white/10 hover:border-islamic-gold transition-all duration-300 transform hover:scale-110"
                     aria-label="Facebook"
                   >
-                    <Facebook className="w-4 h-4" />
+                    <Facebook className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
                   <a
                     href="#"
-                    className="w-9 h-9 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] border border-white/10 hover:border-islamic-gold transition-all duration-300 transform hover:scale-110"
+                    className="w-8 h-8 sm:w-9 sm:h-9 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] border border-white/10 hover:border-islamic-gold transition-all duration-300 transform hover:scale-110"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="w-4 h-4" />
+                    <Linkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
                   <a
                     href="#"
-                    className="w-9 h-9 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] border border-white/10 hover:border-islamic-gold transition-all duration-300 transform hover:scale-110"
+                    className="w-8 h-8 sm:w-9 sm:h-9 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] border border-white/10 hover:border-islamic-gold transition-all duration-300 transform hover:scale-110"
                     aria-label="Instagram"
                   >
-                    <Instagram className="w-4 h-4" />
+                    <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
                   <a
                     href="#"
-                    className="w-9 h-9 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] border border-white/10 hover:border-islamic-gold transition-all duration-300 transform hover:scale-110"
+                    className="w-8 h-8 sm:w-9 sm:h-9 bg-white/5 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-islamic-gold hover:text-[hsl(200,70%,8%)] border border-white/10 hover:border-islamic-gold transition-all duration-300 transform hover:scale-110"
                     aria-label="YouTube"
                   >
-                    <Youtube className="w-4 h-4" />
+                    <Youtube className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </a>
                 </div>
               </div>
@@ -137,15 +137,15 @@ const Footer = () => {
 
             {/* About Us Column */}
             <div>
-              <h4 className="font-bengali font-bold text-base mb-5 text-islamic-gold border-b border-islamic-gold/30 pb-2">
+              <h4 className="font-bengali font-bold text-sm sm:text-base mb-3 sm:mb-5 text-islamic-gold border-b border-islamic-gold/30 pb-2">
                 আমাদের সম্পর্কে
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-1.5 sm:space-y-2">
                 {links.aboutUs.map((link, index) => (
                   <li key={index}>
                     <Link
                       to={link.href}
-                      className="font-bengali text-sm text-white/75 hover:text-islamic-green transition-all duration-300 inline-block relative story-link"
+                      className="font-bengali text-xs sm:text-sm text-white/75 hover:text-islamic-green transition-all duration-300 inline-block relative story-link"
                     >
                       {link.label}
                     </Link>
@@ -156,15 +156,15 @@ const Footer = () => {
 
             {/* Guidance Column */}
             <div>
-              <h4 className="font-bengali font-bold text-base mb-5 text-islamic-gold border-b border-islamic-gold/30 pb-2">
+              <h4 className="font-bengali font-bold text-sm sm:text-base mb-3 sm:mb-5 text-islamic-gold border-b border-islamic-gold/30 pb-2">
                 শিক্ষা নির্দেশনা
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-1.5 sm:space-y-2">
                 {links.guidance.map((link, index) => (
                   <li key={index}>
                     <Link
                       to={link.href}
-                      className="font-bengali text-sm text-white/75 hover:text-islamic-green transition-all duration-300 inline-block relative story-link"
+                      className="font-bengali text-xs sm:text-sm text-white/75 hover:text-islamic-green transition-all duration-300 inline-block relative story-link"
                     >
                       {link.label}
                     </Link>
@@ -175,15 +175,15 @@ const Footer = () => {
 
             {/* Facilities Column */}
             <div>
-              <h4 className="font-bengali font-bold text-base mb-5 text-islamic-gold border-b border-islamic-gold/30 pb-2">
+              <h4 className="font-bengali font-bold text-sm sm:text-base mb-3 sm:mb-5 text-islamic-gold border-b border-islamic-gold/30 pb-2">
                 সুবিধাসমূহ
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-1.5 sm:space-y-2">
                 {links.facilities.map((link, index) => (
                   <li key={index}>
                     <Link
                       to={link.href}
-                      className="font-bengali text-sm text-white/75 hover:text-islamic-green transition-all duration-300 inline-block relative story-link"
+                      className="font-bengali text-xs sm:text-sm text-white/75 hover:text-islamic-green transition-all duration-300 inline-block relative story-link"
                     >
                       {link.label}
                     </Link>
@@ -194,48 +194,48 @@ const Footer = () => {
           </div>
 
           {/* Developer Bar */}
-          <div className="border-t border-white/10 pt-6 pb-4">
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+          <div className="border-t border-white/10 pt-4 sm:pt-6 pb-3 sm:pb-4">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-8">
               <a 
                 href="https://higzendev.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 group transition-all duration-300 px-4 py-2 rounded-lg hover:bg-islamic-green/20"
+                className="flex items-center gap-2 group transition-all duration-300 px-3 sm:px-4 py-2 rounded-lg hover:bg-islamic-green/20"
               >
-                <Code2 className="w-4 h-4 text-islamic-gold group-hover:text-islamic-green transition-colors duration-300" />
-                <span className="text-white/80 font-bengali text-sm group-hover:text-islamic-green transition-colors duration-300">ডেভেলপার:</span>
-                <span className="text-islamic-gold font-english font-semibold group-hover:text-islamic-green transition-colors duration-300">HigzenDev</span>
+                <Code2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-islamic-gold group-hover:text-islamic-green transition-colors duration-300" />
+                <span className="text-white/80 font-bengali text-xs sm:text-sm group-hover:text-islamic-green transition-colors duration-300">ডেভেলপার:</span>
+                <span className="text-islamic-gold font-english font-semibold text-sm sm:text-base group-hover:text-islamic-green transition-colors duration-300">HigzenDev</span>
               </a>
               <div className="flex gap-2">
-                <a href="#" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-green hover:text-white transition-all duration-300 hover:scale-110">
-                  <Facebook className="w-4 h-4" />
+                <a href="#" className="w-7 h-7 sm:w-8 sm:h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-green hover:text-white transition-all duration-300 hover:scale-110">
+                  <Facebook className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </a>
-                <a href="#" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-green hover:text-white transition-all duration-300 hover:scale-110">
-                  <Youtube className="w-4 h-4" />
+                <a href="#" className="w-7 h-7 sm:w-8 sm:h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-green hover:text-white transition-all duration-300 hover:scale-110">
+                  <Youtube className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </a>
-                <a href="#" className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-green hover:text-white transition-all duration-300 hover:scale-110">
-                  <Instagram className="w-4 h-4" />
+                <a href="#" className="w-7 h-7 sm:w-8 sm:h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-islamic-green hover:text-white transition-all duration-300 hover:scale-110">
+                  <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </a>
               </div>
             </div>
           </div>
 
           {/* Bottom Copyright Bar */}
-          <div className="border-t border-white/10 py-4">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-              <div className="flex flex-wrap items-center gap-4 md:gap-6">
-                <Link to="/privacy-policy" className="text-white/70 hover:text-islamic-green font-bengali text-sm transition-colors duration-300">
+          <div className="border-t border-white/10 py-3 sm:py-4">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm">
+              <div className="flex flex-wrap justify-center sm:justify-start items-center gap-3 sm:gap-4 md:gap-6">
+                <Link to="/privacy-policy" className="text-white/70 hover:text-islamic-green font-bengali text-xs sm:text-sm transition-colors duration-300">
                   গোপনীয়তা নীতি
                 </Link>
-                <Link to="/terms" className="text-white/70 hover:text-islamic-green font-bengali text-sm transition-colors duration-300">
+                <Link to="/terms" className="text-white/70 hover:text-islamic-green font-bengali text-xs sm:text-sm transition-colors duration-300">
                   শর্তাবলী
                 </Link>
                 <Link to="/developer" className="flex items-center gap-1 text-white/70 hover:text-islamic-green transition-colors duration-300 group">
-                  <Code2 className="w-3.5 h-3.5 text-islamic-gold group-hover:text-islamic-green transition-colors duration-300" />
-                  <span className="font-bengali text-sm">ডেভেলপার</span>
+                  <Code2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-islamic-gold group-hover:text-islamic-green transition-colors duration-300" />
+                  <span className="font-bengali text-xs sm:text-sm">ডেভেলপার</span>
                 </Link>
               </div>
-              <p className="text-white/70 font-bengali text-center md:text-right">
+              <p className="text-white/70 font-bengali text-center sm:text-right text-xs sm:text-sm">
                 © {currentYear} তা'লিমুল ইন্সান হাফেজিয়া কওমী মাদ্রাসা | সর্বস্বত্ব সংরক্ষিত।
               </p>
             </div>
