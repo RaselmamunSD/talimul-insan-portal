@@ -47,28 +47,32 @@ const Developer = () => {
       <Header />
       
       {/* Hero Section - Premium Design */}
-      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-islamic-dark-green via-emerald-800 to-teal-900 overflow-hidden">
+      <section className="relative min-h-[90vh] flex items-center bg-gradient-to-br from-slate-950 via-indigo-950 to-violet-950 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-islamic-gold/30 rounded-full blur-[100px] animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-400/15 rounded-full blur-[150px]"></div>
+          <div className="absolute top-10 left-5 w-64 h-64 md:w-96 md:h-96 bg-gradient-to-br from-violet-500/40 to-fuchsia-500/30 rounded-full blur-[100px] md:blur-[150px] animate-pulse"></div>
+          <div className="absolute bottom-10 right-5 w-72 h-72 md:w-[500px] md:h-[500px] bg-gradient-to-br from-cyan-500/30 to-blue-500/40 rounded-full blur-[100px] md:blur-[180px] animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] md:w-[700px] md:h-[700px] bg-gradient-to-br from-indigo-500/20 to-purple-500/25 rounded-full blur-[150px] md:blur-[200px]"></div>
+          <div className="absolute top-1/4 right-1/4 w-32 h-32 md:w-64 md:h-64 bg-gradient-to-br from-rose-500/25 to-orange-500/20 rounded-full blur-[80px] md:blur-[120px] animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
         
-        {/* Grid Pattern Overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
+        {/* Mesh Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:40px_40px] md:bg-[size:60px_60px]"></div>
         
-        {/* Floating Particles */}
+        {/* Radial Gradient Overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,rgba(15,23,42,0.5)_100%)]"></div>
+        
+        {/* Floating Orbs */}
         <div className="absolute inset-0 overflow-hidden">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(25)].map((_, i) => (
             <div 
               key={i}
-              className="absolute w-1 h-1 bg-islamic-gold/40 rounded-full animate-pulse"
+              className={`absolute rounded-full animate-pulse ${i % 3 === 0 ? 'w-2 h-2 bg-violet-400/50' : i % 3 === 1 ? 'w-1.5 h-1.5 bg-cyan-400/40' : 'w-1 h-1 bg-fuchsia-400/60'}`}
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${2 + Math.random() * 4}s`
               }}
             ></div>
           ))}
@@ -77,39 +81,40 @@ const Developer = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-5xl mx-auto">
             {/* Badge */}
-            <div className="inline-flex items-center gap-3 bg-gradient-to-r from-islamic-gold/20 to-islamic-teal/20 backdrop-blur-xl px-8 py-4 rounded-full mb-10 border border-islamic-gold/30 shadow-2xl">
-              <div className="w-3 h-3 bg-islamic-gold rounded-full animate-pulse"></div>
-              <span className="text-islamic-gold font-english font-semibold text-lg tracking-wide">Professional Software Development</span>
-              <Sparkles className="w-5 h-5 text-islamic-gold animate-pulse" />
+            <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-violet-500/20 via-fuchsia-500/15 to-cyan-500/20 backdrop-blur-2xl px-5 py-2.5 md:px-8 md:py-4 rounded-full mb-8 md:mb-10 border border-violet-400/30 shadow-[0_0_40px_rgba(139,92,246,0.15)]">
+              <div className="w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full animate-pulse shadow-lg shadow-violet-500/50"></div>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 via-fuchsia-300 to-cyan-300 font-english font-semibold text-sm md:text-lg tracking-wide">Professional Software Development</span>
+              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-fuchsia-400 animate-pulse" />
             </div>
             
             {/* Main Title */}
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-islamic-gold to-islamic-teal mb-8 font-english tracking-tight">
-              Higzen<span className="text-islamic-gold">Dev</span>
+            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 md:mb-8 font-english tracking-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-violet-200 to-white">Higzen</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 drop-shadow-[0_0_30px_rgba(139,92,246,0.5)]">Dev</span>
             </h1>
             
-            <p className="text-xl md:text-2xl lg:text-3xl text-white/70 mb-12 font-bengali leading-relaxed max-w-3xl mx-auto">
-              আধুনিক প্রযুক্তি ব্যবহার করে আপনার ব্যবসার জন্য <span className="text-islamic-gold font-semibold">উদ্ভাবনী ডিজিটাল সলিউশন</span> তৈরি করি
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-slate-300/80 mb-10 md:mb-12 font-bengali leading-relaxed max-w-3xl mx-auto px-4">
+              আধুনিক প্রযুক্তি ব্যবহার করে আপনার ব্যবসার জন্য <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400 font-semibold">উদ্ভাবনী ডিজিটাল সলিউশন</span> তৈরি করি
             </p>
             
             {/* CTA Buttons */}
-            <div className="flex flex-wrap justify-center gap-5">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-5">
               <a 
                 href="https://higzendev.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-islamic-gold via-yellow-400 to-islamic-gold text-islamic-dark-green px-8 py-4 rounded-full font-bold text-base hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] transition-all duration-500 transform hover:scale-105"
+                className="group inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500 text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-base shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:shadow-[0_0_50px_rgba(139,92,246,0.6)] transition-all duration-500 transform hover:scale-105 border border-violet-400/30"
               >
-                <Globe className="w-5 h-5" />
+                <Globe className="w-4 h-4 md:w-5 md:h-5" />
                 <span className="font-english">Visit Website</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="w-3 h-3 md:w-4 md:h-4 group-hover:translate-x-1 transition-transform duration-300" />
               </a>
               
               <a 
                 href="mailto:info@higzendev.com"
-                className="group inline-flex items-center gap-3 bg-white/15 backdrop-blur-md text-white border-2 border-white/40 px-8 py-4 rounded-full font-bold text-base hover:bg-white/25 hover:border-islamic-gold transition-all duration-500"
+                className="group inline-flex items-center gap-2 md:gap-3 bg-white/5 backdrop-blur-xl text-white border border-white/20 px-6 py-3 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-base hover:bg-white/10 hover:border-violet-400/50 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)] transition-all duration-500"
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 h-4 md:w-5 md:h-5" />
                 <span className="font-bengali">যোগাযোগ করুন</span>
               </a>
             </div>
@@ -117,7 +122,7 @@ const Developer = () => {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-8 h-14 border-2 border-white/30 rounded-full flex justify-center pt-2">
             <div className="w-2 h-4 bg-islamic-gold rounded-full animate-pulse"></div>
           </div>
@@ -241,28 +246,32 @@ const Developer = () => {
       </section>
 
       {/* Contact Section - Premium Design */}
-      <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-[#0a1628] via-[#0f2847] to-[#0a1628] relative overflow-hidden">
+      <section className="py-16 md:py-24 lg:py-32 bg-gradient-to-br from-slate-950 via-purple-950/80 to-slate-950 relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
-          <div className="absolute top-10 left-5 md:top-0 md:left-0 w-48 h-48 md:w-72 lg:w-96 md:h-72 lg:h-96 bg-islamic-gold/20 rounded-full blur-[80px] md:blur-[120px] animate-pulse"></div>
-          <div className="absolute bottom-10 right-5 md:bottom-0 md:right-0 w-48 h-48 md:w-72 lg:w-96 md:h-72 lg:h-96 bg-islamic-teal/20 rounded-full blur-[80px] md:blur-[120px] animate-pulse" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 lg:w-[500px] md:h-96 lg:h-[500px] bg-cyan-500/10 rounded-full blur-[100px] md:blur-[150px]"></div>
+          <div className="absolute top-10 left-5 md:top-0 md:left-0 w-48 h-48 md:w-80 lg:w-[450px] md:h-80 lg:h-[450px] bg-gradient-to-br from-violet-600/30 to-fuchsia-500/25 rounded-full blur-[80px] md:blur-[150px] animate-pulse"></div>
+          <div className="absolute bottom-10 right-5 md:bottom-0 md:right-0 w-48 h-48 md:w-80 lg:w-[450px] md:h-80 lg:h-[450px] bg-gradient-to-br from-cyan-500/25 to-blue-600/30 rounded-full blur-[80px] md:blur-[150px] animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-[500px] lg:w-[600px] md:h-[500px] lg:h-[600px] bg-gradient-to-br from-purple-500/15 to-indigo-500/20 rounded-full blur-[100px] md:blur-[180px]"></div>
+          <div className="absolute top-1/4 right-1/3 w-32 h-32 md:w-48 md:h-48 bg-gradient-to-br from-rose-500/20 to-pink-500/15 rounded-full blur-[60px] md:blur-[100px] animate-pulse" style={{ animationDelay: '2.5s' }}></div>
         </div>
         
-        {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:30px_30px] md:bg-[size:50px_50px]"></div>
+        {/* Mesh Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:30px_30px] md:bg-[size:50px_50px]"></div>
+        
+        {/* Radial Overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,transparent_0%,rgba(15,23,42,0.6)_100%)]"></div>
         
         {/* Floating Particles */}
         <div className="absolute inset-0 overflow-hidden hidden md:block">
-          {[...Array(15)].map((_, i) => (
+          {[...Array(20)].map((_, i) => (
             <div 
               key={i}
-              className="absolute w-1.5 h-1.5 bg-islamic-gold/30 rounded-full animate-pulse"
+              className={`absolute rounded-full animate-pulse ${i % 3 === 0 ? 'w-2 h-2 bg-violet-400/40' : i % 3 === 1 ? 'w-1.5 h-1.5 bg-cyan-400/35' : 'w-1 h-1 bg-fuchsia-400/50'}`}
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random() * 3}s`
+                animationDelay: `${Math.random() * 4}s`,
+                animationDuration: `${2 + Math.random() * 4}s`
               }}
             ></div>
           ))}
@@ -271,27 +280,27 @@ const Developer = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-10 md:mb-16">
-            <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-islamic-gold/20 to-islamic-teal/20 backdrop-blur-xl px-5 py-2 md:px-8 md:py-3 rounded-full mb-6 md:mb-8 border border-islamic-gold/30">
-              <div className="w-2 h-2 md:w-3 md:h-3 bg-islamic-gold rounded-full animate-pulse"></div>
-              <span className="text-islamic-gold font-semibold text-sm md:text-base">যোগাযোগ করুন</span>
-              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-islamic-gold" />
+            <div className="inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-violet-500/20 via-fuchsia-500/15 to-cyan-500/20 backdrop-blur-2xl px-5 py-2 md:px-8 md:py-3 rounded-full mb-6 md:mb-8 border border-violet-400/30 shadow-[0_0_30px_rgba(139,92,246,0.15)]">
+              <div className="w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full animate-pulse shadow-lg shadow-violet-500/50"></div>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-fuchsia-300 font-semibold text-sm md:text-base">যোগাযোগ করুন</span>
+              <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-fuchsia-400 animate-pulse" />
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
-              আজই <span className="text-transparent bg-clip-text bg-gradient-to-r from-islamic-gold via-yellow-400 to-islamic-teal">যোগাযোগ</span> করুন
+              আজই <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-cyan-400 drop-shadow-[0_0_20px_rgba(139,92,246,0.4)]">যোগাযোগ</span> করুন
             </h2>
-            <p className="text-white/60 text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-6 px-4">
+            <p className="text-slate-400 text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-6 px-4">
               আপনার প্রজেক্ট নিয়ে আলোচনা করতে বা কোনো প্রশ্ন থাকলে যোগাযোগ করুন
             </p>
-            <div className="w-24 md:w-32 h-1 md:h-1.5 bg-gradient-to-r from-islamic-gold via-islamic-teal to-cyan-400 mx-auto rounded-full"></div>
+            <div className="w-24 md:w-32 h-1 md:h-1.5 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-cyan-500 mx-auto rounded-full shadow-[0_0_15px_rgba(139,92,246,0.4)]"></div>
           </div>
           
           {/* Main Contact Card */}
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               {/* Card Glow Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-islamic-gold/30 via-islamic-teal/30 to-cyan-500/30 rounded-[2rem] md:rounded-[2.5rem] blur-xl opacity-50"></div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-violet-500/40 via-fuchsia-500/30 to-cyan-500/40 rounded-[2rem] md:rounded-[2.5rem] blur-2xl opacity-60"></div>
               
-              <div className="relative bg-white/10 backdrop-blur-2xl rounded-2xl md:rounded-[2rem] p-6 sm:p-8 md:p-10 lg:p-14 border border-white/20 shadow-2xl">
+              <div className="relative bg-white/5 backdrop-blur-2xl rounded-2xl md:rounded-[2rem] p-6 sm:p-8 md:p-10 lg:p-14 border border-white/10 shadow-[0_0_50px_rgba(139,92,246,0.1)]">
                 {/* Contact Info Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
                   {/* Website */}
@@ -299,72 +308,72 @@ const Developer = () => {
                     href="https://higzendev.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-islamic-gold/50 transition-all duration-500 hover:scale-[1.02]"
+                    className="group relative overflow-hidden bg-gradient-to-br from-white/8 to-white/3 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-violet-400/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(139,92,246,0.2)]"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-islamic-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 to-fuchsia-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative flex items-center gap-4 md:gap-5">
-                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-islamic-gold via-yellow-400 to-amber-500 rounded-xl md:rounded-2xl flex items-center justify-center text-islamic-dark-green shadow-lg shadow-islamic-gold/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-violet-500 via-fuchsia-500 to-pink-500 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shadow-violet-500/40 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                         <Globe className="w-6 h-6 md:w-7 lg:w-8 md:h-7 lg:h-8" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-white/50 text-xs md:text-sm mb-0.5 md:mb-1">ওয়েবসাইট</p>
-                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-islamic-gold transition-colors duration-300 truncate block">higzendev.com</span>
+                        <p className="text-slate-500 text-xs md:text-sm mb-0.5 md:mb-1">ওয়েবসাইট</p>
+                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-violet-300 transition-colors duration-300 truncate block">higzendev.com</span>
                       </div>
-                      <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-white/40 group-hover:text-islamic-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0" />
+                      <ExternalLink className="w-4 h-4 md:w-5 md:h-5 text-slate-500 group-hover:text-violet-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300 flex-shrink-0" />
                     </div>
                   </a>
                   
                   {/* Email */}
                   <a 
                     href="mailto:info@higzendev.com"
-                    className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-islamic-teal/50 transition-all duration-500 hover:scale-[1.02]"
+                    className="group relative overflow-hidden bg-gradient-to-br from-white/8 to-white/3 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-cyan-400/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(34,211,238,0.2)]"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-islamic-teal/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative flex items-center gap-4 md:gap-5">
-                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-islamic-teal via-cyan-400 to-blue-500 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shadow-islamic-teal/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-cyan-500 via-blue-500 to-indigo-500 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shadow-cyan-500/40 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                         <Mail className="w-6 h-6 md:w-7 lg:w-8 md:h-7 lg:h-8" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-white/50 text-xs md:text-sm mb-0.5 md:mb-1">ইমেইল</p>
-                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-islamic-teal transition-colors duration-300 truncate block">info@higzendev.com</span>
+                        <p className="text-slate-500 text-xs md:text-sm mb-0.5 md:mb-1">ইমেইল</p>
+                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-cyan-300 transition-colors duration-300 truncate block">info@higzendev.com</span>
                       </div>
-                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white/40 group-hover:text-islamic-teal group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-slate-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
                     </div>
                   </a>
                   
                   {/* Phone */}
                   <a 
                     href="tel:+8801700000000"
-                    className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-green-500/50 transition-all duration-500 hover:scale-[1.02]"
+                    className="group relative overflow-hidden bg-gradient-to-br from-white/8 to-white/3 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-emerald-400/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(52,211,153,0.2)]"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-green-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative flex items-center gap-4 md:gap-5">
-                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shadow-green-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-emerald-500 via-green-500 to-teal-500 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shadow-emerald-500/40 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                         <Phone className="w-6 h-6 md:w-7 lg:w-8 md:h-7 lg:h-8" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-white/50 text-xs md:text-sm mb-0.5 md:mb-1">ফোন</p>
-                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-green-400 transition-colors duration-300 truncate block">+880 1700-000000</span>
+                        <p className="text-slate-500 text-xs md:text-sm mb-0.5 md:mb-1">ফোন</p>
+                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-emerald-300 transition-colors duration-300 truncate block">+880 1700-000000</span>
                       </div>
-                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white/40 group-hover:text-green-400 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-slate-500 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
                     </div>
                   </a>
                   
                   {/* WhatsApp */}
                   <a 
                     href="#"
-                    className="group relative overflow-hidden bg-gradient-to-br from-white/10 to-white/5 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-purple-500/50 transition-all duration-500 hover:scale-[1.02]"
+                    className="group relative overflow-hidden bg-gradient-to-br from-white/8 to-white/3 rounded-xl md:rounded-2xl p-5 md:p-6 lg:p-8 border border-white/10 hover:border-rose-400/50 transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(251,113,133,0.2)]"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative flex items-center gap-4 md:gap-5">
-                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-purple-500 via-pink-500 to-rose-500 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shadow-purple-500/30 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                      <div className="w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br from-rose-500 via-pink-500 to-fuchsia-500 rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg shadow-rose-500/40 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                         <MessageCircle className="w-6 h-6 md:w-7 lg:w-8 md:h-7 lg:h-8" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-white/50 text-xs md:text-sm mb-0.5 md:mb-1">হোয়াটসঅ্যাপ</p>
-                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-purple-400 transition-colors duration-300">Chat Now</span>
+                        <p className="text-slate-500 text-xs md:text-sm mb-0.5 md:mb-1">হোয়াটসঅ্যাপ</p>
+                        <span className="font-english font-bold text-base md:text-lg lg:text-xl text-white group-hover:text-rose-300 transition-colors duration-300">Chat Now</span>
                       </div>
-                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-white/40 group-hover:text-purple-400 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-slate-500 group-hover:text-rose-400 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0" />
                     </div>
                   </a>
                 </div>
@@ -375,11 +384,11 @@ const Developer = () => {
                     <div className="w-full border-t border-white/10"></div>
                   </div>
                   <div className="relative flex justify-center">
-                    <div className="bg-[#0f2847] px-4 md:px-6">
+                    <div className="bg-slate-950/80 backdrop-blur-sm px-4 md:px-6">
                       <div className="flex items-center gap-2 md:gap-3">
-                        <div className="w-2 h-2 bg-islamic-gold rounded-full animate-pulse"></div>
-                        <span className="text-white/50 text-sm md:text-base">সোশ্যাল মিডিয়া</span>
-                        <div className="w-2 h-2 bg-islamic-teal rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                        <div className="w-2 h-2 bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full animate-pulse shadow-lg shadow-violet-500/50"></div>
+                        <span className="text-slate-500 text-sm md:text-base">সোশ্যাল মিডিয়া</span>
+                        <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse shadow-lg shadow-cyan-500/50" style={{ animationDelay: '0.5s' }}></div>
                       </div>
                     </div>
                   </div>
@@ -388,17 +397,17 @@ const Developer = () => {
                 {/* Social Links */}
                 <div className="flex flex-wrap justify-center gap-3 md:gap-4 lg:gap-5">
                   {[
-                    { icon: Facebook, color: "from-blue-500 to-blue-700", hoverColor: "hover:shadow-blue-500/40", label: "Facebook" },
-                    { icon: Youtube, color: "from-red-500 to-red-700", hoverColor: "hover:shadow-red-500/40", label: "YouTube" },
-                    { icon: Instagram, color: "from-pink-500 via-purple-500 to-orange-400", hoverColor: "hover:shadow-pink-500/40", label: "Instagram" },
-                    { icon: Linkedin, color: "from-blue-600 to-blue-800", hoverColor: "hover:shadow-blue-600/40", label: "LinkedIn" }
+                    { icon: Facebook, color: "from-blue-500 via-blue-600 to-indigo-600", hoverColor: "hover:shadow-blue-500/50", label: "Facebook" },
+                    { icon: Youtube, color: "from-red-500 via-rose-500 to-pink-600", hoverColor: "hover:shadow-red-500/50", label: "YouTube" },
+                    { icon: Instagram, color: "from-fuchsia-500 via-pink-500 to-orange-400", hoverColor: "hover:shadow-fuchsia-500/50", label: "Instagram" },
+                    { icon: Linkedin, color: "from-blue-600 via-indigo-600 to-violet-600", hoverColor: "hover:shadow-indigo-600/50", label: "LinkedIn" }
                   ].map((social, index) => (
                     <a 
                       key={index}
                       href="#" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className={`group w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br ${social.color} rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg ${social.hoverColor} hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-1`}
+                      className={`group w-12 h-12 md:w-14 lg:w-16 md:h-14 lg:h-16 bg-gradient-to-br ${social.color} rounded-xl md:rounded-2xl flex items-center justify-center text-white shadow-lg ${social.hoverColor} hover:shadow-2xl transition-all duration-500 hover:scale-110 hover:-translate-y-2 border border-white/10`}
                       aria-label={social.label}
                     >
                       <social.icon className="w-5 h-5 md:w-6 lg:w-7 md:h-6 lg:h-7 group-hover:scale-110 transition-transform duration-300" />
@@ -412,7 +421,7 @@ const Developer = () => {
                     href="https://higzendev.com" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="group inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-islamic-gold via-yellow-400 to-amber-500 text-islamic-dark-green px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-full font-bold text-sm md:text-base lg:text-lg hover:shadow-[0_0_40px_rgba(212,175,55,0.5)] transition-all duration-500 transform hover:scale-105"
+                    className="group inline-flex items-center gap-2 md:gap-3 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-violet-500 text-white px-6 py-3 md:px-8 md:py-4 lg:px-10 lg:py-5 rounded-full font-bold text-sm md:text-base lg:text-lg shadow-[0_0_30px_rgba(139,92,246,0.4)] hover:shadow-[0_0_50px_rgba(139,92,246,0.6)] transition-all duration-500 transform hover:scale-105 border border-violet-400/30"
                   >
                     <Rocket className="w-4 h-4 md:w-5 lg:w-6 md:h-5 lg:h-6 group-hover:rotate-12 transition-transform duration-300" />
                     <span className="font-bengali">আপনার প্রজেক্ট শুরু করুন</span>
