@@ -1,6 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Code2, Globe, Mail, Phone, Facebook, Linkedin, Instagram, Youtube, ExternalLink, CheckCircle2, Sparkles, Rocket, Zap, Award, Users, Target, Star, ArrowRight, MessageCircle } from "lucide-react";
+import { Code2, Globe, Mail, Phone, Facebook, Linkedin, Instagram, Youtube, ExternalLink, CheckCircle2, Sparkles, Rocket, Zap, Award, Users, Target, Star, ArrowRight, MessageCircle, HelpCircle } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Developer = () => {
   const services = [
@@ -415,6 +421,97 @@ const Developer = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-10 md:mb-16">
+            <div className="inline-flex items-center gap-2 md:gap-3 bg-islamic-teal/10 px-5 py-2 md:px-6 md:py-3 rounded-full mb-4 md:mb-6">
+              <HelpCircle className="w-4 h-4 md:w-5 md:h-5 text-islamic-teal" />
+              <span className="text-islamic-teal font-semibold text-sm md:text-base">সাধারণ প্রশ্নাবলী</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-islamic-dark-green mb-4 md:mb-6">
+              প্রায়শই জিজ্ঞাসিত <span className="text-islamic-teal">প্রশ্ন</span>
+            </h2>
+            <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto mb-6">
+              আমাদের সেবা সম্পর্কে সাধারণ প্রশ্নের উত্তর এখানে পাবেন
+            </p>
+            <div className="w-24 md:w-32 h-1 md:h-1.5 bg-gradient-to-r from-islamic-gold via-islamic-teal to-islamic-green mx-auto rounded-full"></div>
+          </div>
+
+          {/* FAQ Accordion */}
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="item-1" className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 px-6 overflow-hidden">
+                <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-islamic-dark-green hover:text-islamic-teal hover:no-underline py-5">
+                  আপনারা কোন ধরনের প্রজেক্ট নিয়ে কাজ করেন?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-sm md:text-base leading-relaxed pb-5">
+                  আমরা ওয়েবসাইট ডিজাইন ও ডেভেলপমেন্ট, মোবাইল অ্যাপ (iOS ও Android), ই-কমার্স সলিউশন, কাস্টম সফটওয়্যার, UI/UX ডিজাইন, ডিজিটাল মার্কেটিং, SEO অপ্টিমাইজেশন এবং গ্রাফিক্স ডিজাইন সহ বিভিন্ন ধরনের প্রজেক্ট নিয়ে কাজ করি।
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2" className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 px-6 overflow-hidden">
+                <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-islamic-dark-green hover:text-islamic-teal hover:no-underline py-5">
+                  একটি প্রজেক্ট সম্পন্ন করতে কতদিন সময় লাগে?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-sm md:text-base leading-relaxed pb-5">
+                  প্রজেক্টের ধরন ও জটিলতার উপর নির্ভর করে সময় পরিবর্তিত হয়। সাধারণত একটি বেসিক ওয়েবসাইট ১-২ সপ্তাহে, মাঝারি প্রজেক্ট ২-৪ সপ্তাহে এবং জটিল প্রজেক্ট ১-৩ মাসে সম্পন্ন হয়। আমরা সবসময় ডেডলাইন মেনে চলি।
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3" className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 px-6 overflow-hidden">
+                <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-islamic-dark-green hover:text-islamic-teal hover:no-underline py-5">
+                  প্রজেক্টের খরচ কিভাবে নির্ধারণ করা হয়?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-sm md:text-base leading-relaxed pb-5">
+                  প্রজেক্টের স্কোপ, ফিচার, জটিলতা এবং সময়সীমার উপর ভিত্তি করে খরচ নির্ধারণ করা হয়। প্রাথমিক আলোচনার পর আমরা একটি বিনামূল্যে কোটেশন প্রদান করি। আমরা স্বচ্ছ মূল্য নীতি অনুসরণ করি এবং কোনো লুকানো খরচ নেই।
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4" className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 px-6 overflow-hidden">
+                <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-islamic-dark-green hover:text-islamic-teal hover:no-underline py-5">
+                  প্রজেক্ট শেষে সাপোর্ট পাওয়া যাবে?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-sm md:text-base leading-relaxed pb-5">
+                  হ্যাঁ, অবশ্যই। প্রতিটি প্রজেক্টের সাথে আমরা বিনামূল্যে সাপোর্ট প্রদান করি। এছাড়াও আমাদের ২৪/৭ কাস্টমার সাপোর্ট টিম সবসময় আপনার পাশে আছে। দীর্ঘমেয়াদী মেইনটেন্যান্স প্যাকেজও পাওয়া যায়।
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5" className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 px-6 overflow-hidden">
+                <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-islamic-dark-green hover:text-islamic-teal hover:no-underline py-5">
+                  কিভাবে প্রজেক্ট শুরু করা যায়?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-sm md:text-base leading-relaxed pb-5">
+                  খুবই সহজ! আমাদের ওয়েবসাইটে যোগাযোগ ফর্ম পূরণ করুন অথবা সরাসরি ফোন/ইমেইল করুন। আমরা প্রাথমিক আলোচনা করব, আপনার প্রয়োজনীয়তা বুঝব এবং একটি প্রস্তাবনা প্রদান করব। অনুমোদনের পর কাজ শুরু হবে।
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6" className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-300 px-6 overflow-hidden">
+                <AccordionTrigger className="text-left text-base md:text-lg font-semibold text-islamic-dark-green hover:text-islamic-teal hover:no-underline py-5">
+                  পেমেন্ট পদ্ধতি কি কি?
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-600 text-sm md:text-base leading-relaxed pb-5">
+                  আমরা বিকাশ, নগদ, রকেট, ব্যাংক ট্রান্সফার এবং অনলাইন পেমেন্ট গ্রহণ করি। সাধারণত ৫০% অগ্রিম এবং ৫০% প্রজেক্ট ডেলিভারির সময় পেমেন্ট করতে হয়। বড় প্রজেক্টের জন্য মাইলস্টোন ভিত্তিক পেমেন্টও সম্ভব।
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-12 md:mt-16">
+            <p className="text-gray-600 mb-4">আরও কোনো প্রশ্ন আছে?</p>
+            <a 
+              href="mailto:info@higzendev.com"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-islamic-teal to-islamic-green text-white px-6 py-3 md:px-8 md:py-4 rounded-full font-semibold hover:shadow-lg hover:shadow-islamic-teal/30 transition-all duration-300 hover:scale-105"
+            >
+              <Mail className="w-4 h-4 md:w-5 md:h-5" />
+              <span>আমাদের জিজ্ঞাসা করুন</span>
+            </a>
           </div>
         </div>
       </section>
