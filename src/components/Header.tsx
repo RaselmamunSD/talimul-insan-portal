@@ -152,7 +152,9 @@ const Header = () => {
       </div>
 
       {/* Main Header */}
-      <div className="bg-islamic-dark-green text-white py-3 px-4">
+      <div className="bg-gradient-to-r from-islamic-dark-green via-islamic-green to-islamic-dark-green text-white py-3 px-4 relative overflow-hidden">
+        {/* Subtle shine effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
         <div className="container mx-auto">
           <div className="flex items-center justify-center gap-4">
             {/* Left - English Name */}
@@ -211,7 +213,7 @@ const Header = () => {
       </header>
 
       {/* Navigation Menu */}
-      <nav className="bg-islamic-dark-green text-white sticky top-0 z-50">
+      <nav className="bg-gradient-to-r from-islamic-dark-green via-islamic-green/90 to-islamic-dark-green text-white sticky top-0 z-50 shadow-lg">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 lg:h-auto">
             {/* Mobile Menu Button */}
