@@ -166,11 +166,14 @@ const Header = () => {
 
             {/* Center - Logo */}
             <div className="flex-shrink-0">
-              <img 
-                src={madrasahLogo} 
-                alt="Madrasah Logo" 
-                className="w-16 h-16 lg:w-20 lg:h-20 object-contain rounded-full bg-white p-2"
-              />
+              <div className="relative">
+                <div className="absolute inset-0 bg-white/40 rounded-full blur-md animate-pulse"></div>
+                <img 
+                  src={madrasahLogo} 
+                  alt="Madrasah Logo" 
+                  className="relative w-16 h-16 lg:w-20 lg:h-20 object-contain rounded-full bg-white p-2 shadow-[0_0_20px_rgba(255,255,255,0.5),0_0_40px_rgba(34,197,94,0.3)]"
+                />
+              </div>
             </div>
 
             {/* Right - Arabic Name */}
