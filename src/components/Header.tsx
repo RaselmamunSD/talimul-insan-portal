@@ -153,6 +153,8 @@ const Header = () => {
 
       {/* Main Header */}
       <div className="bg-gradient-to-r from-islamic-dark-green via-islamic-green to-islamic-dark-green text-white py-3 px-4 relative overflow-hidden">
+        {/* Islamic pattern overlay */}
+        <div className="absolute inset-0 islamic-pattern opacity-[0.04]"></div>
         {/* Subtle shine effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
         <div className="container mx-auto">
