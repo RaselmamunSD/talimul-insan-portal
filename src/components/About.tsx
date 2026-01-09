@@ -136,36 +136,39 @@ const About = () => {
           {features.map((feature, index) => (
             <Card 
               key={index}
-              className={`bg-white border border-border/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 rounded-2xl overflow-hidden h-full ${
+              className={`group bg-white border-2 border-transparent shadow-lg rounded-2xl overflow-hidden h-full transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-primary hover:bg-gradient-to-br hover:from-primary/5 hover:to-emerald-50 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}
-              style={{ transitionDelay: `${500 + index * 100}ms` }}
+              style={{ 
+                transitionDelay: `${500 + index * 100}ms`,
+              }}
             >
               {/* Image Section */}
               <div className="relative h-52 overflow-hidden">
                 <img 
                   src={feature.image} 
                   alt={feature.titleBn}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-105"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
               <CardContent className="p-6 flex flex-col h-auto">
                 {/* Category Tag */}
                 <div className="flex items-center gap-2 mb-3">
-                  <Sparkles className="w-4 h-4 text-primary" />
-                  <span className="text-sm font-bengali text-primary font-medium">
+                  <Sparkles className="w-4 h-4 text-primary transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" />
+                  <span className="text-sm font-bengali text-primary font-medium group-hover:text-emerald-600 transition-colors duration-300">
                     {feature.category}
                   </span>
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-bold font-bengali text-foreground mb-3">
+                <h3 className="text-xl font-bold font-bengali text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                   {feature.titleBn}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-sm font-bengali text-muted-foreground leading-relaxed mb-5">
+                <p className="text-sm font-bengali text-muted-foreground leading-relaxed mb-5 group-hover:text-foreground/80 transition-colors duration-300">
                   {feature.descBn}
                 </p>
                 
@@ -174,7 +177,7 @@ const About = () => {
                   asChild 
                   variant="outline" 
                   size="lg"
-                  className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-bengali font-semibold rounded-lg transition-all duration-300"
+                  className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-bengali font-semibold rounded-lg transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg"
                 >
                   <Link to={feature.link}>
                     বিস্তারিত দেখুন
