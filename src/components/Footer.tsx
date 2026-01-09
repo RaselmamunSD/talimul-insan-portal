@@ -46,7 +46,7 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="relative bg-gradient-to-b from-[hsl(200,60%,15%)] via-[hsl(200,65%,10%)] to-[hsl(200,70%,8%)] text-white overflow-hidden">
+      <footer className="relative bg-gradient-to-b from-islamic-dark-green via-[hsl(148,68%,18%)] to-[hsl(148,70%,12%)] text-white overflow-hidden">
         {/* Mosque Skyline Background Image at Top */}
         <div 
           className="absolute top-0 left-0 right-0 h-40 bg-no-repeat bg-center bg-cover opacity-30"
