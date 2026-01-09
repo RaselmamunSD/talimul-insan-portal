@@ -1,6 +1,7 @@
 import { Card, CardHeader, CardContent, CardTitle, CardDescription } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { BookOpen, GraduationCap, Heart, Sparkles, Clock, CheckCircle2 } from "lucide-react";
 
 const Programs = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -11,6 +12,9 @@ const Programs = () => {
       duration: "২-৩ বছর",
       description: "সম্পূর্ণ পবিত্র কুরআন মুখস্থকরণের জন্য বিশেষ প্রোগ্রাম। অভিজ্ঞ হাফেজদের তত্ত্বাবধানে তাজবীদ সহ সঠিক উচ্চারণে কুরআন মুখস্থ করার সুযোগ।",
       features: ["তাজবীদসহ শুদ্ধ উচ্চারণ", "নিয়মিত দোহরানো", "অভিজ্ঞ উস্তাদ", "বিনামূল্যে থাকা-খাওয়া"],
+      icon: BookOpen,
+      gradient: "from-emerald-500 to-teal-600",
+      lightGradient: "from-emerald-50 to-teal-50",
     },
     {
       titleBn: "কওমী মাদ্রাসা শিক্ষা",
@@ -18,6 +22,9 @@ const Programs = () => {
       duration: "৮-১০ বছর",
       description: "ঐতিহ্যবাহী কওমী শিক্ষা পাঠ্যক্রম অনুসরণ করে আরবি ভাষা, হাদিস, ফিকহ, উসূলে ফিকহ, মানতিক, ফালসাফা ইত্যাদি বিষয়ে গভীর জ্ঞান অর্জন।",
       features: ["দাওরায়ে হাদিস পর্যন্ত", "আরবি ভাষা দক্ষতা", "ইসলামী আইনশাস্ত্র", "মাদ্রাসা বোর্ড স্বীকৃত"],
+      icon: GraduationCap,
+      gradient: "from-blue-500 to-indigo-600",
+      lightGradient: "from-blue-50 to-indigo-50",
     },
     {
       titleBn: "নূরানী/নাযেরা বিভাগ",
@@ -25,6 +32,9 @@ const Programs = () => {
       duration: "১-২ বছর",
       description: "শিশুদের জন্য কুরআন শিক্ষার প্রাথমিক পর্যায়। আরবি বর্ণমালা থেকে শুরু করে সঠিক উচ্চারণে কুরআন তিলাওয়াত শিক্ষা।",
       features: ["কায়দা শিক্ষা", "তাজবীদ মৌলিক", "আমপারা", "শিশু-বান্ধব পরিবেশ"],
+      icon: Sparkles,
+      gradient: "from-amber-500 to-orange-600",
+      lightGradient: "from-amber-50 to-orange-50",
     },
     {
       titleBn: "লিল্লাহ বোডিং (এতিমখানা)",
@@ -32,13 +42,16 @@ const Programs = () => {
       duration: "স্থায়ী",
       description: "এতিম ও অসহায় শিশুদের জন্য সম্পূর্ণ বিনামূল্যে থাকা, খাওয়া, পড়াশোনা এবং চিকিৎসার ব্যবস্থা। ইসলামী পরিবেশে তাদের লালন-পালন ও শিক্ষা।",
       features: ["বিনামূল্যে সকল সুবিধা", "স্বাস্থ্যসেবা", "পোশাক ও বই", "আধ্যাত্মিক পরিচর্যা"],
+      icon: Heart,
+      gradient: "from-rose-500 to-pink-600",
+      lightGradient: "from-rose-50 to-pink-50",
     },
   ];
 
   return (
-    <section ref={ref} id="programs" className="py-16 px-4 bg-background">
+    <section ref={ref} id="programs" className="py-20 px-4 bg-gradient-to-b from-background via-muted/30 to-background">
       <div className="container mx-auto">
-        <div className={`text-center mb-12 transition-all duration-1000 ${
+        <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
           <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
@@ -50,55 +63,82 @@ const Programs = () => {
           <p className="text-lg font-english text-muted-foreground mt-2">
             Academic Programs
           </p>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-emerald-400 mx-auto mt-6 rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
-          {programs.map((program, index) => (
-            <Card 
-              key={index} 
-              className={`shadow-2xl hover:shadow-3xl transition-all hover:-translate-y-2 border-t-8 border-t-primary bg-gradient-to-br from-white to-muted/30 rounded-2xl overflow-hidden ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-              }`}
-              style={{ transitionDelay: `${200 + index * 150}ms` }}
-            >
-              <CardHeader className="pb-6 pt-8 px-8">
-                <div className="flex items-start justify-between mb-4">
-                  <Badge variant="secondary" className="font-bengali text-base px-4 py-2 shadow-md">
-                    ⏱️ {program.duration}
-                  </Badge>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {programs.map((program, index) => {
+            const IconComponent = program.icon;
+            return (
+              <Card 
+                key={index} 
+                className={`group relative bg-white border-2 border-transparent shadow-lg rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-primary/50 ${
+                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                }`}
+                style={{ 
+                  transitionDelay: `${200 + index * 150}ms`,
+                }}
+              >
+                {/* Gradient Header */}
+                <div className={`relative h-28 bg-gradient-to-r ${program.gradient} overflow-hidden`}>
+                  <div className="absolute inset-0 bg-[url('/islamic-pattern.png')] opacity-10"></div>
+                  <div className="absolute inset-0 flex items-center justify-between px-8">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-white/30 transition-all duration-500">
+                        <IconComponent className="w-8 h-8 text-white" />
+                      </div>
+                      <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 font-bengali text-sm px-4 py-2 group-hover:bg-white/30 transition-all duration-300">
+                        <Clock className="w-3.5 h-3.5 mr-2" />
+                        {program.duration}
+                      </Badge>
+                    </div>
+                  </div>
+                  {/* Decorative circles */}
+                  <div className="absolute -right-8 -top-8 w-32 h-32 rounded-full bg-white/10 group-hover:scale-125 transition-transform duration-700"></div>
+                  <div className="absolute -right-4 -bottom-12 w-24 h-24 rounded-full bg-white/5"></div>
                 </div>
-                <CardTitle className="text-3xl font-bengali text-primary mb-3 leading-snug">
-                  {program.titleBn}
-                </CardTitle>
-                <CardDescription className="text-xl font-arabic text-secondary">
-                  {program.titleAr}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="px-8 pb-8">
-                <p className="text-lg font-bengali text-muted-foreground mb-6 leading-relaxed">
-                  {program.description}
-                </p>
-                <div className="space-y-3 bg-muted/50 p-6 rounded-xl border border-primary/10">
-                  <p className="text-base font-bengali font-bold text-primary mb-4 flex items-center">
-                    <span className="mr-2">✨</span>
-                    বৈশিষ্ট্যসমূহ:
+
+                <CardHeader className="pb-4 pt-6 px-8">
+                  <CardTitle className="text-2xl font-bengali text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                    {program.titleBn}
+                  </CardTitle>
+                  <CardDescription className="text-lg font-arabic text-secondary/80">
+                    {program.titleAr}
+                  </CardDescription>
+                </CardHeader>
+
+                <CardContent className="px-8 pb-8">
+                  <p className="text-base font-bengali text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground/70 transition-colors duration-300">
+                    {program.description}
                   </p>
-                  <ul className="space-y-3">
-                    {program.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start text-base font-bengali">
-                        <span className="text-primary mr-3 text-xl mt-0.5">✓</span>
-                        <span className="leading-relaxed">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  
+                  <div className={`space-y-3 bg-gradient-to-br ${program.lightGradient} p-5 rounded-2xl border border-primary/10 group-hover:border-primary/20 transition-all duration-300`}>
+                    <p className="text-sm font-bengali font-bold text-primary mb-3 flex items-center">
+                      <Sparkles className="w-4 h-4 mr-2 group-hover:animate-pulse" />
+                      বৈশিষ্ট্যসমূহ:
+                    </p>
+                    <ul className="grid grid-cols-2 gap-2">
+                      {program.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-sm font-bengali group/item">
+                          <CheckCircle2 className="w-4 h-4 text-primary mr-2 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200" />
+                          <span className="leading-snug text-foreground/80">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </CardContent>
+
+                {/* Hover glow effect */}
+                <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{
+                  boxShadow: 'inset 0 0 0 2px hsl(var(--primary) / 0.3), 0 0 30px -5px hsl(var(--primary) / 0.3)'
+                }}></div>
+              </Card>
+            );
+          })}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-lg font-bengali text-muted-foreground mb-4">
+        <div className="text-center mt-14">
+          <p className="text-lg font-bengali text-muted-foreground">
             আরও বিস্তারিত জানতে এবং ভর্তির জন্য যোগাযোগ করুন
           </p>
         </div>
