@@ -1,52 +1,60 @@
 import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
-import { BookOpen, Heart, Users, GraduationCap, Star, Brain } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+
+// Import activity images
+import activityHifz from "@/assets/activity-hifz.jpg";
+import activityQawmi from "@/assets/activity-qawmi.jpg";
+import activityNurani from "@/assets/activity-nurani.jpg";
+import activityLillah from "@/assets/activity-lillah.jpg";
+import activityCharacter from "@/assets/activity-character.jpg";
+import activityKnowledge from "@/assets/activity-knowledge.jpg";
 
 const About = () => {
   const { ref, isVisible } = useScrollAnimation();
   const features = [
     {
-      icon: <BookOpen className="w-12 h-12 text-primary" />,
+      image: activityHifz,
       titleBn: "হিফজুল কুরআন",
-      titleEn: "Hifzul Quran",
-      descBn: "পবিত্র কুরআন সম্পূর্ণ মুখস্থ করার জন্য বিশেষায়িত প্রশিক্ষণ ও নিবিড় পরিচর্যা। অভিজ্ঞ শিক্ষকমণ্ডলীর তত্ত্বাবধানে তাজবিদসহ শুদ্ধভাবে কুরআন মুখস্থ করার সুযোগ।",
+      category: "নিয়মিত কার্যক্রম",
+      descBn: "পবিত্র কুরআন সম্পূর্ণ মুখস্থ করার জন্য বিশেষায়িত প্রশিক্ষণ ও নিবিড় পরিচর্যা।",
       link: "/hifz-department"
     },
     {
-      icon: <GraduationCap className="w-12 h-12 text-primary" />,
+      image: activityQawmi,
       titleBn: "কওমী শিক্ষা",
-      titleEn: "Qawmi Education",
-      descBn: "ঐতিহ্যবাহী কওমী শিক্ষা পাঠ্যক্রম অনুযায়ী আরবি ভাষা, ফিকহ, হাদিস, তাফসির ও অন্যান্য ইসলামী জ্ঞান অর্জনের ব্যবস্থা। দক্ষ ও অভিজ্ঞ উস্তাদগণের তত্ত্বাবধান।",
+      category: "নিয়মিত কার্যক্রম",
+      descBn: "ঐতিহ্যবাহী কওমী শিক্ষা পাঠ্যক্রম অনুযায়ী আরবি ভাষা ও ইসলামী জ্ঞান অর্জন।",
       link: "/qawmi-department"
     },
     {
-      icon: <Star className="w-12 h-12 text-primary" />,
+      image: activityNurani,
       titleBn: "নূরানী বিভাগ",
-      titleEn: "Nurani Department",
-      descBn: "ছোট শিশুদের জন্য নূরানী পদ্ধতিতে কুরআন শিক্ষার বিশেষ ব্যবস্থা। সহজ ও আধুনিক পদ্ধতিতে আরবি হরফ, শব্দ ও কুরআন পড়া শেখানো হয়।",
+      category: "নিয়মিত কার্যক্রম",
+      descBn: "ছোট শিশুদের জন্য নূরানী পদ্ধতিতে কুরআন শিক্ষার বিশেষ ব্যবস্থা।",
       link: "/nurani-department"
     },
     {
-      icon: <Heart className="w-12 h-12 text-primary" />,
+      image: activityLillah,
       titleBn: "লিল্লাহ বোডিং",
-      titleEn: "Lillah Boarding",
-      descBn: "এতিম ও অসহায় শিশুদের জন্য সম্পূর্ণ বিনামূল্যে আবাসন, খাবার, চিকিৎসা ও শিক্ষার ব্যবস্থা। আল্লাহর সন্তুষ্টির জন্য মানবসেবায় নিবেদিত।",
+      category: "নিয়মিত কার্যক্রম",
+      descBn: "এতিম ও অসহায় শিশুদের জন্য সম্পূর্ণ বিনামূল্যে আবাসন ও শিক্ষার ব্যবস্থা।",
       link: "/lillah-boarding"
     },
     {
-      icon: <Users className="w-12 h-12 text-primary" />,
+      image: activityCharacter,
       titleBn: "চরিত্র গঠন",
-      titleEn: "Character Building",
-      descBn: "ইসলামী মূল্যবোধ, নৈতিকতা, শিষ্টাচার ও সামাজিক দায়িত্ববোধ শিক্ষার মাধ্যমে আদর্শ মানুষ হিসেবে গড়ে তোলা। ব্যক্তিত্ব ও চরিত্র বিকাশে বিশেষ গুরুত্ব।",
+      category: "নিয়মিত কার্যক্রম",
+      descBn: "ইসলামী মূল্যবোধ ও নৈতিকতার মাধ্যমে আদর্শ মানুষ হিসেবে গড়ে তোলা।",
       link: "/features"
     },
     {
-      icon: <Brain className="w-12 h-12 text-primary" />,
+      image: activityKnowledge,
       titleBn: "সাধারণ জ্ঞান",
-      titleEn: "General Knowledge",
-      descBn: "ধর্মীয় শিক্ষার পাশাপাশি বাংলা, ইংরেজি, গণিত, বিজ্ঞান ও সমসাময়িক বিষয়ে সাধারণ জ্ঞান শিক্ষা প্রদান। শিক্ষার্থীদের বিশ্ব সম্পর্কে সচেতন করা এবং বাস্তব জীবনের জন্য প্রস্তুত করা।",
+      category: "নিয়মিত কার্যক্রম",
+      descBn: "ধর্মীয় শিক্ষার পাশাপাশি বাংলা, ইংরেজি, গণিত ও বিজ্ঞান শিক্ষা প্রদান।",
       link: "/features"
     },
   ];
@@ -124,60 +132,57 @@ const About = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {features.map((feature, index) => {
-            const bgColors = [
-              "bg-blue-50/80 border-blue-200",
-              "bg-purple-50/80 border-purple-200", 
-              "bg-green-50/80 border-green-200",
-              "bg-pink-50/80 border-pink-200",
-              "bg-indigo-50/80 border-indigo-200",
-              "bg-orange-50/80 border-orange-200"
-            ];
-            const iconBgColors = [
-              "bg-blue-500",
-              "bg-purple-500",
-              "bg-green-500", 
-              "bg-pink-500",
-              "bg-indigo-500",
-              "bg-orange-500"
-            ];
-            
-            return (
-              <Card 
-                key={index}
-                className={`${bgColors[index % 6]} border-2 shadow-lg hover:shadow-xl transition-all hover:-translate-y-2 rounded-2xl h-full ${
-                  isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
-                style={{ transitionDelay: `${500 + index * 100}ms` }}
-              >
-                <CardContent className="p-8 text-center flex flex-col h-full">
-                  <div className={`${iconBgColors[index % 6]} w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-md`}>
-                    {feature.icon}
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold font-bengali text-foreground mb-4">
-                    {feature.titleBn}
-                  </h3>
-                  
-                  <p className="text-base font-bengali text-muted-foreground leading-relaxed mb-6 flex-grow">
-                    {feature.descBn}
-                  </p>
-                  
-                  <Button 
-                    asChild 
-                    variant="ghost" 
-                    size="lg"
-                    className="text-primary hover:text-primary hover:bg-primary/10 font-bengali w-full"
-                  >
-                    <Link to={feature.link}>
-                      বিস্তারিত দেখুন →
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            );
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {features.map((feature, index) => (
+            <Card 
+              key={index}
+              className={`bg-white border border-border/50 shadow-lg hover:shadow-xl transition-all duration-500 hover:-translate-y-2 rounded-2xl overflow-hidden h-full ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+              }`}
+              style={{ transitionDelay: `${500 + index * 100}ms` }}
+            >
+              {/* Image Section */}
+              <div className="relative h-52 overflow-hidden">
+                <img 
+                  src={feature.image} 
+                  alt={feature.titleBn}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
+              </div>
+              
+              <CardContent className="p-6 flex flex-col h-auto">
+                {/* Category Tag */}
+                <div className="flex items-center gap-2 mb-3">
+                  <Sparkles className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-bengali text-primary font-medium">
+                    {feature.category}
+                  </span>
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-xl font-bold font-bengali text-foreground mb-3">
+                  {feature.titleBn}
+                </h3>
+                
+                {/* Description */}
+                <p className="text-sm font-bengali text-muted-foreground leading-relaxed mb-5">
+                  {feature.descBn}
+                </p>
+                
+                {/* Button */}
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  size="lg"
+                  className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-bengali font-semibold rounded-lg transition-all duration-300"
+                >
+                  <Link to={feature.link}>
+                    বিস্তারিত দেখুন
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
