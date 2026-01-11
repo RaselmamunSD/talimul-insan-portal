@@ -303,15 +303,23 @@ const Students = () => {
                         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-islamic-green to-transparent"></div>
                         
                         <div className="flex flex-col items-center text-center space-y-5 mt-4">
-                          {/* Student Image with Enhanced Ring */}
+                        {/* Student Image with Enhanced Ring */}
                           <div className="relative">
-                            <div className="absolute inset-0 bg-gradient-to-br from-islamic-green to-islamic-teal rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
-                            <div className="relative w-36 h-36 rounded-full overflow-hidden bg-gradient-to-br from-islamic-green/20 via-islamic-teal/20 to-islamic-gold/10 flex items-center justify-center ring-4 ring-islamic-green/30 shadow-2xl group-hover:ring-islamic-green/50 transition-all duration-300">
-                              <img 
-                                src={student.image} 
-                                alt={student.name}
-                                className="w-full h-full object-cover"
-                              />
+                            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-opacity animate-pulse"></div>
+                            <div className="relative w-36 h-36 rounded-full overflow-hidden bg-gradient-to-br from-cyan-100 via-blue-100 to-purple-100 flex items-center justify-center ring-[5px] ring-offset-4 ring-offset-background shadow-2xl transition-all duration-300"
+                              style={{
+                                boxShadow: '0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)',
+                              }}
+                            >
+                              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 p-[4px]">
+                                <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                                  <img 
+                                    src={student.image} 
+                                    alt={student.name}
+                                    className="w-full h-full object-cover"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                           
