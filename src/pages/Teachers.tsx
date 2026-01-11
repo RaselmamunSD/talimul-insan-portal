@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
+import personPlaceholder from "@/assets/person-placeholder.png";
 
 const Teachers = () => {
   const teachers = [
@@ -71,8 +72,8 @@ const Teachers = () => {
               className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-blue-50 hover:to-indigo-50 dark:hover:from-blue-950/30 dark:hover:to-indigo-950/30 border-2 border-transparent hover:border-blue-200"
             >
               <CardContent className="p-8">
-                <div className="w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full mx-auto mb-6 flex items-center justify-center text-5xl ring-4 ring-blue-500 ring-offset-4 ring-offset-background shadow-lg group-hover:ring-blue-600 group-hover:scale-105 transition-all duration-300">
-                  👤
+                <div className="w-32 h-32 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-full mx-auto mb-6 overflow-hidden ring-4 ring-blue-500 ring-offset-4 ring-offset-background shadow-lg group-hover:ring-blue-600 group-hover:scale-105 transition-all duration-300">
+                  <img src={personPlaceholder} alt={teacher.name} className="w-full h-full object-cover" />
                 </div>
                 <h3 className="text-xl font-bold font-bengali text-center mb-2 group-hover:text-blue-700 transition-colors">
                   {teacher.name}
