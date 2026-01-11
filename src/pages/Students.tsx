@@ -306,7 +306,7 @@ const Students = () => {
                         {/* Student Image with Enhanced Ring */}
                           <div className="relative">
                             <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 via-blue-500 to-purple-600 rounded-full blur-lg opacity-50 group-hover:opacity-70 transition-opacity animate-pulse"></div>
-                            <div className="relative w-44 h-44 rounded-full overflow-hidden bg-gradient-to-br from-cyan-100 via-blue-100 to-purple-100 flex items-center justify-center ring-[5px] ring-offset-4 ring-offset-background shadow-2xl transition-all duration-300"
+                            <div className="relative w-36 h-36 rounded-full overflow-hidden bg-gradient-to-br from-cyan-100 via-blue-100 to-purple-100 flex items-center justify-center ring-[5px] ring-offset-4 ring-offset-background shadow-2xl transition-all duration-300"
                               style={{
                                 boxShadow: '0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)',
                               }}
