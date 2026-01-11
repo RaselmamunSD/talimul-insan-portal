@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, User, Phone, MapPin, Droplet, Calendar } from "lucide-react";
 import { useState, useMemo } from "react";
+import personPlaceholder from "@/assets/person-placeholder.png";
 
 // Sample student data with career info
 const generateStudentData = () => {
@@ -45,7 +46,7 @@ const generateStudentData = () => {
         phone: `01${Math.floor(Math.random() * 900000000) + 100000000}`,
         bloodGroup: bloodGroups[i % bloodGroups.length],
         year: year,
-        image: `https://api.dicebear.com/7.x/avataaars/svg?seed=${year}-${i}`,
+        image: personPlaceholder,
         position: positions[i % positions.length],
         bio: bios[i % bios.length]
       });
