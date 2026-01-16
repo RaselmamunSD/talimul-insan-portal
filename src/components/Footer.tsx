@@ -220,6 +220,19 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Scroll to Top Button - Inside Footer, Left Side */}
+          {showScrollTop && (
+            <div className="flex justify-start mb-3">
+              <button
+                onClick={scrollToTop}
+                className="w-10 h-10 bg-islamic-green hover:bg-islamic-green/90 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+                aria-label="Scroll to top"
+              >
+                <ArrowUp className="w-5 h-5" />
+              </button>
+            </div>
+          )}
+
           {/* Bottom Copyright Bar */}
           <div className="border-t border-white/10 py-3 sm:py-4">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-xs sm:text-sm">
@@ -242,17 +255,6 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-
-      {/* Scroll to Top Button - Green color */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-islamic-green hover:bg-islamic-green/90 text-white rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-110 animate-fade-in"
-          aria-label="Scroll to top"
-        >
-          <ArrowUp className="w-5 h-5" />
-        </button>
-      )}
     </>
   );
 };
