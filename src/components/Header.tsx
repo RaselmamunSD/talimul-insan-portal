@@ -171,7 +171,7 @@ const Header = () => {
                 <img 
                   src={madrasahLogo} 
                   alt="Madrasah Logo" 
-                  className="relative w-16 h-16 lg:w-20 lg:h-20 object-contain rounded-full bg-white p-2 shadow-[0_0_20px_rgba(255,255,255,0.5),0_0_40px_rgba(34,197,94,0.3)]"
+                  className="relative w-20 h-20 lg:w-28 lg:h-28 object-contain rounded-full bg-white p-2 shadow-[0_0_20px_rgba(255,255,255,0.5),0_0_40px_rgba(34,197,94,0.3)]"
                 />
               </div>
             </div>
