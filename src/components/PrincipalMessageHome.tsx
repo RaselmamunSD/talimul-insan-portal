@@ -2,6 +2,7 @@ import { Card, CardContent } from "./ui/card";
 import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import principalPhoto from "@/assets/principal-photo.png";
 
 const PrincipalMessageHome = () => {
   const { ref, isVisible } = useScrollAnimation();
@@ -31,8 +32,12 @@ const PrincipalMessageHome = () => {
               <div className="grid md:grid-cols-3 gap-6">
                 {/* Principal Image */}
                 <div className="md:col-span-1 bg-gradient-primary p-8 flex flex-col items-center justify-center text-white">
-                  <div className="w-40 h-40 rounded-full bg-white/20 border-4 border-white/40 flex items-center justify-center mb-4">
-                    <span className="text-6xl">👤</span>
+                  <div className="w-40 h-40 rounded-full bg-white/20 border-4 border-white/40 overflow-hidden mb-4">
+                    <img 
+                      src={principalPhoto} 
+                      alt="মুহতামিম সাহেব" 
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
                   <h3 className="text-xl font-bold font-bengali text-center">
                     মাওলানা মুহাম্মদ আব্দুল্লাহ
