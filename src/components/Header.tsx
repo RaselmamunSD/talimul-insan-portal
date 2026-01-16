@@ -27,7 +27,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import madrasahLogo from "@/assets/madrasah-logo.png";
+import madrasahLogo from "@/assets/madrasah-logo-new.png";
 
 const Header = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
