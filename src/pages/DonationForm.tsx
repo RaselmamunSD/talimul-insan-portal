@@ -6,9 +6,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Building2, Phone, Mail, CreditCard, Heart, Construction, Church, HandCoins, UtensilsCrossed, Users } from "lucide-react";
+import { Building2, Phone, Mail, CreditCard, Heart, Construction, Church, HandCoins, UtensilsCrossed, Users, Check } from "lucide-react";
+
+// Payment method logos
+import bkashLogo from "@/assets/bkash-logo.png";
+import nagadLogo from "@/assets/nagad-logo.png";
+import rocketLogo from "@/assets/rocket-logo.png";
 
 const categoryNames: Record<string, string> = {
   "orphan-students": "এতিম ও অসহায় ছাত্রদের সাহায্য",
@@ -238,26 +242,83 @@ const DonationForm = () => {
                 </div>
 
                 <div>
-                  <Label className="font-bengali text-base mb-3 block">
-                    <CreditCard className="inline w-4 h-4 mr-1" />
-                    পেমেন্ট মেথড *
+                  <Label className="font-bengali text-lg mb-4 block">
+                    পেমেন্ট মেথড বেছে নিন *
                   </Label>
-                  <Select required onValueChange={setPaymentMethod}>
-                    <SelectTrigger className="text-lg h-12">
-                      <SelectValue placeholder="পেমেন্ট মেথড নির্বাচন করুন" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white">
-                      <SelectItem value="bkash" className="font-bengali text-base">
-                        বিকাশ
-                      </SelectItem>
-                      <SelectItem value="nagad" className="font-bengali text-base">
-                        নগদ
-                      </SelectItem>
-                      <SelectItem value="bank" className="font-bengali text-base">
-                        ব্যাংক ট্রান্সফার
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <div className="grid grid-cols-3 gap-3">
+                    {/* bKash */}
+                    <button
+                      type="button"
+                      onClick={() => setPaymentMethod("bkash")}
+                      className={`relative flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all duration-300 ${
+                        paymentMethod === "bkash"
+                          ? "border-islamic-green bg-islamic-green/5 shadow-lg"
+                          : "border-gray-200 hover:border-gray-300 bg-white hover:bg-gray-50"
+                      }`}
+                    >
+                      {paymentMethod === "bkash" && (
+                        <div className="absolute top-2 right-2 w-6 h-6 bg-islamic-green rounded-full flex items-center justify-center">
+                          <Check className="w-4 h-4 text-white" />
+                        </div>
+                      )}
+                      <img src={bkashLogo} alt="বিকাশ" className="h-12 w-auto object-contain" />
+                    </button>
+
+                    {/* Nagad */}
+                    <button
+                      type="button"
+                      onClick={() => setPaymentMethod("nagad")}
+                      className={`relative flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all duration-300 ${
+                        paymentMethod === "nagad"
+                          ? "border-islamic-green bg-islamic-green/5 shadow-lg"
+                          : "border-gray-200 hover:border-gray-300 bg-white hover:bg-gray-50"
+                      }`}
+                    >
+                      {paymentMethod === "nagad" && (
+                        <div className="absolute top-2 right-2 w-6 h-6 bg-islamic-green rounded-full flex items-center justify-center">
+                          <Check className="w-4 h-4 text-white" />
+                        </div>
+                      )}
+                      <img src={nagadLogo} alt="নগদ" className="h-12 w-auto object-contain" />
+                    </button>
+
+                    {/* Rocket */}
+                    <button
+                      type="button"
+                      onClick={() => setPaymentMethod("rocket")}
+                      className={`relative flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all duration-300 ${
+                        paymentMethod === "rocket"
+                          ? "border-islamic-green bg-islamic-green/5 shadow-lg"
+                          : "border-gray-200 hover:border-gray-300 bg-white hover:bg-gray-50"
+                      }`}
+                    >
+                      {paymentMethod === "rocket" && (
+                        <div className="absolute top-2 right-2 w-6 h-6 bg-islamic-green rounded-full flex items-center justify-center">
+                          <Check className="w-4 h-4 text-white" />
+                        </div>
+                      )}
+                      <img src={rocketLogo} alt="রকেট" className="h-12 w-auto object-contain" />
+                    </button>
+                  </div>
+
+                  {/* Bank Transfer Option */}
+                  <button
+                    type="button"
+                    onClick={() => setPaymentMethod("bank")}
+                    className={`mt-3 w-full relative flex items-center justify-center gap-2 p-4 rounded-xl border-2 transition-all duration-300 ${
+                      paymentMethod === "bank"
+                        ? "border-islamic-green bg-islamic-green/5 shadow-lg"
+                        : "border-gray-200 hover:border-gray-300 bg-white hover:bg-gray-50"
+                    }`}
+                  >
+                    {paymentMethod === "bank" && (
+                      <div className="absolute top-2 right-2 w-6 h-6 bg-islamic-green rounded-full flex items-center justify-center">
+                        <Check className="w-4 h-4 text-white" />
+                      </div>
+                    )}
+                    <Building2 className="w-6 h-6 text-blue-600" />
+                    <span className="font-bengali font-medium">ব্যাংক ট্রান্সফার</span>
+                  </button>
                 </div>
 
                 <Button 
