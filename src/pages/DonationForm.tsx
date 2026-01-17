@@ -24,48 +24,90 @@ const categoryNames: Record<string, string> = {
   "annual-mahfil": "বাৎসরিক মাহফিল"
 };
 
-const categoryDetails: Record<string, { description: string; importance: string; impact: string; icon: any }> = {
+const categoryDetails: Record<string, { description: string; importance: string; impact: string; icon: any; expenses: { label: string; value: string }[] }> = {
   "orphan-students": {
     description: "এতিম ও অসহায় ছাত্রদের শিক্ষা ও জীবনযাত্রার ব্যয় নির্বাহে সহায়তা করুন। আল্লাহ তা'আলা এতিমদের প্রতি সদাচরণ করার বিশেষ গুরুত্ব দিয়েছেন।",
     importance: "রাসূলুল্লাহ (সা.) বলেছেন, 'আমি এবং এতিমের তত্ত্বাবধায়ক জান্নাতে এভাবে থাকব' এবং তিনি তর্জনী ও মধ্যমা আঙুল একসাথে রেখে ইঙ্গিত করলেন। (বুখারী)",
     impact: "আপনার দান একজন এতিম শিশুর জীবন পরিবর্তন করতে পারে, তাদের শিক্ষা, খাবার এবং আবাসনের নিশ্চয়তা প্রদান করবে।",
-    icon: Heart
+    icon: Heart,
+    expenses: [
+      { label: "শিক্ষা উপকরণ", value: "বই, খাতা, কলম ইত্যাদি" },
+      { label: "খাবার খরচ", value: "মাসিক খাবার ও পুষ্টি" },
+      { label: "পোশাক", value: "শীতবস্ত্র ও জুতা" },
+      { label: "চিকিৎসা", value: "স্বাস্থ্য সেবা ও ওষুধ" }
+    ]
   },
   "madrasah-development": {
     description: "মাদ্রাসার সার্বিক উন্নয়ন, রক্ষণাবেক্ষণ এবং শিক্ষার মান উন্নয়নে অবদান রাখুন।",
     importance: "ইলম অর্জনের স্থান তৈরি ও রক্ষণাবেক্ষণ করা একটি সাদাকায়ে জারিয়া। যতদিন এই প্রতিষ্ঠান থেকে মানুষ ইলম অর্জন করবে, আপনি তার সওয়াব পেতে থাকবেন।",
     impact: "আপনার অবদান শত শত ছাত্রের জন্য উন্নত শিক্ষার পরিবেশ নিশ্চিত করবে এবং মানসম্মত ইসলামী শিক্ষা প্রদানে সহায়তা করবে।",
-    icon: Building2
+    icon: Building2,
+    expenses: [
+      { label: "বিদ্যুৎ বিল", value: "মাসিক বিদ্যুৎ খরচ" },
+      { label: "পানি ও গ্যাস", value: "মাসিক ইউটিলিটি" },
+      { label: "রক্ষণাবেক্ষণ", value: "ভবন মেরামত ও পরিষ্কার" },
+      { label: "আসবাবপত্র", value: "ডেস্ক, চেয়ার ইত্যাদি" }
+    ]
   },
   "new-building": {
     description: "মাদ্রাসার নতুন শিক্ষা ভবন নির্মাণে আপনার অবদান রাখুন এবং ভবিষ্যৎ প্রজন্মের শিক্ষার জন্য একটি আধুনিক স্থাপনা তৈরিতে অংশীদার হন।",
     importance: "একটি শিক্ষা প্রতিষ্ঠান নির্মাণ করা সবচেয়ে বড় সাদাকায়ে জারিয়াগুলোর মধ্যে একটি। যতদিন এই ভবনে শিক্ষা কার্যক্রম চলবে, আপনি সওয়াব পেতে থাকবেন।",
     impact: "নতুন ভবন শত শত ছাত্রকে আরামদায়ক ও আধুনিক পরিবেশে পড়াশোনার সুযোগ দেবে।",
-    icon: Construction
+    icon: Construction,
+    expenses: [
+      { label: "ভিত্তি নির্মাণ", value: "ফাউন্ডেশন ও পিলার" },
+      { label: "ইট ও সিমেন্ট", value: "নির্মাণ সামগ্রী" },
+      { label: "রড ও টাইলস", value: "কাঠামো ও ফিনিশিং" },
+      { label: "শ্রমিক বেতন", value: "দৈনিক মজুরি" }
+    ]
   },
   "new-mosque": {
     description: "নতুন মসজিদ নির্মাণে সাদাকায়ে জারিয়ায় অংশীদার হোন এবং আল্লাহর ঘর তৈরিতে অবদান রাখুন।",
     importance: "রাসূলুল্লাহ (সা.) বলেছেন, 'যে ব্যক্তি আল্লাহর সন্তুষ্টির জন্য একটি মসজিদ নির্মাণ করবে, আল্লাহ তার জন্য জান্নাতে একটি ঘর নির্মাণ করবেন।' (বুখারী ও মুসলিম)",
     impact: "আপনার দান হাজারো মুসল্লির নামাজ আদায়ের ব্যবস্থা করবে এবং এলাকায় ইসলামী শিক্ষা ও সংস্কৃতির কেন্দ্র হয়ে উঠবে।",
-    icon: Church
+    icon: Church,
+    expenses: [
+      { label: "মিম্বার ও মিহরাব", value: "ডিজাইন ও নির্মাণ" },
+      { label: "কার্পেট", value: "জায়নামাজ ও মেঝে" },
+      { label: "সাউন্ড সিস্টেম", value: "মাইক ও স্পিকার" },
+      { label: "এসি ও ফ্যান", value: "শীতাতপ নিয়ন্ত্রণ" }
+    ]
   },
   "zakat-fund": {
     description: "আপনার যাকাত দিয়ে দরিদ্র ও অসহায় ছাত্রদের শিক্ষা ও জীবনযাত্রায় সাহায্য করুন।",
     importance: "যাকাত ইসলামের পাঁচটি স্তম্ভের একটি। সঠিক খাতে যাকাত প্রদান করা প্রতিটি মুসলমানের দায়িত্ব।",
     impact: "আপনার যাকাত দরিদ্র ছাত্রদের শিক্ষা উপকরণ, খাবার এবং অন্যান্য প্রয়োজনীয় সামগ্রী সরবরাহ করবে।",
-    icon: HandCoins
+    icon: HandCoins,
+    expenses: [
+      { label: "দরিদ্র ছাত্র সহায়তা", value: "শিক্ষা ও খাবার" },
+      { label: "ঋণগ্রস্ত সাহায্য", value: "ঋণ পরিশোধ" },
+      { label: "মুসাফির সহায়তা", value: "যাত্রী সাহায্য" },
+      { label: "জরুরি সাহায্য", value: "চিকিৎসা ও দুর্যোগ" }
+    ]
   },
   "ramadan-iftar": {
     description: "রমাদান মাসে ছাত্রদের ইফতার ও সেহেরীর ব্যবস্থায় অংশ নিন এবং রোজাদারদের ইফতার করানোর সওয়াব লাভ করুন।",
     importance: "রাসূলুল্লাহ (সা.) বলেছেন, 'যে ব্যক্তি কোনো রোজাদারকে ইফতার করাবে, সে তার সমান সওয়াব পাবে।' (তিরমিযী)",
     impact: "আপনার দান শত শত ছাত্রকে মাহে রমাদানে পুষ্টিকর ইফতার ও সেহেরী খাওয়ার সুযোগ দেবে।",
-    icon: UtensilsCrossed
+    icon: UtensilsCrossed,
+    expenses: [
+      { label: "খেজুর ও পানি", value: "ইফতার শুরু" },
+      { label: "ফল ও জুস", value: "তাজা ফলমূল" },
+      { label: "ভাত ও তরকারি", value: "সেহেরী খাবার" },
+      { label: "মিষ্টি", value: "ঈদ উপলক্ষে" }
+    ]
   },
   "annual-mahfil": {
     description: "বার্ষিক ওয়াজ মাহফিল আয়োজনে সহযোগিতা করুন এবং ইসলামী শিক্ষা প্রচারে অংশীদার হোন।",
     importance: "দ্বীনি মাহফিল আয়োজন করা এবং মানুষকে ইসলামের পথে আহ্বান করা একটি মহৎ কাজ। এতে অসংখ্য মানুষ উপকৃত হয় এবং ইসলামের বাণী ছড়িয়ে পড়ে।",
     impact: "আপনার অবদান হাজারো মানুষের কাছে ইসলামী জ্ঞান পৌঁছে দেবে এবং ধর্মীয় চেতনা জাগ্রত করবে।",
-    icon: Users
+    icon: Users,
+    expenses: [
+      { label: "প্যান্ডেল ও স্টেজ", value: "মঞ্চ সজ্জা" },
+      { label: "সাউন্ড সিস্টেম", value: "মাইক ও জেনারেটর" },
+      { label: "আলেম সম্মানী", value: "বক্তাদের সম্মানী" },
+      { label: "খাবার ব্যবস্থা", value: "অতিথি আপ্যায়ন" }
+    ]
   }
 };
 
@@ -77,7 +119,10 @@ const DonationForm = () => {
     description: "আপনার দান মাদ্রাসার উন্নয়নে ব্যবহৃত হবে।",
     importance: "আল্লাহর পথে দান করা একটি মহৎ কাজ।",
     impact: "আপনার অবদান শিক্ষার মান উন্নয়নে সাহায্য করবে।",
-    icon: Building2
+    icon: Building2,
+    expenses: [
+      { label: "সাধারণ খরচ", value: "মাদ্রাসার উন্নয়ন" }
+    ]
   };
   
   const IconComponent = categoryInfo.icon;
@@ -128,36 +173,41 @@ const DonationForm = () => {
 
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Side - Category Details */}
+          {/* Left Side - Expense Categories */}
           <div className="space-y-6">
-            <Card className="border-islamic-green/20">
+            {/* Expense Categories Card */}
+            <Card className="border-islamic-green/20 bg-gradient-to-br from-islamic-green/5 to-transparent">
               <CardHeader>
                 <CardTitle className="font-bengali text-2xl flex items-center gap-2">
-                  <IconComponent className="w-6 h-6 text-islamic-green" />
+                  <CreditCard className="w-6 h-6 text-islamic-green" />
+                  দানের ব্যয়ের খাত
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {categoryInfo.expenses?.map((expense, index) => (
+                  <div 
+                    key={index}
+                    className="flex justify-between items-center p-4 bg-white rounded-xl border border-islamic-green/10 shadow-sm"
+                  >
+                    <span className="font-bengali font-medium text-foreground">{expense.label}:</span>
+                    <span className="font-bengali text-muted-foreground">{expense.value}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* Category Description Card */}
+            <Card className="border-islamic-green/20">
+              <CardHeader>
+                <CardTitle className="font-bengali text-xl flex items-center gap-2">
+                  <IconComponent className="w-5 h-5 text-islamic-green" />
                   বিস্তারিত তথ্য
                 </CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h3 className="font-bengali font-semibold text-lg mb-2 text-islamic-green">বিবরণ</h3>
-                  <p className="font-bengali text-muted-foreground leading-relaxed">
-                    {categoryInfo.description}
-                  </p>
-                </div>
-                
-                <div className="pt-4 border-t">
-                  <h3 className="font-bengali font-semibold text-lg mb-2 text-islamic-green">গুরুত্ব</h3>
-                  <p className="font-bengali text-muted-foreground leading-relaxed">
-                    {categoryInfo.importance}
-                  </p>
-                </div>
-                
-                <div className="pt-4 border-t">
-                  <h3 className="font-bengali font-semibold text-lg mb-2 text-islamic-green">প্রভাব</h3>
-                  <p className="font-bengali text-muted-foreground leading-relaxed">
-                    {categoryInfo.impact}
-                  </p>
-                </div>
+              <CardContent>
+                <p className="font-bengali text-muted-foreground leading-relaxed">
+                  {categoryInfo.description}
+                </p>
               </CardContent>
             </Card>
 
