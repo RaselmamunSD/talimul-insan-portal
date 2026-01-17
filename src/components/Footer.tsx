@@ -225,10 +225,15 @@ const Footer = () => {
             <div className="flex justify-start mb-3">
               <button
                 onClick={scrollToTop}
-                className="w-10 h-10 bg-islamic-green hover:bg-islamic-green/90 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
+                className="group relative w-12 h-12 bg-gradient-to-br from-islamic-green via-islamic-green to-emerald-600 hover:from-emerald-500 hover:via-islamic-green hover:to-emerald-700 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-2xl hover:shadow-islamic-green/40 transition-all duration-500 transform hover:scale-110 hover:-translate-y-1 animate-fade-in"
                 aria-label="Scroll to top"
               >
-                <ArrowUp className="w-5 h-5" />
+                {/* Glow ring effect */}
+                <span className="absolute inset-0 rounded-full bg-islamic-green/30 animate-ping opacity-75"></span>
+                <span className="absolute inset-0 rounded-full bg-gradient-to-br from-islamic-green/20 to-emerald-400/20 blur-md group-hover:blur-lg transition-all duration-300"></span>
+                
+                {/* Arrow icon with bounce animation */}
+                <ArrowUp className="w-5 h-5 relative z-10 group-hover:animate-bounce" />
               </button>
             </div>
           )}
