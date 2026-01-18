@@ -173,29 +173,8 @@ const DonationForm = () => {
 
       <main className="flex-1 container mx-auto px-4 py-12">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Left Side - Expense Categories */}
+          {/* Left Side - Details & Expense Categories */}
           <div className="space-y-6">
-            {/* Expense Categories Card */}
-            <Card className="border-islamic-green/20 bg-gradient-to-br from-islamic-green/5 to-transparent">
-              <CardHeader>
-                <CardTitle className="font-bengali text-2xl flex items-center gap-2">
-                  <CreditCard className="w-6 h-6 text-islamic-green" />
-                  দানের ব্যয়ের খাত
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {categoryInfo.expenses?.map((expense, index) => (
-                  <div 
-                    key={index}
-                    className="flex justify-between items-center p-4 bg-white rounded-xl border border-islamic-green/10 shadow-sm"
-                  >
-                    <span className="font-bengali font-medium text-foreground">{expense.label}:</span>
-                    <span className="font-bengali text-muted-foreground">{expense.value}</span>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-
             {/* Category Description Card */}
             <Card className="border-islamic-green/20">
               <CardHeader>
@@ -204,10 +183,22 @@ const DonationForm = () => {
                   বিস্তারিত তথ্য
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
                 <p className="font-bengali text-muted-foreground leading-relaxed">
                   {categoryInfo.description}
                 </p>
+                <div className="p-4 bg-islamic-green/5 rounded-lg border border-islamic-green/10">
+                  <p className="font-bengali text-sm text-foreground font-medium mb-2">গুরুত্ব:</p>
+                  <p className="font-bengali text-sm text-muted-foreground leading-relaxed">
+                    {categoryInfo.importance}
+                  </p>
+                </div>
+                <div className="p-4 bg-islamic-gold/5 rounded-lg border border-islamic-gold/10">
+                  <p className="font-bengali text-sm text-foreground font-medium mb-2">প্রভাব:</p>
+                  <p className="font-bengali text-sm text-muted-foreground leading-relaxed">
+                    {categoryInfo.impact}
+                  </p>
+                </div>
               </CardContent>
             </Card>
 
@@ -225,6 +216,27 @@ const DonationForm = () => {
                     (সূরা আল-বাকারা: ২৪৫)
                   </p>
                 </div>
+              </CardContent>
+            </Card>
+
+            {/* Expense Categories Card - Below the details */}
+            <Card className="border-islamic-green/20 bg-gradient-to-br from-islamic-green/5 to-transparent">
+              <CardHeader>
+                <CardTitle className="font-bengali text-2xl flex items-center gap-2">
+                  <CreditCard className="w-6 h-6 text-islamic-green" />
+                  দানের ব্যয়ের খাত
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {categoryInfo.expenses?.map((expense, index) => (
+                  <div 
+                    key={index}
+                    className="flex justify-between items-center p-4 bg-white rounded-xl border border-islamic-green/10 shadow-sm hover:shadow-md hover:border-islamic-green/30 transition-all duration-300"
+                  >
+                    <span className="font-bengali font-medium text-foreground">{expense.label}:</span>
+                    <span className="font-bengali text-muted-foreground">{expense.value}</span>
+                  </div>
+                ))}
               </CardContent>
             </Card>
           </div>
