@@ -253,8 +253,8 @@ const Header = () => {
                             to={item.href}
                             className="nav-link px-6 py-3 rounded transition-smooth font-semibold hover:bg-white/10 flex items-center gap-1 group"
                           >
-                            {item.label} 
-                            <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+                            {item.label}
+                            <ChevronDown className="h-4 w-4 ml-1 transition-transform duration-300 group-hover:translate-y-0.5" />
                           </Link>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent 
