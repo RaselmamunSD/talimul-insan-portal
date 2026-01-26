@@ -234,7 +234,9 @@ All colors MUST be HSL.
   /* Navigation hover effects */
   .nav-link {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
   }
 
   .nav-link::before {
