@@ -3,7 +3,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useCounterAnimation } from "@/hooks/use-counter-animation";
 
 const SuccessStatistics = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1, rootMargin: "50px" });
 
   const stats = [
     {
@@ -41,7 +41,7 @@ const SuccessStatistics = () => {
   ];
 
   return (
-    <section ref={ref} className="py-16 px-4 bg-gradient-to-br from-[#1a4d4d] to-[#0d3333]">
+    <section ref={ref} className="section-spacing px-4 bg-gradient-to-br from-[#1a4d4d] to-[#0d3333]">
       <div className="container mx-auto">
         <div className={`text-center mb-12 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"

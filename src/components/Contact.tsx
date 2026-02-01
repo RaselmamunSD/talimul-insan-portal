@@ -6,7 +6,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const Contact = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1, rootMargin: "50px" });
   const contactInfo = [
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -65,7 +65,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <section ref={ref} id="contact" className="py-16 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
+      <section ref={ref} id="contact" className="section-spacing px-4 bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
       {/* Islamic Pattern Background */}
       <div 
         className="absolute inset-0 opacity-[0.03]"

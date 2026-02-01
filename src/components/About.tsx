@@ -13,7 +13,7 @@ import activityCharacter from "@/assets/activity-character.jpg";
 import activityKnowledge from "@/assets/activity-knowledge.jpg";
 
 const About = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1, rootMargin: "50px" });
   const features = [
     {
       image: activityHifz,
@@ -60,7 +60,7 @@ const About = () => {
   ];
 
   return (
-    <section ref={ref} id="about" className="py-16 px-4 bg-muted relative">
+    <section ref={ref} id="about" className="section-spacing px-4 bg-muted relative">
       <div className="absolute inset-0 islamic-pattern opacity-30"></div>
       
       <div className="container mx-auto relative z-10">
