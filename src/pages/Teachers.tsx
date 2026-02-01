@@ -29,6 +29,54 @@ const Teachers = () => {
       qualification: "আলিম, হাফেজ",
       experience: "৮ বছর",
     },
+    {
+      name: "হাফেজ মোঃ ইউসুফ",
+      designation: "হিফজ বিভাগের শিক্ষক",
+      qualification: "হাফেজ, আলিম",
+      experience: "১২ বছর",
+    },
+    {
+      name: "মাওলানা আব্দুল্লাহ",
+      designation: "আরবি ভাষার শিক্ষক",
+      qualification: "কামিল, এমএ আরবি",
+      experience: "১৪ বছর",
+    },
+    {
+      name: "উস্তাদ মোঃ হাসান",
+      designation: "হাদিস বিভাগের শিক্ষক",
+      qualification: "দাওরায়ে হাদিস",
+      experience: "১১ বছর",
+    },
+    {
+      name: "মাওলানা ইব্রাহীম খলিল",
+      designation: "ফিকহ বিভাগের শিক্ষক",
+      qualification: "কামিল, মুফতি",
+      experience: "৯ বছর",
+    },
+    {
+      name: "হাফেজ আব্দুর রহমান",
+      designation: "তাজবীদ শিক্ষক",
+      qualification: "হাফেজ, কারী",
+      experience: "৭ বছর",
+    },
+    {
+      name: "উস্তাদ মোঃ আমিন",
+      designation: "বাংলা ও গণিত শিক্ষক",
+      qualification: "বিএ, বিএড",
+      experience: "৬ বছর",
+    },
+    {
+      name: "মাওলানা জাকির হোসেন",
+      designation: "নাহু-সরফ শিক্ষক",
+      qualification: "ফাজিল",
+      experience: "৫ বছর",
+    },
+    {
+      name: "উস্তাদ মোঃ সাইফুল",
+      designation: "মক্তব বিভাগের শিক্ষক",
+      qualification: "আলিম",
+      experience: "৪ বছর",
+    },
   ];
 
   return (
