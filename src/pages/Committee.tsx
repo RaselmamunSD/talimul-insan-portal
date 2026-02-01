@@ -5,12 +5,26 @@ import personPlaceholder from "@/assets/person-placeholder.png";
 
 const Committee = () => {
   const members = [
-    { name: "মাওলানা [নাম]", position: "সভাপতি", phone: "+880 1XXX-XXXXXX" },
-    { name: "আলহাজ্ব [নাম]", position: "সহ-সভাপতি", phone: "+880 1XXX-XXXXXX" },
-    { name: "মাওলানা [নাম]", position: "সাধারণ সম্পাদক", phone: "+880 1XXX-XXXXXX" },
-    { name: "[নাম]", position: "কোষাধ্যক্ষ", phone: "+880 1XXX-XXXXXX" },
-    { name: "[নাম]", position: "সদস্য", phone: "+880 1XXX-XXXXXX" },
-    { name: "[নাম]", position: "সদস্য", phone: "+880 1XXX-XXXXXX" },
+    { name: "মাওলানা আব্দুর রহমান", position: "সভাপতি", phone: "+880 1XXX-XXXXXX" },
+    { name: "আলহাজ্ব মোঃ আব্দুল্লাহ", position: "সহ-সভাপতি", phone: "+880 1XXX-XXXXXX" },
+    { name: "মাওলানা হাফেজ ইব্রাহীম", position: "সাধারণ সম্পাদক", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ রফিকুল ইসলাম", position: "যুগ্ম সম্পাদক", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ আমিনুল হক", position: "কোষাধ্যক্ষ", phone: "+880 1XXX-XXXXXX" },
+    { name: "মাওলানা আবু তালহা", position: "সাংগঠনিক সম্পাদক", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ সাইফুল ইসলাম", position: "প্রচার সম্পাদক", phone: "+880 1XXX-XXXXXX" },
+    { name: "হাফেজ মোঃ ইউসুফ আলী", position: "শিক্ষা সম্পাদক", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ জাহাঙ্গীর আলম", position: "সমাজ কল্যাণ সম্পাদক", phone: "+880 1XXX-XXXXXX" },
+    { name: "মাওলানা আব্দুল কাদের", position: "ধর্ম বিষয়ক সম্পাদক", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ নূরুল হক", position: "অর্থ সম্পাদক", phone: "+880 1XXX-XXXXXX" },
+    { name: "আলহাজ্ব মোঃ আনোয়ার হোসেন", position: "নির্বাহী সদস্য", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ মতিউর রহমান", position: "নির্বাহী সদস্য", phone: "+880 1XXX-XXXXXX" },
+    { name: "মাওলানা মোঃ ইদ্রিস আলী", position: "নির্বাহী সদস্য", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ শফিকুল ইসলাম", position: "সদস্য", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ আব্দুর রশিদ", position: "সদস্য", phone: "+880 1XXX-XXXXXX" },
+    { name: "হাফেজ মোঃ আব্দুল মান্নান", position: "সদস্য", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ জসিম উদ্দিন", position: "সদস্য", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ সোহরাব হোসেন", position: "সদস্য", phone: "+880 1XXX-XXXXXX" },
+    { name: "মাওলানা মোঃ হাসান আলী", position: "সদস্য", phone: "+880 1XXX-XXXXXX" },
   ];
 
   return (
