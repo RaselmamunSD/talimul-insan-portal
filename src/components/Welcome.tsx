@@ -1,11 +1,11 @@
 import { Sparkles } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useScrollAnimation, getAnimationClass } from "@/hooks/use-scroll-animation";
 
 const Welcome = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.15, rootMargin: "50px" });
 
   return (
-    <section ref={ref} className="relative py-20 bg-gradient-to-br from-background via-islamic-green/5 to-background overflow-hidden">
+    <section ref={ref} className="relative section-spacing bg-gradient-to-br from-background via-islamic-green/5 to-background overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-72 h-72 bg-islamic-green rounded-full blur-3xl"></div>

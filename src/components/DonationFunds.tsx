@@ -60,7 +60,7 @@ const donationCategories = [
 
 const DonationFunds = () => {
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-br from-islamic-dark-green via-islamic-green to-islamic-teal">
+    <section className="relative section-spacing overflow-hidden bg-gradient-to-br from-islamic-dark-green via-islamic-green to-islamic-teal">
       {/* Islamic Pattern Background */}
       <div 
         className="absolute inset-0 opacity-10"

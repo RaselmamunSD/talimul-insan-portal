@@ -322,4 +322,100 @@ All colors MUST be HSL.
   .animate-wiggle {
     animation: wiggle 2s ease-in-out infinite;
   }
+
+  /* UX Enhancement Classes */
+  
+  /* Smooth Card Hover Effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-smooth;
+  }
+  
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 20px 40px -15px hsl(var(--primary) / 0.2);
+  }
+
+  /* Button Hover Effects */
+  .btn-hover {
+    @apply transition-all duration-300 ease-smooth;
+  }
+  
+  .btn-hover:hover {
+    @apply -translate-y-0.5 scale-[1.02];
+    box-shadow: 0 10px 25px -5px hsl(var(--primary) / 0.25);
+  }
+  
+  .btn-hover:active {
+    @apply translate-y-0 scale-[0.98];
+  }
+
+  /* Image Hover Effects */
+  .img-hover {
+    @apply transition-transform duration-500 ease-smooth;
+  }
+  
+  .img-hover:hover {
+    @apply scale-105;
+  }
+
+  /* Link Underline Animation */
+  .link-underline {
+    @apply relative;
+  }
+  
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 ease-smooth;
+  }
+  
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Section spacing utilities */
+  .section-spacing {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+  
+  .section-spacing-sm {
+    @apply py-10 md:py-14 lg:py-16;
+  }
+
+  /* Content spacing */
+  .content-spacing {
+    @apply space-y-6 md:space-y-8;
+  }
+
+  /* Grid gaps */
+  .grid-gap {
+    @apply gap-4 md:gap-6 lg:gap-8;
+  }
+
+  /* Stagger animation delays for children */
+  .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger-children > *:nth-child(2) { animation-delay: 75ms; }
+  .stagger-children > *:nth-child(3) { animation-delay: 150ms; }
+  .stagger-children > *:nth-child(4) { animation-delay: 225ms; }
+  .stagger-children > *:nth-child(5) { animation-delay: 300ms; }
+  .stagger-children > *:nth-child(6) { animation-delay: 375ms; }
+  .stagger-children > *:nth-child(7) { animation-delay: 450ms; }
+  .stagger-children > *:nth-child(8) { animation-delay: 525ms; }
+
+  /* Scroll reveal base state */
+  .scroll-reveal {
+    @apply opacity-0 translate-y-5 transition-all duration-500 ease-smooth;
+  }
+  
+  .scroll-reveal.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-background/80 backdrop-blur-md;
+  }
+  
+  .glass-strong {
+    @apply bg-background/90 backdrop-blur-lg;
+  }
 }

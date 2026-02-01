@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const RecentNews = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1, rootMargin: "50px" });
   const newsItems = [
     {
       id: 1,
@@ -30,7 +30,7 @@ const RecentNews = () => {
   ];
 
   return (
-    <section ref={ref} className="relative py-20 bg-gradient-to-br from-background via-islamic-teal/5 to-background overflow-hidden">
+    <section ref={ref} className="relative section-spacing bg-gradient-to-br from-background via-islamic-teal/5 to-background overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('/src/assets/islamic-pattern.png')] bg-repeat opacity-10"></div>

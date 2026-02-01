@@ -4,7 +4,7 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { BookOpen, GraduationCap, Heart, Sparkles, Clock, CheckCircle2 } from "lucide-react";
 
 const Programs = () => {
-  const { ref, isVisible } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1, rootMargin: "50px" });
   const programs = [
     {
       titleBn: "হিফজুল কুরআন (হাফেজিয়া)",
@@ -49,7 +49,7 @@ const Programs = () => {
   ];
 
   return (
-    <section ref={ref} id="programs" className="py-20 px-4 bg-gradient-to-b from-background via-muted/30 to-background">
+    <section ref={ref} id="programs" className="section-spacing px-4 bg-gradient-to-b from-background via-muted/30 to-background">
       <div className="container mx-auto">
         <div className={`text-center mb-16 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
