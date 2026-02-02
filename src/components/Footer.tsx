@@ -47,19 +47,16 @@ const Footer = () => {
   return (
     <>
       <footer className="relative text-white overflow-hidden">
-        {/* Dark Green Background */}
-        <div className="absolute inset-0 bg-[hsl(148,68%,15%)]" />
-        
-        {/* Mosque Silhouette Background Image - Positioned at Bottom */}
+        {/* Full Footer Background Image */}
         <div 
-          className="absolute inset-x-0 bottom-0 h-[70%] bg-contain bg-bottom bg-no-repeat opacity-40"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: `url(${footerMosqueBg})`
           }}
         />
         
-        {/* Subtle Top Gradient for Smooth Blend */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(148,68%,15%)] via-transparent to-transparent" />
+        {/* Dark Green Overlay for Text Readability */}
+        <div className="absolute inset-0 bg-[hsl(148,68%,15%)]/75" />
 
         <div className="container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-6 sm:pb-8 relative z-10">
 
