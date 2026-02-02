@@ -2,7 +2,7 @@ import { Facebook, Youtube, Mail, Phone, Linkedin, Instagram, ArrowUp, MapPin, C
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import madrasahLogo from "@/assets/madrasah-logo-new.png";
-import mosqueSkyline from "@/assets/mosque-skyline.png";
+import footerMosqueBg from "@/assets/footer-mosque-bg.jpeg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -46,20 +46,17 @@ const Footer = () => {
 
   return (
     <>
-      <footer className="relative bg-gradient-to-b from-islamic-dark-green via-[hsl(148,68%,18%)] to-[hsl(148,70%,12%)] text-white overflow-hidden">
-        {/* Mosque Skyline Background Image at Top */}
+      <footer className="relative text-white overflow-hidden">
+        {/* Full Background Image */}
         <div 
-          className="absolute top-0 left-0 right-0 h-40 bg-no-repeat bg-center bg-cover opacity-30"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url(${mosqueSkyline})`,
-            backgroundPosition: 'center bottom'
+            backgroundImage: `url(${footerMosqueBg})`
           }}
         />
-
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="islamic-pattern h-full w-full"></div>
-        </div>
+        
+        {/* Dark Overlay for Better Text Readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-islamic-dark-green/90 via-islamic-dark-green/85 to-islamic-dark-green/95" />
 
         <div className="container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-6 sm:pb-8 relative z-10">
 
