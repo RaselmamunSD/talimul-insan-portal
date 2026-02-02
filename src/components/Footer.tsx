@@ -56,7 +56,7 @@ const Footer = () => {
         />
         
         {/* Dark Green Overlay for Text Readability */}
-        <div className="absolute inset-0 bg-[hsl(148,68%,15%)]/75" />
+        <div className="absolute inset-0 bg-[hsl(148,68%,20%)]/85" />
 
         <div className="container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-6 sm:pb-8 relative z-10">
 
