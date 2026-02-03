@@ -75,10 +75,10 @@ const Footer = () => {
         {/* Top Decorative Border */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent" />
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-6 sm:pb-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-10 sm:pt-12 lg:pt-14 pb-4 sm:pb-6 relative z-10">
 
           {/* Main Footer Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 mb-8 sm:mb-10">
             
             {/* Company Info Section */}
             <div className="sm:col-span-2 lg:col-span-1 space-y-6">
@@ -215,7 +215,7 @@ const Footer = () => {
           </div>
 
           {/* Developer Bar */}
-          <div className="border-t border-white/10 pt-8 pb-6">
+          <div className="border-t border-white/10 pt-5 pb-4">
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8">
               <a 
                 href="https://higzendev.com" 
@@ -262,7 +262,7 @@ const Footer = () => {
           )}
 
           {/* Bottom Copyright Bar */}
-          <div className="border-t border-white/10 py-5">
+          <div className="border-t border-white/10 py-4">
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
               <div className="flex flex-wrap justify-center sm:justify-start items-center gap-4 sm:gap-6">
                 <Link 
