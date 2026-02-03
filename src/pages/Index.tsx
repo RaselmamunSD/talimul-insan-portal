@@ -8,6 +8,7 @@ import SuccessStatistics from "@/components/SuccessStatistics";
 import About from "@/components/About";
 import Programs from "@/components/Programs";
 import DonationFunds from "@/components/DonationFunds";
+import BlogSection from "@/components/BlogSection";
 import Contact from "@/components/Contact";
 import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
@@ -27,6 +28,7 @@ const Index = () => {
         <About />
         <Programs />
         <DonationFunds />
+        <BlogSection />
         <Contact />
       </main>
       <Newsletter />
