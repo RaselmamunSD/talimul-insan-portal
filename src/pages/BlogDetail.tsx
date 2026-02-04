@@ -7,11 +7,17 @@ import { blogsData } from "@/data/blogsData";
 import blog1 from "@/assets/blog-1.jpg";
 import blog2 from "@/assets/blog-2.jpg";
 import blog3 from "@/assets/blog-3.jpg";
+import blog4 from "@/assets/blog-4.jpg";
+import blog5 from "@/assets/blog-5.jpg";
+import blog6 from "@/assets/blog-6.jpg";
 
 const blogImages: Record<string, string> = {
   "blog-1": blog1,
   "blog-2": blog2,
   "blog-3": blog3,
+  "blog-4": blog4,
+  "blog-5": blog5,
+  "blog-6": blog6,
 };
 
 const BlogDetail = () => {
