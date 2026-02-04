@@ -5,6 +5,7 @@ import ImageGallerySlider from "@/components/ImageGallerySlider";
 import RecentNews from "@/components/RecentNews";
 import PrincipalMessageHome from "@/components/PrincipalMessageHome";
 import SuccessStatistics from "@/components/SuccessStatistics";
+import FounderSection from "@/components/FounderSection";
 import About from "@/components/About";
 import Programs from "@/components/Programs";
 import DonationFunds from "@/components/DonationFunds";
@@ -25,6 +26,7 @@ const Index = () => {
         <RecentNews />
         <PrincipalMessageHome />
         <SuccessStatistics />
+        <FounderSection />
         <About />
         <Programs />
         <DonationFunds />
