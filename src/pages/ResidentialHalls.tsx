@@ -1,12 +1,16 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import personPlaceholder from "@/assets/person-placeholder.png";
 
 const ResidentialHalls = () => {
   const directors = [
-    { name: "মাওলানা [নাম]", role: "প্রধান পরিচালক", phone: "+880 1XXX-XXXXXX" },
-    { name: "মাওলানা [নাম]", role: "সহকারী পরিচালক", phone: "+880 1XXX-XXXXXX" },
-    { name: "[নাম]", role: "হল সুপারভাইজার", phone: "+880 1XXX-XXXXXX" },
+    { name: "মাওলানা আব্দুর রহমান", role: "প্রধান পরিচালক", department: "হিফজ বিভাগ", phone: "+880 1XXX-XXXXXX" },
+    { name: "মাওলানা হাফেজ ইব্রাহীম", role: "সহকারী পরিচালক", department: "কওমী বিভাগ", phone: "+880 1XXX-XXXXXX" },
+    { name: "হাফেজ মোঃ ইউসুফ আলী", role: "হল সুপারভাইজার", department: "নূরানী বিভাগ", phone: "+880 1XXX-XXXXXX" },
+    { name: "মাওলানা আবু তালহা", role: "হল সুপারভাইজার", department: "হিফজ বিভাগ", phone: "+880 1XXX-XXXXXX" },
+    { name: "জনাব মোঃ রফিকুল ইসলাম", role: "হল সুপারভাইজার", department: "কওমী বিভাগ", phone: "+880 1XXX-XXXXXX" },
+    { name: "হাফেজ মোঃ আব্দুল মান্নান", role: "হল সুপারভাইজার", department: "লিল্লাহ বোর্ডিং", phone: "+880 1XXX-XXXXXX" },
   ];
 
   const halls = [
@@ -68,15 +72,19 @@ const ResidentialHalls = () => {
                 <CardTitle className="font-bengali">পরিচালকবৃন্দ</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {directors.map((director, index) => (
-                    <div key={index} className="text-center p-4 rounded-lg bg-muted/50">
-                      <div className="w-20 h-20 bg-primary/10 rounded-full mx-auto mb-3 flex items-center justify-center">
-                        <span className="text-3xl">👤</span>
+                    <div 
+                      key={index} 
+                      className="group text-center p-6 rounded-xl bg-gradient-to-br from-muted/30 to-muted/50 hover:from-purple-50 hover:to-indigo-50 dark:hover:from-purple-950/30 dark:hover:to-indigo-950/30 border-2 border-transparent hover:border-purple-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                    >
+                      <div className="bg-gradient-to-br from-purple-50 to-indigo-100 w-28 h-28 rounded-full mx-auto mb-4 overflow-hidden ring-4 ring-purple-500 ring-offset-4 ring-offset-background shadow-lg group-hover:ring-purple-600 group-hover:scale-105 transition-all duration-300">
+                        <img src={personPlaceholder} alt={director.name} className="w-full h-full object-cover" />
                       </div>
-                      <h3 className="font-bold font-bengali mb-1">{director.name}</h3>
-                      <p className="text-primary text-sm font-bengali mb-2">{director.role}</p>
-                      <p className="text-xs text-muted-foreground">{director.phone}</p>
+                      <h3 className="text-lg font-bold font-bengali mb-1 group-hover:text-purple-700 transition-colors">{director.name}</h3>
+                      <p className="text-primary font-semibold text-sm font-bengali mb-1">{director.role}</p>
+                      <p className="text-purple-600 dark:text-purple-400 text-xs font-bengali mb-2 bg-purple-100 dark:bg-purple-900/30 px-3 py-1 rounded-full inline-block">{director.department}</p>
+                      <p className="text-xs text-muted-foreground mt-2 bg-muted/50 rounded-lg py-2 px-4 group-hover:bg-white/80 transition-colors">{director.phone}</p>
                     </div>
                   ))}
                 </div>
