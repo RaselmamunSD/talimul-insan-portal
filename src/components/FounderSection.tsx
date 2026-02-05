@@ -22,19 +22,19 @@ const FounderSection = () => {
   };
 
   return (
-    <section ref={ref} className="section-spacing px-4 bg-gradient-to-b from-background to-muted/30">
+    <section ref={ref} className="py-12 md:py-20 px-4 bg-gradient-to-b from-background to-muted/30">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className={`text-center mb-12 transition-all duration-1000 ${
+        <div className={`text-center mb-8 md:mb-12 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
-          <div className="inline-block px-5 py-2 bg-primary/10 rounded-full mb-4">
-            <p className="font-arabic text-lg text-primary">{founder.arabicTitle}</p>
+          <div className="inline-block px-4 md:px-5 py-2 bg-primary/10 rounded-full mb-3 md:mb-4">
+            <p className="font-arabic text-base md:text-lg text-primary">{founder.arabicTitle}</p>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold font-bengali text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-bengali text-foreground mb-3 md:mb-4">
             মাদ্রাসার প্রতিষ্ঠাতা
           </h2>
-          <p className="text-lg font-english text-muted-foreground">
+          <p className="text-base md:text-lg font-english text-muted-foreground">
             Founder of the Madrasah
           </p>
         </div>
@@ -43,15 +43,15 @@ const FounderSection = () => {
         <div className={`max-w-5xl mx-auto transition-all duration-1000 delay-200 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
-          <div className="bg-card rounded-3xl shadow-elegant overflow-hidden border border-border/50">
-            <div className="grid md:grid-cols-5 gap-0">
+          <div className="bg-card rounded-2xl md:rounded-3xl shadow-elegant overflow-hidden border border-border/50">
+            <div className="flex flex-col md:grid md:grid-cols-5 gap-0">
               {/* Image Section */}
-              <div className="md:col-span-2 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-8 flex items-center justify-center">
+              <div className="md:col-span-2 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 md:p-8 flex items-center justify-center">
                 <div className="relative">
                   {/* Decorative ring */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 blur-xl scale-110" />
                   
-                  <div className="relative w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden ring-4 ring-primary ring-offset-4 ring-offset-card shadow-2xl">
+                  <div className="relative w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden ring-4 ring-primary ring-offset-2 md:ring-offset-4 ring-offset-card shadow-2xl">
                     <img 
                       src={personPlaceholder} 
                       alt={founder.name}
@@ -59,44 +59,44 @@ const FounderSection = () => {
                     />
                   </div>
                   
-                  {/* Decorative elements */}
-                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary/20 rounded-full animate-pulse" />
-                  <div className="absolute -bottom-2 -left-2 w-6 h-6 bg-primary/30 rounded-full animate-pulse delay-300" />
+                  {/* Decorative elements - hidden on mobile */}
+                  <div className="hidden sm:block absolute -top-4 -right-4 w-6 md:w-8 h-6 md:h-8 bg-primary/20 rounded-full animate-pulse" />
+                  <div className="hidden sm:block absolute -bottom-2 -left-2 w-4 md:w-6 h-4 md:h-6 bg-primary/30 rounded-full animate-pulse delay-300" />
                 </div>
               </div>
 
               {/* Content Section */}
-              <div className="md:col-span-3 p-8 md:p-10">
-                <div className="mb-6">
-                  <h3 className="text-2xl md:text-3xl font-bold font-bengali text-foreground mb-2">
+              <div className="md:col-span-3 p-6 md:p-8 lg:p-10">
+                <div className="mb-4 md:mb-6">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-bengali text-foreground mb-1 md:mb-2">
                     {founder.name}
                   </h3>
-                  <p className="text-primary font-semibold font-bengali text-lg">
+                  <p className="text-primary font-semibold font-bengali text-base md:text-lg">
                     {founder.title}
                   </p>
                 </div>
 
-                <div className="prose prose-lg max-w-none mb-8">
-                  <p className="text-muted-foreground font-bengali leading-relaxed whitespace-pre-line text-base">
+                <div className="prose prose-sm md:prose-lg max-w-none mb-6 md:mb-8">
+                  <p className="text-muted-foreground font-bengali leading-relaxed whitespace-pre-line text-sm md:text-base">
                     {founder.description}
                   </p>
                 </div>
 
                 {/* Achievements */}
-                <div className="bg-muted/50 rounded-2xl p-6">
-                  <h4 className="font-bold font-bengali text-foreground mb-4 text-lg">
+                <div className="bg-muted/50 rounded-xl md:rounded-2xl p-4 md:p-6">
+                  <h4 className="font-bold font-bengali text-foreground mb-3 md:mb-4 text-base md:text-lg">
                     বিশেষ অর্জনসমূহ
                   </h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3">
                     {founder.achievements.map((achievement, index) => (
                       <div 
                         key={index}
-                        className="flex items-center gap-3 bg-background/80 rounded-xl px-4 py-3 shadow-sm"
+                        className="flex items-center gap-2 md:gap-3 bg-background/80 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 shadow-sm"
                       >
-                        <span className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                          <span className="text-primary text-lg">✓</span>
+                        <span className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                          <span className="text-primary text-sm md:text-lg">✓</span>
                         </span>
-                        <span className="font-bengali text-sm text-foreground">
+                        <span className="font-bengali text-xs md:text-sm text-foreground">
                           {achievement}
                         </span>
                       </div>
