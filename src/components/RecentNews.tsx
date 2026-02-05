@@ -2,6 +2,7 @@ import { Calendar, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Link } from "react-router-dom";
 
 const RecentNews = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.1, rootMargin: "50px" });
@@ -119,11 +120,14 @@ const RecentNews = () => {
           isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
         }`}>
           <Button 
+            asChild
             size="lg"
             className="font-bengali text-base px-8 py-6 bg-gradient-to-r from-islamic-teal to-islamic-green hover:from-islamic-green hover:to-islamic-teal transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            সকল খবর দেখুন
-            <ChevronRight className="w-5 h-5 ml-2" />
+            <Link to="/news">
+              সকল নোটিশ দেখুন
+              <ChevronRight className="w-5 h-5 ml-2" />
+            </Link>
           </Button>
         </div>
       </div>
