@@ -108,7 +108,7 @@ const Header = () => {
         { label: "ভর্তির শর্তাবলী", href: "/admission-terms", icon: FileText }
       ]
     },
-    { label: "নিউজ", href: "/news" },
+    { label: "নোটিশ", href: "/news" },
     { label: "গ্যালারি", href: "/gallery" },
     { label: "মিডিয়া", href: "/media" },
     { label: "যোগাযোগ", href: "/contact" },
