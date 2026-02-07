@@ -38,6 +38,7 @@ import Help from "./pages/Help";
 import Developer from "./pages/Developer";
 import Blogs from "./pages/Blogs";
 import BlogDetail from "./pages/BlogDetail";
+import NoticeDetail from "./pages/NoticeDetail";
 
 const queryClient = new QueryClient();
 
@@ -71,6 +72,7 @@ const App = () => (
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/students" element={<Students />} />
           <Route path="/news" element={<News />} />
+          <Route path="/notice/:id" element={<NoticeDetail />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/media" element={<Media />} />
           <Route path="/donate" element={<Donate />} />
