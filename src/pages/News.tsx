@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -8,6 +9,7 @@ import islamicPattern from "@/assets/islamic-pattern.png";
 
 const allNews = [
   {
+    id: "1",
     date: "০৩ অক্টোবর ২০২৫",
     title: "২০২৫ শিক্ষাবর্ষের ভর্তি চলছে",
     description: "হিফজুল কুরআন, কওমী শিক্ষা ও লিল্লাহ বোডিং-এ সীমিত সংখ্যক আসনে ভর্তি চলছে। আগ্রহী অভিভাবকগণ অনলাইনে আবেদন করতে পারবেন।",
@@ -15,6 +17,7 @@ const allNews = [
     isNew: true,
   },
   {
+    id: "2",
     date: "২৫ সেপ্টেম্বর ২০২৫",
     title: "কামিল পরীক্ষার বিজ্ঞপ্তি প্রকাশ",
     description: "কামিল ১ম ও ২য় পর্বের বার্ষিক পরীক্ষা আগামী ১৫ নভেম্বর থেকে শুরু হবে। সকল শিক্ষার্থীদের প্রস্তুতি নিতে বলা হচ্ছে।",
@@ -22,6 +25,7 @@ const allNews = [
     isNew: true,
   },
   {
+    id: "3",
     date: "১০ সেপ্টেম্বর ২০২৫",
     title: "বার্ষিক খতমে কুরআন মাহফিল",
     description: "আলহামদুলিল্লাহ, এ বছর ৫০ জন ছাত্র সফলভাবে হিফজ সম্পন্ন করেছে। তাদের সম্মানে আগামী ২০ সেপ্টেম্বর খতমে কুরআন মাহফিল অনুষ্ঠিত হবে।",
@@ -29,6 +33,7 @@ const allNews = [
     isNew: false,
   },
   {
+    id: "4",
     date: "০১ সেপ্টেম্বর ২০২৫",
     title: "নতুন শিক্ষক নিয়োগ বিজ্ঞপ্তি",
     description: "মাদ্রাসায় অভিজ্ঞ শিক্ষক নিয়োগ দেওয়া হবে। আগ্রহী প্রার্থীদের আগামী ১৫ সেপ্টেম্বরের মধ্যে আবেদন করতে হবে।",
@@ -36,6 +41,7 @@ const allNews = [
     isNew: false,
   },
   {
+    id: "5",
     date: "২০ আগস্ট ২০২৫",
     title: "ঈদ-উল-আযহা উপলক্ষে ছুটির ঘোষণা",
     description: "আগামী ঈদ-উল-আযহা উপলক্ষে মাদ্রাসা ১০ দিন বন্ধ থাকবে। ছুটির পর নিয়মিত ক্লাস শুরু হবে।",
@@ -43,6 +49,7 @@ const allNews = [
     isNew: false,
   },
   {
+    id: "6",
     date: "১০ আগস্ট ২০২৫",
     title: "অভিভাবক সমাবেশের তারিখ ঘোষণা",
     description: "আগামী ২৫ আগস্ট রবিবার সকাল ১০টায় মাদ্রাসা প্রাঙ্গণে অভিভাবক সমাবেশ অনুষ্ঠিত হবে।",
@@ -129,8 +136,8 @@ const News = () => {
           {/* Notice List */}
           <div className="max-w-4xl mx-auto space-y-4">
             {filteredNews.map((item, index) => (
+              <Link to={`/notice/${item.id}`} key={item.id} className="block">
               <Card
-                key={index}
                 className={`group border-0 hover:shadow-xl bg-card/90 backdrop-blur-sm overflow-hidden transition-all duration-500 ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
                 }`}
@@ -171,6 +178,7 @@ const News = () => {
                   </div>
                 </CardContent>
               </Card>
+              </Link>
             ))}
 
             {filteredNews.length === 0 && (
