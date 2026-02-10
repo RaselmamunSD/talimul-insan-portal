@@ -1,40 +1,41 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Mail, Sparkles, Bell, Send } from "lucide-react";
+import { Mail, CheckCircle2, Shield, Zap, Send } from "lucide-react";
 import { toast } from "sonner";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
-  const [isHovered, setIsHovered] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
-      toast.success("সাবস্ক্রিপশন সফল হয়েছে!");
+      setIsLoading(true);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      toast.success("সাবস্ক্রিপশন সফল হয়েছে! 🎉", {
+        description: "আপনার ইমেইলে শীঘ্রই আপডেট পাঠানো হবে।",
+      });
       setEmail("");
+      setIsLoading(false);
     }
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-islamic-green via-islamic-teal to-emerald-600 py-24 overflow-hidden">
-      {/* Animated Background Glow Effects */}
+    <section className="relative bg-gradient-to-br from-islamic-green via-emerald-600 to-teal-600 py-20 md:py-28 overflow-hidden">
+      {/* Simplified Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-teal-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl"></div>
+        {/* Subtle gradient orbs */}
+        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-teal-400/10 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Floating Decorative Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-4 h-4 bg-amber-400/60 rounded-full animate-bounce" style={{ animationDuration: '3s' }}></div>
-        <div className="absolute top-20 right-20 w-3 h-3 bg-white/40 rounded-full animate-bounce" style={{ animationDuration: '2.5s', animationDelay: '0.5s' }}></div>
-        <div className="absolute bottom-20 left-1/4 w-5 h-5 bg-amber-300/50 rounded-full animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
-        <div className="absolute bottom-32 right-1/3 w-3 h-3 bg-white/30 rounded-full animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.7s' }}></div>
-      </div>
-
-      {/* Islamic Pattern Decorations - Left Side */}
-      <div className="absolute left-0 top-0 bottom-0 w-1/4 opacity-15">
+      {/* Geometric Pattern - Single Side */}
+      <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-5 hidden lg:block">
         <img 
           src="/src/assets/islamic-pattern.png" 
           alt="" 
@@ -42,105 +43,125 @@ const Newsletter = () => {
         />
       </div>
 
-      {/* Islamic Pattern Decorations - Right Side */}
-      <div className="absolute right-0 top-0 bottom-0 w-1/4 opacity-15">
-        <img 
-          src="/src/assets/islamic-pattern.png" 
-          alt="" 
-          className="h-full w-full object-cover"
-        />
+      {/* Clean Wave at Bottom */}
+      <div className="absolute bottom-0 left-0 right-0 pointer-events-none">
+        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+          <path d="M0 100L60 90C120 80 240 60 360 50C480 40 600 40 720 45C840 50 960 60 1080 65C1200 70 1320 70 1380 70L1440 70V100H1380C1320 100 1200 100 1080 100C960 100 840 100 720 100C600 100 480 100 360 100C240 100 120 100 60 100H0Z" fill="white" fillOpacity="0.03"/>
+        </svg>
       </div>
 
-      {/* Shimmer Effect Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer" style={{ backgroundSize: '200% 100%' }}></div>
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Decorative Icon */}
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-amber-400/30 rounded-full blur-xl animate-pulse"></div>
-              <div className="relative bg-gradient-to-br from-amber-400 to-orange-500 p-4 rounded-full shadow-2xl">
-                <Bell className="w-8 h-8 text-white animate-wiggle" />
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-10">
-            {/* Premium Badge */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/20">
-              <Sparkles className="w-4 h-4 text-amber-400" />
-              <span className="font-bengali text-white/90 text-sm">সর্বশেষ আপডেট পেতে যুক্ত হোন</span>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-5xl mx-auto">
+          {/* Content Section */}
+          <div className="text-center mb-12 md:mb-16">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/20 hover:bg-white/15 transition-colors">
+              <Zap className="w-4 h-4 text-amber-400" />
+              <span className="font-bengali text-white/90 text-sm font-medium">সর্বশেষ আপডেট পান</span>
             </div>
 
-            <h2 className="font-bengali text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+            {/* Heading */}
+            <h2 className="font-bengali text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 leading-tight px-4">
               নিয়মিত নিউজলেটার পেতে
               <br />
-              <span className="bg-gradient-to-r from-amber-300 via-yellow-300 to-orange-300 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-300 bg-clip-text text-transparent">
                 সাবস্ক্রাইব করুন
               </span>
             </h2>
-            <p className="font-bengali text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+
+            {/* Description */}
+            <p className="font-bengali text-white/80 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed px-4">
               মাদ্রাসার সকল আপডেট, খবরাখবর ও গুরুত্বপূর্ণ ঘোষণা সরাসরি আপনার ইমেইলে পৌঁছে যাবে
             </p>
           </div>
 
-          <form onSubmit={handleSubscribe} className="max-w-xl mx-auto">
-            <div 
-              className={`relative bg-white/10 backdrop-blur-md p-2 rounded-full border transition-all duration-500 ${
-                isHovered 
-                  ? 'border-amber-400/50 shadow-[0_0_30px_rgba(251,191,36,0.3)]' 
-                  : 'border-white/20 shadow-xl'
-              }`}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <div className="flex flex-col sm:flex-row gap-2">
-                <div className="relative flex-1">
-                  <Mail className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <Input
-                    type="email"
-                    placeholder="আপনার ইমেইল ঠিকানা লিখুন"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="h-14 pl-12 pr-4 font-bengali text-lg bg-white border-0 focus-visible:ring-2 focus-visible:ring-amber-400/50 rounded-full shadow-inner"
-                  />
+          {/* Modern Card Form */}
+          <div className="max-w-3xl mx-auto px-4">
+            <div className="bg-white/95 backdrop-blur-lg rounded-3xl shadow-2xl p-6 sm:p-8 md:p-10 border border-white/20">
+              <form onSubmit={handleSubscribe} className="space-y-6">
+                {/* Email Input */}
+                <div className="relative">
+                  <label htmlFor="newsletter-email" className="sr-only">
+                    ইমেইল ঠিকানা
+                  </label>
+                  <div className="relative">
+                    <Mail className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 transition-colors ${
+                      isFocused ? 'text-islamic-green' : 'text-gray-400'
+                    }`} />
+                    <Input
+                      id="newsletter-email"
+                      type="email"
+                      placeholder="আপনার ইমেইল ঠিকানা লিখুন"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      onFocus={() => setIsFocused(true)}
+                      onBlur={() => setIsFocused(false)}
+                      required
+                      disabled={isLoading}
+                      className="h-14 sm:h-16 pl-12 pr-4 font-bengali text-base sm:text-lg bg-gray-50 border-2 border-gray-200 focus:border-islamic-green focus:bg-white focus-visible:ring-4 focus-visible:ring-islamic-green/10 rounded-2xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    />
+                  </div>
                 </div>
+
+                {/* Submit Button */}
                 <Button
                   type="submit"
-                  className="h-14 px-8 font-bengali text-lg font-semibold bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 hover:from-amber-500 hover:via-orange-500 hover:to-amber-600 transition-all text-gray-900 rounded-full shadow-lg hover:shadow-[0_0_25px_rgba(251,191,36,0.5)] hover:scale-105 flex items-center gap-2 group"
+                  disabled={isLoading}
+                  className="w-full h-14 sm:h-16 font-bengali text-base sm:text-lg font-semibold bg-gradient-to-r from-islamic-green to-emerald-600 hover:from-islamic-green hover:to-emerald-700 text-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2 group"
                 >
-                  <span>সাবস্ক্রাইব</span>
-                  <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  {isLoading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      <span>অপেক্ষা করুন...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>সাবস্ক্রাইব করুন</span>
+                      <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
                 </Button>
-              </div>
-            </div>
-          </form>
 
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mt-8">
-            <div className="flex items-center gap-2 text-white/70">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="font-bengali text-sm">১০০% নিরাপদ</span>
+                {/* Trust Indicators */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                  <div className="flex items-center gap-3 justify-center sm:justify-start">
+                    <div className="flex-shrink-0 w-10 h-10 bg-green-50 rounded-full flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-green-600" />
+                    </div>
+                    <span className="font-bengali text-sm text-gray-700 font-medium">১০০% নিরাপদ</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 justify-center sm:justify-start">
+                    <div className="flex-shrink-0 w-10 h-10 bg-blue-50 rounded-full flex items-center justify-center">
+                      <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span className="font-bengali text-sm text-gray-700 font-medium">স্প্যাম মুক্ত</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 justify-center sm:justify-start">
+                    <div className="flex-shrink-0 w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center">
+                      <Zap className="w-5 h-5 text-amber-600" />
+                    </div>
+                    <span className="font-bengali text-sm text-gray-700 font-medium">সহজ আনসাবস্ক্রাইব</span>
+                  </div>
+                </div>
+              </form>
             </div>
-            <div className="flex items-center gap-2 text-white/70">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="font-bengali text-sm">স্প্যাম মুক্ত</span>
-            </div>
-            <div className="flex items-center gap-2 text-white/70">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="font-bengali text-sm">যেকোনো সময় আনসাবস্ক্রাইব</span>
-            </div>
+
+            {/* Additional Info */}
+            <p className="text-center text-white/60 text-xs sm:text-sm font-bengali mt-6 px-4">
+              সাবস্ক্রাইব করার মাধ্যমে আপনি আমাদের{" "}
+              <a href="/privacy-policy" className="text-white/90 hover:text-white underline transition-colors">
+                গোপনীয়তা নীতি
+              </a>{" "}
+              এবং{" "}
+              <a href="/terms" className="text-white/90 hover:text-white underline transition-colors">
+                শর্তাবলী
+              </a>{" "}
+              মেনে নিচ্ছেন
+            </p>
           </div>
         </div>
-      </div>
-
-      {/* Bottom Wave Decoration */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
-          <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white" fillOpacity="0.05"/>
-        </svg>
       </div>
     </section>
   );

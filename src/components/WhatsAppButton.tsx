@@ -5,7 +5,7 @@ const WhatsAppButton = () => {
   const [isHovered, setIsHovered] = useState(false);
   
   // WhatsApp number - update with actual madrasah number
-  const phoneNumber = "8801XXXXXXXXX"; // Replace with actual number (e.g., 8801712345678)
+  const phoneNumber = "+8801738060329"; // Replace with actual number (e.g., 8801712345678)
   const message = "আসসালামু আলাইকুম, আমি তা'লিমুল ইন্‌সান মাদ্রাসা সম্পর্কে জানতে চাই।";
   
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

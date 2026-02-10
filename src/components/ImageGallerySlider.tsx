@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -7,47 +7,40 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
-import { useState } from "react";
-import { Maximize2 } from "lucide-react";
-import madrasahBuilding from "@/assets/madrasah-building.jpg";
-import mosqueSkyline from "@/assets/mosque-skyline.png";
-import Lightbox from "./Lightbox";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import madrasah1 from "@/assets/madrasah-1.png";
+import madrasah2 from "@/assets/madrasah-2.png";
+import madrasah3 from "@/assets/madrasah-3.png";
+import madrasah4 from "@/assets/madrasah-4.png";
+import madrasah5 from "@/assets/madrasah-5.png";
 
-// Sample gallery images - replace with actual madrasah activity images
+// Madrasah gallery images
 const galleryImages = [
   {
-    src: madrasahBuilding,
+    src: madrasah1,
     title: "মাদ্রাসার প্রধান ভবন",
-    description: "আধুনিক সুবিধা সম্পন্ন শিক্ষা প্রতিষ্ঠান",
   },
   {
-    src: mosqueSkyline,
+    src: madrasah2,
     title: "মসজিদ ও ক্যাম্পাস",
-    description: "নামাজ ও ইবাদতের জন্য সুন্দর পরিবেশ",
   },
   {
-    src: madrasahBuilding,
-    title: "শ্রেণীকক্ষ কার্যক্রম",
-    description: "আধুনিক শিক্ষা পদ্ধতিতে পাঠদান",
+    src: madrasah3,
+    title: "শিক্ষা কার্যক্রম",
   },
   {
-    src: mosqueSkyline,
-    title: "কুরআন শিক্ষা কার্যক্রম",
-    description: "হিফজ ও তিলাওয়াত প্রশিক্ষণ",
+    src: madrasah4,
+    title: "ছাত্রাবাস",
   },
   {
-    src: madrasahBuilding,
-    title: "সাংস্কৃতিক অনুষ্ঠান",
-    description: "ইসলামিক অনুষ্ঠান ও প্রতিযোগিতা",
+    src: madrasah5,
+    title: "মাদ্রাসা পরিবেশ",
   },
 ];
 
 const ImageGallerySlider = () => {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     if (!api) {
@@ -60,22 +53,17 @@ const ImageGallerySlider = () => {
       setCurrent(api.selectedScrollSnap());
     });
 
-    // Auto-play functionality
+    // Auto-play functionality - change every 3 seconds
     const autoplay = setInterval(() => {
       if (api.canScrollNext()) {
         api.scrollNext();
       } else {
         api.scrollTo(0);
       }
-    }, 4000);
+    }, 3000);
 
     return () => clearInterval(autoplay);
   }, [api]);
-
-  const openLightbox = (index: number) => {
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-  };
 
   return (
     <section className="py-16 bg-gradient-to-b from-background to-muted/30">
@@ -84,20 +72,20 @@ const ImageGallerySlider = () => {
         <div className="text-center mb-12">
           <div className="inline-block">
             <div className="flex items-center gap-3 mb-3">
-              <div className="h-px w-12 bg-primary"></div>
-              <h2 className="text-3xl md:text-4xl font-bold font-bengali text-primary">
+              <div className="h-0.5 w-16 bg-islamic-green"></div>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-bengali text-islamic-green">
                 আমাদের মাদ্রাসা
               </h2>
-              <div className="h-px w-12 bg-primary"></div>
+              <div className="h-0.5 w-16 bg-islamic-green"></div>
             </div>
           </div>
-          <p className="text-muted-foreground font-bengali text-lg mt-2">
+          <p className="text-muted-foreground font-bengali text-lg mt-3">
             মাদ্রাসার বিভিন্ন কার্যক্রম ও সুবিধাসমূহ
           </p>
         </div>
 
         {/* Carousel */}
-        <div className="relative max-w-6xl mx-auto">
+        <div className="relative max-w-7xl mx-auto">
           <Carousel
             setApi={setApi}
             opts={{
@@ -106,40 +94,39 @@ const ImageGallerySlider = () => {
             }}
             className="w-full"
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-4">
               {galleryImages.map((image, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="border-2 border-border/50 overflow-hidden group hover:border-primary transition-all duration-300 hover:shadow-xl cursor-pointer">
-                    <CardContent className="p-0" onClick={() => openLightbox(index)}>
-                      <div className="relative aspect-[4/3] overflow-hidden">
-                        <img
-                          src={image.src}
-                          alt={image.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        
-                        {/* Zoom Icon */}
-                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110">
-                          <Maximize2 className="h-5 w-5 text-primary" />
-                        </div>
-
-                        <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                          <h3 className="text-white font-bengali font-semibold text-lg mb-1">
-                            {image.title}
-                          </h3>
-                          <p className="text-white/90 font-bengali text-sm">
-                            {image.description}
-                          </p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <div className="relative group overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                      <img
+                        src={image.src}
+                        alt={image.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      {/* Overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-islamic-green/80 via-islamic-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-12 bg-primary hover:bg-primary/90 text-white border-0" />
-            <CarouselNext className="hidden md:flex -right-12 bg-primary hover:bg-primary/90 text-white border-0" />
+            
+            {/* Custom Navigation Buttons */}
+            <button
+              onClick={() => api?.scrollPrev()}
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-islamic-green hover:bg-islamic-dark-green text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Previous slide"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={() => api?.scrollNext()}
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-islamic-green hover:bg-islamic-dark-green text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 z-10"
+              aria-label="Next slide"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
           </Carousel>
 
           {/* Slide Indicators */}
@@ -149,23 +136,25 @@ const ImageGallerySlider = () => {
                 key={index}
                 onClick={() => api?.scrollTo(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  index === current ? "w-8 bg-primary" : "w-2 bg-muted-foreground/30"
+                  index === current 
+                    ? "w-8 bg-islamic-green" 
+                    : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
         </div>
-      </div>
 
-      {/* Lightbox */}
-      <Lightbox
-        images={galleryImages}
-        currentIndex={lightboxIndex}
-        isOpen={lightboxOpen}
-        onClose={() => setLightboxOpen(false)}
-      />
-    </section>
+        {/* Description Section */}
+        <div className="max-w-6xl mx-auto mt-16">
+          <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl p-8 md:p-12 shadow-lg border border-blue-200/50">
+            <h3 className="text-2xl md:text-3xl font-bold font-bengali text-islamic-dark-green mb-6 text-center">
+              দারুননাজাত সিদ্দিকিয়া কামিল মাদরাসার আপনাকে স্বাগতম
+            </h3>
+            
+            <div className="space-y-6 font-bengali text-base md:text-lg text-foreground/90 leading-relaxed">
+              <p>
   );
 };
 

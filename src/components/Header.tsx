@@ -27,7 +27,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import madrasahLogo from "@/assets/madrasah-logo-new.png";
+import madrasahLogo from "@/assets/madrasah-logo-new.webp";
 
 const Header = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -159,9 +159,9 @@ const Header = () => {
           <div className="flex items-center justify-center gap-4">
             {/* Left - English Name */}
             <div className="hidden lg:block text-left flex-1">
-              <p className="text-sm font-english font-semibold leading-tight">
-                Talimul Insan Hafizia<br />Qawmi Madrasah & Lillah Boarding
-              </p>
+              <h2 className="text-sm font-english font-semibold leading-tight">
+                Talimul Insan Hafizia Qawmi Madrasah & Lillah Boarding
+              </h2>
             </div>
 
             {/* Center - Logo */}
@@ -187,7 +187,7 @@ const Header = () => {
           {/* Bengali Names - Center */}
           <div className="text-center mt-2">
             <h1 className="text-lg lg:text-2xl font-bold font-bengali leading-tight">
-              হাড়ীভাঙ্গা তা'লিমুল ইন্‌স্সান হাফেজিয়া কওমী মাদ্রাসা ও লিল্লাহ বোডিং
+              হাড়ীভাঙ্গা তা'লিমুল ইনসান হাফেজিয়া,কওমী মাদ্রাসা ও লিল্লাহ বোর্ডিং
             </h1>
             <p className="text-xs lg:text-sm font-bengali mt-1">
               হাড়ীভাঙ্গা এয়ারপোর্ট সংলগ্ন, লালমনিরহাট।
@@ -234,7 +234,7 @@ const Header = () => {
                 asChild
                 className="bg-islamic-green hover:bg-islamic-green/90 hover:scale-105 text-white font-bengali font-bold border-2 border-white px-4 py-2 text-sm shadow-lg animate-electric-glow transition-all duration-300"
               >
-                <Link to="/donate">💝 দান করুন</Link>
+                <Link to="/donate"> দান করুন</Link>
               </Button>
             </div>
 
@@ -308,7 +308,7 @@ const Header = () => {
                 asChild
                 className="bg-islamic-green hover:bg-islamic-green/90 hover:scale-105 text-white font-bengali font-bold border-2 border-white px-6 py-3 shadow-lg hover:shadow-2xl transition-all duration-300 animate-electric-glow"
               >
-                <Link to="/donate">💝 দান করুন</Link>
+                <Link to="/donate"> দান করুন</Link>
               </Button>
               
               <DropdownMenu>
@@ -352,8 +352,8 @@ const Header = () => {
               </div>
               <div className="relative flex justify-between items-center">
                 <div>
-                  <span className="font-bengali font-bold text-xl text-white drop-shadow-lg">মেনু</span>
-                  <p className="font-bengali text-xs text-white/80 mt-1">তা'লিমুল ইন্‌স্সান মাদ্রাসা</p>
+                  <span className="font-bengali font-bold text-xl text-white drop-shadow-lg">MTIHQML</span>
+                  <p className="font-bengali text-xs text-white/80 mt-1">হাড়ীভাঙ্গা তা'লিমুল ইনসান হাফেজিয়া,কওমী মাদ্রাসা ও লিল্লাহ বোর্ডিং</p>
                 </div>
                 <button
                   onClick={() => setIsMenuOpen(false)}
@@ -440,7 +440,7 @@ const Header = () => {
                 asChild
                 className="w-full bg-gradient-to-r from-islamic-green to-primary hover:from-islamic-green/90 hover:to-primary/90 hover:scale-105 text-white font-bengali font-bold border border-white/20 shadow-lg transition-all duration-300"
               >
-                <Link to="/donate" onClick={() => setIsMenuOpen(false)}>💝 দান করুন</Link>
+                <Link to="/donate" onClick={() => setIsMenuOpen(false)}> <b> দান করুন </b> </Link>
               </Button>
               
               <Button

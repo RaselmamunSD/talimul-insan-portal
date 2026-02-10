@@ -1,7 +1,7 @@
 import { Facebook, Youtube, Mail, Phone, Linkedin, Instagram, ArrowUp, MapPin, Code2, Send, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import madrasahLogo from "@/assets/madrasah-logo-new.png";
+import madrasahLogo from "@/assets/madrasah-logo-new.webp";
 import footerMosqueBg from "@/assets/footer-mosque-bg.jpeg";
 
 const Footer = () => {
