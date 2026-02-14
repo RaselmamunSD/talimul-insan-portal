@@ -55,16 +55,16 @@ const RecentNews = () => {
         <div className={`text-center mb-10 md:mb-14 transition-all duration-700 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
         }`}>
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-islamic-teal/10 rounded-full mb-4">
-            <Bell className="w-4 h-4 text-islamic-teal" />
-            <span className="font-bengali text-sm text-islamic-teal font-semibold">সর্বশেষ নোটিশ</span>
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-islamic-teal/10 rounded-full mb-4">
+            <Bell className="w-5 h-5 text-islamic-teal" />
+            <span className="font-bengali text-base text-islamic-teal font-semibold">সর্বশেষ নোটিশ</span>
           </div>
           
-          <h2 className="font-bengali text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3">
+          <h2 className="font-bengali text-5xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 px-4">
             সাম্প্রতিক নোটিশ
           </h2>
           
-          <p className="font-bengali text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="font-bengali text-lg md:text-lg text-muted-foreground max-w-2xl mx-auto">
             মাদ্রাসার সর্বশেষ ঘোষণা ও গুরুত্বপূর্ণ তথ্যাবলী
           </p>
 
@@ -87,39 +87,39 @@ const RecentNews = () => {
                 }`}
                 style={{ transitionDelay: `${200 + index * 150}ms` }}
               >
-                <CardContent className="p-5 md:p-6 flex flex-col h-full">
+                <CardContent className="p-6 md:p-6 flex flex-col h-full">
                   {/* Top row: category + new badge */}
                   <div className="flex items-center gap-2 mb-3">
-                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-bengali font-semibold ${getCategoryColor(news.category)}`}>
+                    <span className={`inline-block px-3 py-1.5 rounded-full text-sm font-bengali font-semibold ${getCategoryColor(news.category)}`}>
                       {news.category}
                     </span>
                     {news.isNew && (
-                      <span className="px-2 py-0.5 bg-destructive/10 text-destructive rounded-full text-xs font-bengali font-semibold animate-pulse">
+                      <span className="px-2.5 py-1 bg-destructive/10 text-destructive rounded-full text-sm font-bengali font-semibold animate-pulse">
                         নতুন
                       </span>
                     )}
                   </div>
 
                   {/* Date */}
-                  <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                    <Calendar className="w-3.5 h-3.5" />
-                    <span className="font-bengali text-xs">{news.date}</span>
+                  <div className="flex items-center gap-2 text-muted-foreground mb-3">
+                    <Calendar className="w-4 h-4" />
+                    <span className="font-bengali text-sm">{news.date}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-bengali text-lg font-bold text-foreground mb-2 group-hover:text-islamic-teal transition-colors line-clamp-2">
+                  <h3 className="font-bengali text-xl font-bold text-foreground mb-3 group-hover:text-islamic-teal transition-colors line-clamp-2">
                     {news.title}
                   </h3>
 
                   {/* Excerpt */}
-                  <p className="font-bengali text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-2 flex-1">
+                  <p className="font-bengali text-muted-foreground text-base leading-relaxed mb-4 line-clamp-2 flex-1">
                     {news.excerpt}
                   </p>
 
                   {/* Read More */}
-                  <span className="flex items-center gap-1.5 text-islamic-teal font-bengali font-semibold text-sm group-hover:gap-3 transition-all mt-auto">
+                  <span className="flex items-center gap-1.5 text-islamic-teal font-bengali font-semibold text-base group-hover:gap-3 transition-all mt-auto">
                     বিস্তারিত দেখুন
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="w-5 h-5" />
                   </span>
                 </CardContent>
               </Card>
@@ -134,7 +134,7 @@ const RecentNews = () => {
           <Button 
             asChild
             size="lg"
-            className="font-bengali text-base px-8 py-6 bg-gradient-to-r from-islamic-teal to-islamic-green hover:from-islamic-green hover:to-islamic-teal shadow-lg hover:shadow-xl"
+            className="font-bengali text-lg px-8 py-6 h-14 bg-gradient-to-r from-islamic-teal to-islamic-green hover:from-islamic-green hover:to-islamic-teal shadow-lg hover:shadow-xl"
           >
             <Link to="/news">
               সকল নোটিশ দেখুন

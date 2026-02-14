@@ -33,31 +33,31 @@ const Welcome = () => {
               <div className={`text-center mb-8 transition-all duration-1000 delay-100 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}>
-                <p className="text-3xl md:text-4xl lg:text-5xl font-arabic text-islamic-gold mb-4 drop-shadow-sm">
+                <p className="text-4xl md:text-4xl lg:text-5xl font-arabic text-islamic-gold mb-4 drop-shadow-sm">
                   السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ
                 </p>
               </div>
 
               {/* Bengali Welcome Title */}
-              <h2 className={`text-center font-bengali text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-islamic-green via-islamic-teal to-islamic-green bg-clip-text text-transparent mb-10 transition-all duration-1000 delay-200 ${
+              <h2 className={`text-center font-bengali text-6xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-islamic-green via-islamic-teal to-islamic-green bg-clip-text text-transparent mb-10 transition-all duration-1000 delay-200 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}>
                 স্বাগতম
               </h2>
 
               {/* Welcome Message */}
-              <div className={`space-y-6 font-bengali text-lg md:text-xl lg:text-2xl text-center leading-relaxed transition-all duration-1000 delay-300 ${
+              <div className={`space-y-6 font-bengali text-xl md:text-xl lg:text-2xl text-center leading-relaxed transition-all duration-1000 delay-300 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
               }`}>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground text-xl">
                   আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহি ওয়া বারাকাতুহু।
                 </p>
-                <p className="text-foreground/80 max-w-3xl mx-auto">
+                <p className="text-foreground/80 max-w-3xl mx-auto text-xl">
                   আমাদের মাদ্রাসার ওয়েবসাইটে আপনাকে স্বাগতম। এখানে আপনি মাদ্রাসার সকল কার্যক্রম, 
                   শিক্ষা ব্যবস্থা, ভর্তি সংক্রান্ত তথ্য এবং আরও অনেক কিছু সম্পর্কে জানতে পারবেন।
                 </p>
                 <div className="pt-4">
-                  <p className="text-islamic-green font-bold text-xl md:text-2xl drop-shadow-sm">
+                  <p className="text-islamic-green font-bold text-2xl md:text-2xl drop-shadow-sm">
                     আল্লাহ তায়ালা আমাদের সবাইকে দ্বীনি ইলম অর্জনের তাওফিক দান করুন। আমীন।
                   </p>
                 </div>

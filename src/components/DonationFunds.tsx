@@ -78,15 +78,15 @@ const DonationFunds = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <div className="mb-4 inline-block px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full">
-            <p className="font-bengali text-lg text-white">صَدَقَةٌ جَارِيَةٌ</p>
+          <div className="mb-4 inline-block px-6 py-2.5 bg-white/20 backdrop-blur-sm rounded-full">
+            <p className="font-bengali text-xl text-white">صَدَقَةٌ جَارِيَةٌ</p>
           </div>
           
-          <h2 className="text-4xl md:text-5xl font-bold font-bengali text-white mb-4 drop-shadow-lg">
+          <h2 className="text-5xl md:text-5xl font-bold font-bengali text-white mb-4 drop-shadow-lg px-4">
             অনুদান তহবিলসমূহ
           </h2>
           
-          <p className="font-bengali text-lg md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md">
+          <p className="font-bengali text-xl md:text-xl text-white/90 max-w-3xl mx-auto drop-shadow-md px-4">
             "যে ব্যক্তি আল্লাহর পথে ব্যয় করে, তার প্রতিদান আল্লাহর কাছে রয়েছে"
           </p>
         </div>
@@ -121,20 +121,20 @@ const DonationFunds = () => {
                     </div>
                     
                     {/* Content Section */}
-                    <CardContent className="p-5 text-center">
+                    <CardContent className="p-6 text-center">
                       {/* Title */}
-                      <h3 className="font-bengali text-xl font-bold text-islamic-dark-green mb-3 leading-tight min-h-[56px] flex items-center justify-center">
+                      <h3 className="font-bengali text-2xl font-bold text-islamic-dark-green mb-3 leading-tight min-h-[64px] flex items-center justify-center">
                         {category.title}
                       </h3>
                       
                       {/* Description */}
-                      <p className="font-bengali text-gray-600 text-sm leading-relaxed mb-5 min-h-[48px]">
+                      <p className="font-bengali text-gray-600 text-base leading-relaxed mb-5 min-h-[56px]">
                         {category.description}
                       </p>
                       
                       {/* Donate Button */}
                       <Link to={`/donation-form?category=${category.id}`} className="block">
-                        <Button className="w-full bg-islamic-green hover:bg-islamic-dark-green text-white font-bengali text-base py-5 rounded-xl transition-all duration-300 hover:shadow-lg">
+                        <Button className="w-full bg-islamic-green hover:bg-islamic-dark-green text-white font-bengali text-lg py-6 h-14 rounded-xl transition-all duration-300 hover:shadow-lg">
                           দান করুন
                         </Button>
                       </Link>
@@ -162,7 +162,7 @@ const DonationFunds = () => {
           <Button 
             asChild
             size="lg"
-            className="bg-white text-islamic-green hover:bg-white/90 font-bengali text-xl px-8 py-6 shadow-xl hover:shadow-2xl transition-smooth border-2 border-white/50"
+            className="bg-white text-islamic-green hover:bg-white/90 font-bengali text-xl px-8 py-6 h-16 shadow-xl hover:shadow-2xl transition-smooth border-2 border-white/50"
           >
             <Link to="/donate">সব তহবিল দেখুন</Link>
           </Button>

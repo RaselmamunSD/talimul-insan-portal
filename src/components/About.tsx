@@ -157,18 +157,18 @@ const About = () => {
                 {/* Category Tag */}
                 <div className="flex items-center gap-2 mb-4">
                   <Sparkles className="w-5 h-5 md:w-4 md:h-4 text-primary transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" />
-                  <span className="text-base md:text-sm font-bengali text-primary font-medium group-hover:text-emerald-600 transition-colors duration-300">
+                  <span className="text-lg md:text-sm font-bengali text-primary font-medium group-hover:text-emerald-600 transition-colors duration-300">
                     {feature.category}
                   </span>
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-2xl md:text-xl font-bold font-bengali text-foreground mb-4 md:mb-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-3xl md:text-xl font-bold font-bengali text-foreground mb-4 md:mb-3 group-hover:text-primary transition-colors duration-300">
                   {feature.titleBn}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-base md:text-sm font-bengali text-muted-foreground leading-relaxed mb-6 md:mb-5 group-hover:text-foreground/80 transition-colors duration-300">
+                <p className="text-lg md:text-sm font-bengali text-muted-foreground leading-relaxed mb-6 md:mb-5 group-hover:text-foreground/80 transition-colors duration-300">
                   {feature.descBn}
                 </p>
                 
@@ -177,7 +177,7 @@ const About = () => {
                   asChild 
                   variant="outline" 
                   size="lg"
-                  className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-bengali text-base font-semibold rounded-lg transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg"
+                  className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-bengali text-lg font-semibold rounded-lg transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg h-12"
                 >
                   <Link to={feature.link}>
                     বিস্তারিত দেখুন

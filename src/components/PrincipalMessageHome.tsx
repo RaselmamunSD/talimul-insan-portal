@@ -60,22 +60,22 @@ const PrincipalMessageHome = () => {
 
                 {/* Name & Title */}
                 <div className="mb-6 md:mb-6">
-                  <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold font-bengali text-foreground mb-2 md:mb-2">
+                  <h3 className="text-3xl sm:text-3xl md:text-3xl font-bold font-bengali text-foreground mb-2 md:mb-2">
                     মাওলানা মুহাম্মদ আব্দুল্লাহ
                   </h3>
-                  <p className="text-primary font-semibold font-bengali text-lg md:text-xl">
+                  <p className="text-primary font-semibold font-bengali text-xl md:text-xl">
                     মুহতামিম ও প্রতিষ্ঠাতা
                   </p>
                 </div>
 
                 {/* Message */}
                 <div className="space-y-4 md:space-y-4 mb-8 md:mb-8">
-                  <p className="text-lg md:text-xl font-bengali leading-relaxed text-foreground">
+                  <p className="text-xl md:text-xl font-bengali leading-relaxed text-foreground">
                     বিস্মিল্লাহির রাহমানির রাহিম। আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহ। 
                     আল্লাহ তা'আলার অশেষ রহমতে আমাদের মাদ্রাসা দীর্ঘ ১৫ বছর যাবত কুরআন ও হাদিসের 
                     খিদমতে নিয়োজিত রয়েছে।
                   </p>
-                  <p className="text-base md:text-lg font-bengali leading-relaxed text-muted-foreground">
+                  <p className="text-lg md:text-lg font-bengali leading-relaxed text-muted-foreground">
                     আমাদের প্রতিষ্ঠানে শিক্ষার্থীরা শুধুমাত্র ধর্মীয় জ্ঞানই অর্জন করে না, বরং 
                     চরিত্র গঠন, নৈতিকতা ও মানবিক মূল্যবোধেও দীক্ষিত হয়।
                   </p>

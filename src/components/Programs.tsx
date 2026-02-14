@@ -99,27 +99,27 @@ const Programs = () => {
                 </div>
 
                 <CardHeader className="pb-4 md:pb-4 pt-6 md:pt-6 px-7 md:px-8">
-                  <CardTitle className="text-2xl md:text-2xl font-bengali text-foreground mb-2 md:mb-2 group-hover:text-primary transition-colors duration-300">
+                  <CardTitle className="text-3xl md:text-2xl font-bengali text-foreground mb-2 md:mb-2 group-hover:text-primary transition-colors duration-300">
                     {program.titleBn}
                   </CardTitle>
-                  <CardDescription className="text-xl md:text-lg font-arabic text-secondary/80">
+                  <CardDescription className="text-2xl md:text-lg font-arabic text-secondary/80">
                     {program.titleAr}
                   </CardDescription>
                 </CardHeader>
 
                 <CardContent className="px-7 md:px-8 pb-7 md:pb-8">
-                  <p className="text-lg md:text-base font-bengali text-muted-foreground mb-6 md:mb-6 leading-relaxed group-hover:text-foreground/70 transition-colors duration-300">
+                  <p className="text-xl md:text-base font-bengali text-muted-foreground mb-6 md:mb-6 leading-relaxed group-hover:text-foreground/70 transition-colors duration-300">
                     {program.description}
                   </p>
                   
                   <div className={`space-y-3 md:space-y-3 bg-gradient-to-br ${program.lightGradient} p-6 md:p-5 rounded-2xl border border-primary/10 group-hover:border-primary/20 transition-all duration-300`}>
-                    <p className="text-base md:text-sm font-bengali font-bold text-primary mb-3 md:mb-3 flex items-center">
+                    <p className="text-lg md:text-sm font-bengali font-bold text-primary mb-3 md:mb-3 flex items-center">
                       <Sparkles className="w-5 h-5 md:w-4 md:h-4 mr-2 group-hover:animate-pulse" />
                       বৈশিষ্ট্যসমূহ:
                     </p>
                     <ul className="grid grid-cols-2 gap-3 md:gap-2">
                       {program.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-base md:text-sm font-bengali group/item">
+                        <li key={idx} className="flex items-center text-lg md:text-sm font-bengali group/item">
                           <CheckCircle2 className="w-5 h-5 md:w-4 md:h-4 text-primary mr-2 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200" />
                           <span className="leading-snug text-foreground/80">{feature}</span>
                         </li>

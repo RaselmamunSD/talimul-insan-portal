@@ -68,23 +68,23 @@ const FounderSection = () => {
               {/* Content Section */}
               <div className="md:col-span-3 p-8 md:p-8 lg:p-10">
                 <div className="mb-6 md:mb-6">
-                  <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold font-bengali text-foreground mb-2 md:mb-2">
+                  <h3 className="text-3xl sm:text-3xl md:text-3xl font-bold font-bengali text-foreground mb-2 md:mb-2">
                     {founder.name}
                   </h3>
-                  <p className="text-primary font-semibold font-bengali text-lg md:text-xl">
+                  <p className="text-primary font-semibold font-bengali text-xl md:text-xl">
                     {founder.title}
                   </p>
                 </div>
 
                 <div className="prose prose-base md:prose-lg max-w-none mb-8 md:mb-8">
-                  <p className="text-muted-foreground font-bengali leading-relaxed whitespace-pre-line text-base md:text-lg">
+                  <p className="text-muted-foreground font-bengali leading-relaxed whitespace-pre-line text-lg md:text-lg">
                     {founder.description}
                   </p>
                 </div>
 
                 {/* Achievements */}
                 <div className="bg-muted/50 rounded-xl md:rounded-2xl p-6 md:p-6">
-                  <h4 className="font-bold font-bengali text-foreground mb-4 md:mb-4 text-lg md:text-xl">
+                  <h4 className="font-bold font-bengali text-foreground mb-4 md:mb-4 text-xl md:text-xl">
                     বিশেষ অর্জনসমূহ
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-3">
@@ -94,9 +94,9 @@ const FounderSection = () => {
                         className="flex items-center gap-3 md:gap-3 bg-background/80 rounded-lg md:rounded-xl px-4 md:px-4 py-3 md:py-3 shadow-sm"
                       >
                         <span className="flex-shrink-0 w-7 h-7 md:w-8 md:h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                          <span className="text-primary text-base md:text-lg">✓</span>
+                          <span className="text-primary text-lg md:text-lg">✓</span>
                         </span>
-                        <span className="font-bengali text-sm md:text-base text-foreground">
+                        <span className="font-bengali text-base md:text-base text-foreground">
                           {achievement}
                         </span>
                       </div>
