@@ -65,37 +65,37 @@ const About = () => {
       
       <div className="container mx-auto relative z-10">
         {/* About Us Section */}
-        <div className={`text-center mb-12 transition-all duration-1000 ${
+        <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
+          <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold font-bengali text-primary mb-5 px-4">
             আমাদের সম্পর্কে
           </h2>
-          <p className="text-xl font-arabic text-secondary">
+          <p className="text-2xl md:text-2xl font-arabic text-secondary">
             معلومات عنا
           </p>
-          <p className="text-lg font-english text-muted-foreground mt-2">
+          <p className="text-xl md:text-xl font-english text-muted-foreground mt-3">
             About Our Madrasah
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="max-w-7xl mx-auto mb-16 md:mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-10 items-center">
             <Card className={`shadow-elegant bg-white border-2 transition-all duration-1000 delay-200 ${
               isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
             }`}>
-              <CardContent className="p-8">
-                <p className="text-lg font-bengali leading-relaxed mb-4">
+              <CardContent className="p-8 md:p-10">
+                <p className="text-xl md:text-2xl font-bengali leading-relaxed mb-5">
                   হাড়ীভাঙ্গা তা'লিমুল ইন্‌সান হাফেজিয়া কওমী মাদ্রাসা ও লিল্লাহ বোডিং লালমনিরহাটে অবস্থিত একটি 
                   স্বনামধন্য ইসলামী শিক্ষা প্রতিষ্ঠান। আমরা কুরআনিক শিক্ষা, হাদিস, ফিকহ এবং আরবি ভাষা শিক্ষার 
                   মাধ্যমে ছাত্রদের পরিপূর্ণ ইসলামী জ্ঞান প্রদান করি।
                 </p>
-                <p className="text-lg font-bengali leading-relaxed mb-4">
+                <p className="text-xl md:text-2xl font-bengali leading-relaxed mb-5">
                   আমাদের মূল লক্ষ্য হলো কুরআন ও সুন্নাহর আলোকে প্রকৃত মুসলিম হিসেবে শিক্ষার্থীদের গড়ে তোলা। 
                   এখানে শুধু কিতাবি শিক্ষা নয়, বরং ব্যবহারিক ও নৈতিক শিক্ষার মাধ্যমে আদর্শ চরিত্রবান মানুষ 
                   হিসেবে তৈরি করা হয়। প্রতিষ্ঠানটি ২০০৮ সাল থেকে নিরলসভাবে দ্বীনি শিক্ষা বিস্তারে কাজ করে আসছে।
                 </p>
-                <p className="text-base font-english text-muted-foreground">
+                <p className="text-base md:text-lg font-english text-muted-foreground leading-relaxed">
                   Located near Haribhanga Airport in Lalmonirhat, our institution has been serving 
                   the community by providing quality Islamic education and shelter for orphans since 2008. 
                   We combine traditional Qawmi curriculum with modern teaching methods to prepare 
@@ -118,16 +118,16 @@ const About = () => {
         </div>
 
         {/* Our Activities Section */}
-        <div className={`text-center mb-12 transition-all duration-1000 ${
+        <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
+          <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold font-bengali text-primary mb-5 px-4">
             আমাদের কার্যক্রমসমূহ
           </h2>
-          <p className="text-xl font-arabic text-secondary">
+          <p className="text-2xl md:text-2xl font-arabic text-secondary">
             أنشطتنا وبرامجنا
           </p>
-          <p className="text-lg font-english text-muted-foreground mt-2">
+          <p className="text-xl md:text-xl font-english text-muted-foreground mt-3">
             Our Activities & Programs
           </p>
         </div>
@@ -153,22 +153,22 @@ const About = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
               
-              <CardContent className="p-6 flex flex-col h-auto">
+              <CardContent className="p-7 md:p-6 flex flex-col h-auto">
                 {/* Category Tag */}
-                <div className="flex items-center gap-2 mb-3">
-                  <Sparkles className="w-4 h-4 text-primary transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" />
-                  <span className="text-sm font-bengali text-primary font-medium group-hover:text-emerald-600 transition-colors duration-300">
+                <div className="flex items-center gap-2 mb-4">
+                  <Sparkles className="w-5 h-5 md:w-4 md:h-4 text-primary transition-transform duration-300 group-hover:scale-125 group-hover:rotate-12" />
+                  <span className="text-base md:text-sm font-bengali text-primary font-medium group-hover:text-emerald-600 transition-colors duration-300">
                     {feature.category}
                   </span>
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-bold font-bengali text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-2xl md:text-xl font-bold font-bengali text-foreground mb-4 md:mb-3 group-hover:text-primary transition-colors duration-300">
                   {feature.titleBn}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-sm font-bengali text-muted-foreground leading-relaxed mb-5 group-hover:text-foreground/80 transition-colors duration-300">
+                <p className="text-base md:text-sm font-bengali text-muted-foreground leading-relaxed mb-6 md:mb-5 group-hover:text-foreground/80 transition-colors duration-300">
                   {feature.descBn}
                 </p>
                 
@@ -177,7 +177,7 @@ const About = () => {
                   asChild 
                   variant="outline" 
                   size="lg"
-                  className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-bengali font-semibold rounded-lg transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg"
+                  className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-bengali text-base font-semibold rounded-lg transition-all duration-300 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg"
                 >
                   <Link to={feature.link}>
                     বিস্তারিত দেখুন

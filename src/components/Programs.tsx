@@ -51,19 +51,19 @@ const Programs = () => {
   return (
     <section ref={ref} id="programs" className="section-spacing px-4 bg-gradient-to-b from-background via-muted/30 to-background">
       <div className="container mx-auto">
-        <div className={`text-center mb-16 transition-all duration-1000 ${
+        <div className={`text-center mb-16 md:mb-20 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
-          <h2 className="text-4xl md:text-5xl font-bold font-bengali text-primary mb-4">
+          <h2 className="text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-bold font-bengali text-primary mb-5 px-4">
             শিক্ষা কার্যক্রম
           </h2>
-          <p className="text-xl font-arabic text-secondary">
+          <p className="text-2xl md:text-2xl font-arabic text-secondary">
             البرامج التعليمية
           </p>
-          <p className="text-lg font-english text-muted-foreground mt-2">
+          <p className="text-xl md:text-xl font-english text-muted-foreground mt-3">
             Academic Programs
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-emerald-400 mx-auto mt-6 rounded-full"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-primary to-emerald-400 mx-auto mt-8 rounded-full"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -80,15 +80,15 @@ const Programs = () => {
                 }}
               >
                 {/* Gradient Header */}
-                <div className={`relative h-28 bg-gradient-to-r ${program.gradient} overflow-hidden`}>
+                <div className={`relative h-32 md:h-28 bg-gradient-to-r ${program.gradient} overflow-hidden`}>
                   <div className="absolute inset-0 bg-[url('/islamic-pattern.png')] opacity-10"></div>
-                  <div className="absolute inset-0 flex items-center justify-between px-8">
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-white/30 transition-all duration-500">
-                        <IconComponent className="w-8 h-8 text-white" />
+                  <div className="absolute inset-0 flex items-center justify-between px-6 md:px-8">
+                    <div className="flex items-center gap-3 md:gap-4">
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 group-hover:bg-white/30 transition-all duration-500">
+                        <IconComponent className="w-7 h-7 md:w-8 md:h-8 text-white" />
                       </div>
-                      <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 font-bengali text-sm px-4 py-2 group-hover:bg-white/30 transition-all duration-300">
-                        <Clock className="w-3.5 h-3.5 mr-2" />
+                      <Badge className="bg-white/20 backdrop-blur-sm text-white border-0 font-bengali text-sm md:text-sm px-3 md:px-4 py-1.5 md:py-2 group-hover:bg-white/30 transition-all duration-300">
+                        <Clock className="w-3.5 h-3.5 mr-1.5 md:mr-2" />
                         {program.duration}
                       </Badge>
                     </div>
@@ -98,29 +98,29 @@ const Programs = () => {
                   <div className="absolute -right-4 -bottom-12 w-24 h-24 rounded-full bg-white/5"></div>
                 </div>
 
-                <CardHeader className="pb-4 pt-6 px-8">
-                  <CardTitle className="text-2xl font-bengali text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                <CardHeader className="pb-4 md:pb-4 pt-6 md:pt-6 px-7 md:px-8">
+                  <CardTitle className="text-2xl md:text-2xl font-bengali text-foreground mb-2 md:mb-2 group-hover:text-primary transition-colors duration-300">
                     {program.titleBn}
                   </CardTitle>
-                  <CardDescription className="text-lg font-arabic text-secondary/80">
+                  <CardDescription className="text-xl md:text-lg font-arabic text-secondary/80">
                     {program.titleAr}
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent className="px-8 pb-8">
-                  <p className="text-base font-bengali text-muted-foreground mb-6 leading-relaxed group-hover:text-foreground/70 transition-colors duration-300">
+                <CardContent className="px-7 md:px-8 pb-7 md:pb-8">
+                  <p className="text-lg md:text-base font-bengali text-muted-foreground mb-6 md:mb-6 leading-relaxed group-hover:text-foreground/70 transition-colors duration-300">
                     {program.description}
                   </p>
                   
-                  <div className={`space-y-3 bg-gradient-to-br ${program.lightGradient} p-5 rounded-2xl border border-primary/10 group-hover:border-primary/20 transition-all duration-300`}>
-                    <p className="text-sm font-bengali font-bold text-primary mb-3 flex items-center">
-                      <Sparkles className="w-4 h-4 mr-2 group-hover:animate-pulse" />
+                  <div className={`space-y-3 md:space-y-3 bg-gradient-to-br ${program.lightGradient} p-6 md:p-5 rounded-2xl border border-primary/10 group-hover:border-primary/20 transition-all duration-300`}>
+                    <p className="text-base md:text-sm font-bengali font-bold text-primary mb-3 md:mb-3 flex items-center">
+                      <Sparkles className="w-5 h-5 md:w-4 md:h-4 mr-2 group-hover:animate-pulse" />
                       বৈশিষ্ট্যসমূহ:
                     </p>
-                    <ul className="grid grid-cols-2 gap-2">
+                    <ul className="grid grid-cols-2 gap-3 md:gap-2">
                       {program.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm font-bengali group/item">
-                          <CheckCircle2 className="w-4 h-4 text-primary mr-2 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200" />
+                        <li key={idx} className="flex items-center text-base md:text-sm font-bengali group/item">
+                          <CheckCircle2 className="w-5 h-5 md:w-4 md:h-4 text-primary mr-2 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-200" />
                           <span className="leading-snug text-foreground/80">{feature}</span>
                         </li>
                       ))}
@@ -137,8 +137,8 @@ const Programs = () => {
           })}
         </div>
 
-        <div className="text-center mt-14">
-          <p className="text-lg font-bengali text-muted-foreground">
+        <div className="text-center mt-14 md:mt-16">
+          <p className="text-xl md:text-lg font-bengali text-muted-foreground px-4">
             আরও বিস্তারিত জানতে এবং ভর্তির জন্য যোগাযোগ করুন
           </p>
         </div>

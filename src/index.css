@@ -51,19 +51,12 @@ All colors MUST be HSL.
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -113,28 +106,106 @@ All colors MUST be HSL.
 
   html {
     scroll-behavior: smooth;
+    /* Increase base font size for better mobile readability */
+    font-size: 16px;
+  }
+  
+  /* Larger base font for very small screens */
+  @media (max-width: 374px) {
+    html {
+      font-size: 15px;
+    }
   }
 
   body {
     @apply bg-background text-foreground font-sans;
+    /* Better line height for Bengali text */
+    line-height: 1.7;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-bengali;
+    /* Better line height for Bengali headings */
+    line-height: 1.4;
   }
 }
 
 @layer utilities {
   .font-arabic {
     font-family: 'Amiri', serif;
+    line-height: 1.8;
   }
   
   .font-bengali {
     font-family: 'Noto Sans Bengali', sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
   }
   
   .font-english {
     font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Mobile-optimized text sizes */
+  .text-mobile-xs {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.6;
+  }
+  
+  .text-mobile-sm {
+    font-size: 1rem; /* 16px */
+    line-height: 1.7;
+  }
+  
+  .text-mobile-base {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75;
+  }
+  
+  .text-mobile-lg {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.8;
+  }
+  
+  .text-mobile-xl {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.6;
+  }
+  
+  .text-mobile-2xl {
+    font-size: 1.875rem; /* 30px */
+    line-height: 1.5;
+  }
+  
+  .text-mobile-3xl {
+    font-size: 2.25rem; /* 36px */
+    line-height: 1.4;
+  }
+  
+  /* Mobile-optimized padding */
+  .p-mobile-sm {
+    padding: 1.5rem; /* 24px */
+  }
+  
+  .p-mobile-md {
+    padding: 2rem; /* 32px */
+  }
+  
+  .p-mobile-lg {
+    padding: 2.5rem; /* 40px */
+  }
+  
+  /* Mobile-optimized spacing */
+  .space-mobile-sm > * + * {
+    margin-top: 1rem;
+  }
+  
+  .space-mobile-md > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-mobile-lg > * + * {
+    margin-top: 2rem;
   }
   
   .gradient-primary {

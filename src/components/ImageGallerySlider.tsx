@@ -3,11 +3,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import madrasah1 from "@/assets/madrasah-1.png";
 import madrasah2 from "@/assets/madrasah-2.png";
 import madrasah3 from "@/assets/madrasah-3.png";
@@ -94,64 +91,32 @@ const ImageGallerySlider = () => {
             }}
             className="w-full"
           >
-            <CarouselContent>
+            <CarouselContent className="ml-0">
               {galleryImages.map((image, index) => (
-                <CarouselItem key={index}>
-                  <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                <CarouselItem key={index} className="pl-0">
+                  <div className="overflow-hidden rounded-xl shadow-2xl">
                     <div className="relative aspect-[16/9] overflow-hidden bg-muted">
                       <img
                         src={image.src}
                         alt={image.title}
                         className="w-full h-full object-cover transition-transform duration-700"
                       />
-                      {/* Image Title Overlay */}
-                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-6">
-                        <h3 className="text-white font-bengali text-2xl md:text-3xl font-bold">
-                          {image.title}
-                        </h3>
-                      </div>
+                    </div>
+                    {/* Image Title Below Image */}
+                    <div className="bg-gradient-to-br from-islamic-green to-islamic-dark-green p-4 md:p-6">
+                      <h3 className="text-white font-bengali text-xl md:text-2xl font-bold text-center">
+                        {image.title}
+                      </h3>
                     </div>
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            
-            {/* Custom Navigation Buttons */}
-            <button
-              onClick={() => api?.scrollPrev()}
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/90 hover:bg-white text-islamic-green flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 z-10"
-              aria-label="Previous slide"
-            >
-              <ChevronLeft className="w-7 h-7" />
-            </button>
-            <button
-              onClick={() => api?.scrollNext()}
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/90 hover:bg-white text-islamic-green flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 z-10"
-              aria-label="Next slide"
-            >
-              <ChevronRight className="w-7 h-7" />
-            </button>
           </Carousel>
-
-          {/* Slide Indicators */}
-          <div className="flex justify-center gap-3 mt-6">
-            {galleryImages.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => api?.scrollTo(index)}
-                className={`h-3 rounded-full transition-all duration-300 ${
-                  index === current 
-                    ? "w-12 bg-islamic-green" 
-                    : "w-3 bg-gray-300 hover:bg-gray-400"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
 
         {/* Description Section */}
-        <div className="max-w-6xl mx-auto mt-8">
+        <div className="max-w-6xl mx-auto mt-0">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl p-8 md:p-12 shadow-lg border border-blue-200/50">
             <h3 className="text-2xl md:text-3xl font-bold font-bengali text-islamic-dark-green mb-6 text-center">
               দারুননাজাত সিদ্দিকিয়া কামিল মাদরাসার আপনাকে স্বাগতম
@@ -164,6 +129,22 @@ const ImageGallerySlider = () => {
               <p>
                 আমাদের মাদরাসায় রয়েছে অভিজ্ঞ শিক্ষকমণ্ডলী, আধুনিক শিক্ষা উপকরণ এবং শিক্ষার্থীদের জন্য উন্নত আবাসিক সুবিধা। আমরা প্রতিটি শিক্ষার্থীকে দ্বীনি ও দুনিয়াবি শিক্ষায় শিক্ষিত করে তোলার জন্য প্রতিশ্রুতিবদ্ধ।
               </p>
+            </div>
+
+            {/* Slide Indicators - Moved Below Description */}
+            <div className="flex justify-center gap-3 mt-8">
+              {galleryImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => api?.scrollTo(index)}
+                  className={`h-3 rounded-full transition-all duration-300 ${
+                    index === current 
+                      ? "w-12 bg-islamic-green" 
+                      : "w-3 bg-gray-300 hover:bg-gray-400"
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>

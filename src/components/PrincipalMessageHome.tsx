@@ -11,16 +11,16 @@ const PrincipalMessageHome = () => {
     <section ref={ref} className="py-12 md:py-20 px-4 bg-gradient-to-b from-muted/30 to-background">
       <div className="container mx-auto">
         {/* Section Header */}
-        <div className={`text-center mb-8 md:mb-14 transition-all duration-1000 ${
+        <div className={`text-center mb-10 md:mb-14 transition-all duration-1000 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}>
-          <div className="inline-block px-4 md:px-5 py-2 bg-primary/10 rounded-full mb-3 md:mb-4">
-            <p className="font-arabic text-base md:text-lg text-primary">رسالة المدير</p>
+          <div className="inline-block px-5 md:px-6 py-2.5 md:py-2 bg-primary/10 rounded-full mb-4 md:mb-4">
+            <p className="font-arabic text-lg md:text-xl text-primary">رسالة المدير</p>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-bengali text-foreground mb-3 md:mb-4">
+          <h2 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold font-bengali text-foreground mb-4 md:mb-4 px-4">
             মুহতামিমের বাণী
           </h2>
-          <p className="text-base md:text-lg font-english text-muted-foreground">
+          <p className="text-lg md:text-xl font-english text-muted-foreground">
             Principal's Message
           </p>
         </div>
@@ -32,12 +32,12 @@ const PrincipalMessageHome = () => {
           <div className="bg-card rounded-2xl md:rounded-3xl shadow-elegant overflow-hidden border border-border/50">
             <div className="flex flex-col md:grid md:grid-cols-5 gap-0">
               {/* Principal Image Section */}
-              <div className="md:col-span-2 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-6 md:p-8 flex items-center justify-center">
+              <div className="md:col-span-2 bg-gradient-to-br from-primary/10 via-primary/5 to-transparent p-8 md:p-8 flex items-center justify-center">
                 <div className="relative">
                   {/* Decorative ring */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 blur-xl scale-110" />
                   
-                  <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden ring-4 ring-primary ring-offset-2 md:ring-offset-4 ring-offset-card shadow-2xl">
+                  <div className="relative w-48 h-48 sm:w-52 sm:h-52 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden ring-4 ring-primary ring-offset-4 md:ring-offset-4 ring-offset-card shadow-2xl">
                     <img 
                       src={principalPhoto} 
                       alt="মুহতামিম সাহেব" 
@@ -52,37 +52,37 @@ const PrincipalMessageHome = () => {
               </div>
 
               {/* Message Content Section */}
-              <div className="md:col-span-3 p-6 md:p-8 lg:p-10 relative">
+              <div className="md:col-span-3 p-8 md:p-8 lg:p-10 relative">
                 {/* Quote Icon */}
-                <div className="absolute top-4 md:top-6 right-4 md:right-6 opacity-10">
-                  <Quote className="w-10 h-10 md:w-16 md:h-16 text-primary" />
+                <div className="absolute top-6 md:top-6 right-6 md:right-6 opacity-10">
+                  <Quote className="w-12 h-12 md:w-16 md:h-16 text-primary" />
                 </div>
 
                 {/* Name & Title */}
-                <div className="mb-4 md:mb-6">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-bengali text-foreground mb-1 md:mb-2">
+                <div className="mb-6 md:mb-6">
+                  <h3 className="text-2xl sm:text-3xl md:text-3xl font-bold font-bengali text-foreground mb-2 md:mb-2">
                     মাওলানা মুহাম্মদ আব্দুল্লাহ
                   </h3>
-                  <p className="text-primary font-semibold font-bengali text-base md:text-lg">
+                  <p className="text-primary font-semibold font-bengali text-lg md:text-xl">
                     মুহতামিম ও প্রতিষ্ঠাতা
                   </p>
                 </div>
 
                 {/* Message */}
-                <div className="space-y-3 md:space-y-4 mb-6 md:mb-8">
-                  <p className="text-base md:text-lg font-bengali leading-relaxed text-foreground">
+                <div className="space-y-4 md:space-y-4 mb-8 md:mb-8">
+                  <p className="text-lg md:text-xl font-bengali leading-relaxed text-foreground">
                     বিস্মিল্লাহির রাহমানির রাহিম। আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহ। 
                     আল্লাহ তা'আলার অশেষ রহমতে আমাদের মাদ্রাসা দীর্ঘ ১৫ বছর যাবত কুরআন ও হাদিসের 
                     খিদমতে নিয়োজিত রয়েছে।
                   </p>
-                  <p className="text-sm md:text-base font-bengali leading-relaxed text-muted-foreground">
+                  <p className="text-base md:text-lg font-bengali leading-relaxed text-muted-foreground">
                     আমাদের প্রতিষ্ঠানে শিক্ষার্থীরা শুধুমাত্র ধর্মীয় জ্ঞানই অর্জন করে না, বরং 
                     চরিত্র গঠন, নৈতিকতা ও মানবিক মূল্যবোধেও দীক্ষিত হয়।
                   </p>
                 </div>
 
                 {/* CTA Button */}
-                <Button asChild size="default" className="font-bengali group w-full sm:w-auto">
+                <Button asChild size="lg" className="font-bengali text-base group w-full sm:w-auto">
                   <Link to="/principal-message">
                     সম্পূর্ণ বাণী পড়ুন 
                     <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
